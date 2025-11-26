@@ -1,12 +1,12 @@
 // Configuración de tu proyecto (Copiada de tu imagen)
 const firebaseConfig = {
-  apiKey: "AIzaSyBU1oaDdq6qD4fTiLN41SAeQg6Kp06gDXk",
-  authDomain: "simulador-tics.firebaseapp.com",
-  projectId: "simulador-tics",
-  storageBucket: "simulador-tics.firebasestorage.app", // Corregido (a veces la consola pone .appspot.com, pero firebasestorage es más seguro para v8)
-  messagingSenderId: "501091859008",
-  appId: "1:501091859008:web:80e4596d2adcb5adbf7da5",
-  measurementId: "G-5LFLE4MBPH"
+  apiKey: "AIzaSyDTxkPNlA8q6PfD-8KwmVfh12bK6cXT1cg",
+  authDomain: "simulador-st.firebaseapp.com",
+  projectId: "simulador-st",
+  storageBucket: "simulador-st.firebasestorage.app",
+  messagingSenderId: "682714171968",
+  appId: "1:682714171968:web:38d785d9e1343d3e96ada5",
+  measurementId: "G-HMJ2FKMZ9T"
 };
 
 // Inicialización (Estilo v8 compat)
