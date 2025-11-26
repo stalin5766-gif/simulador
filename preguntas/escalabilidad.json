@@ -1,0 +1,1006 @@
+[
+  {
+    "pregunta": "En el protocolo GLBP (Gateway Load Balancing Protocol), ¿cómo se utiliza el algoritmo Round Robin por defecto para la distribución de carga entre los routers del grupo?",
+    "opciones": [
+      "El router con la prioridad más baja toma el control de forma rotatoria.",
+      "El Gateway Virtual Activo (AVG) asigna las direcciones MAC virtuales a los dispositivos finales de forma secuencial.",
+      "Todos los routers activos responden a ARP simultáneamente.",
+      "El tráfico es balanceado por hash de la dirección IP de origen."
+    ],
+    "respuesta": 1,
+    "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
+  },
+  {
+    "pregunta": "¿Por qué SDH y SONET son considerados pilares en las redes de telecomunicaciones modernas?",
+    "opciones": [
+      "Porque utilizan el algoritmo DUAL para una rápida convergencia.",
+      "Porque son tecnologías clave en la red backbone de Internet y manejan grandes volúmenes de tráfico de manera eficiente.",
+      "Porque permiten la asignación de direcciones MAC virtuales a dispositivos finales.",
+      "Porque operan exclusivamente en la capa de acceso."
+    ],
+    "respuesta": 1,
+    "explicacion": "SDH y SONET son la base del transporte óptico, diseñados para la transmisión eficiente de grandes volúmenes de tráfico en la red troncal."
+  },
+  {
+    "pregunta": "¿Cuál es la función principal que cumplen los Protocolos de Redundancia de Primer Salto (FHRPs) en una red conmutada para mitigar el problema de un punto único de fallo en la puerta de enlace predeterminada?",
+    "opciones": [
+      "Permiten el balanceo de carga activo entre todos los routers de la LAN.",
+      "Aseguran que todos los dispositivos finales usen una dirección IP única para comunicarse con el exterior.",
+      "Permiten que dos o más routers o switches de Capa 3 compartan una única dirección IP virtual y una dirección MAC virtual.",
+      "Bloquean los puertos redundantes usando STP para prevenir bucles de enrutamiento."
+    ],
+    "respuesta": 2,
+    "explicacion": "Los FHRPs (como HSRP, VRRP y GLBP) usan direcciones virtuales compartidas para crear una puerta de enlace redundante, lo cual es transparente para los dispositivos de la LAN."
+  },
+  {
+    "pregunta": "¿Cuál es la principal ventaja de utilizar WDM en redes de fibra óptica?",
+    "opciones": [
+      "Aumenta la velocidad de transmisión de datos en un 50%.",
+      "WDM permite la transmisión de múltiples señales ópticas a través de una sola fibra óptica, aumentando la capacidad de transmisión sin la necesidad de instalar nuevas fibras.",
+      "Permite que las fibras ópticas se conecten directamente a redes de cobre.",
+      "Reduce el número de switches de Capa 2 requeridos en el core."
+    ],
+    "respuesta": 1,
+    "explicacion": "WDM permite la transmisión de múltiples canales de luz (longitudes de onda) a través de una única fibra, multiplicando la capacidad total de transmisión."
+  },
+  {
+    "pregunta": "Desde una perspectiva de diseño de red, ¿Cuál describe la estructura distintiva y el principal beneficio o aplicación típica de un \"backbone colapsado\"?",
+    "opciones": [
+      "Consiste en múltiples caminos redundantes entre los dispositivos principales, aumentando la tolerancia a fallos.",
+      "La capa de acceso se conecta directamente a la capa de core, eliminando la distribución y simplificando el enrutamiento.",
+      "La capa de distribución y la capa de core se combinan en una sola capa, ofreciendo simplicidad y menor costo en redes pequeñas a medianas.",
+      "Utiliza un enlace físico simple que conecta todos los dispositivos en serie, minimizando el cableado."
+    ],
+    "respuesta": 2,
+    "explicacion": "La topología colapsada reduce el número de capas físicas al combinar distribución y núcleo, lo que es ideal para redes de tamaño limitado que buscan simplicidad y economía."
+  },
+  {
+    "pregunta": "¿Cuál es la función del siguiente comando? R1(config-if)# standby 1 preempt",
+    "opciones": [
+      "El router pasivo queda encargado totalmente de administrar el tráfico de la red.",
+      "Activa el balanceo de carga de acuerdo a la disponibilidad de los routers.",
+      "El router activo se hará cargo de la función de puerta de enlace cuando vuelva a funcionar.",
+      "El router pasivo crea una ip virtual para administrar el tráfico de la red."
+    ],
+    "respuesta": 2,
+    "explicacion": "El comando 'preempt' permite que un router con mayor prioridad (el principal) recupere el rol de Activo en HSRP una vez que se restablece su funcionamiento, forzando la expulsión del router que tiene menor prioridad."
+  },
+  {
+    "pregunta": "Determine a qué tipo de red troncal corresponde la siguiente descripción: Es una arquitectura de red en la que se utilizan múltiples backbones independientes que funcionan para interconectar diferentes segmentos de la red.",
+    "opciones": [
+      "Backbone colapsada",
+      "Backbone distribuida",
+      "Backbone en serie",
+      "Backbone paralela"
+    ],
+    "respuesta": 3,
+    "explicacion": "Una 'Backbone paralela' se define por la existencia de múltiples enlaces o caminos redundantes y simultáneos para interconectar puntos principales, aumentando la tolerancia a fallos y la capacidad."
+  },
+  {
+    "pregunta": "Si se desea que un router con una prioridad HSRP más alta siempre asuma el rol de Activo tan pronto como esté operativo y tenga una mejor prioridad que el router actualmente Activo (que tiene menor prioridad), ¿Qué comando específico de HSRP debe configurarse en las interfaces de los routers que forman parte del grupo de redundancia?",
+    "opciones": [
+      "standby <group> active",
+      "standby <group> priority 255",
+      "standby <group> preempt",
+      "standby <group> track interface"
+    ],
+    "respuesta": 2,
+    "explicacion": "El comando 'preempt' es necesario para que el router de mayor prioridad tome el control si detecta que hay un router Activo con menor prioridad."
+  },
+  {
+    "pregunta": "En el protocolo HSRP (Hot Standby Router Protocol), ¿cuál es la función principal de la \"Dirección IP Virtual\" configurada en un grupo de HSRP?",
+    "opciones": [
+      "Ser usada por el router Standby para enviar mensajes Hello.",
+      "Actuar como la dirección de enrutamiento para el tráfico de administración de HSRP.",
+      "Actuar como la puerta de enlace predeterminada (Default Gateway) para los dispositivos finales en la subred.",
+      "Identificar el router Activo dentro de la red."
+    ],
+    "respuesta": 2,
+    "explicacion": "La Dirección IP Virtual es la dirección de la puerta de enlace que los hosts de la LAN utilizan, proveyendo un punto de acceso constante a pesar de que el router Activo físico pueda cambiar."
+  },
+  {
+    "pregunta": "Señale una ventaja de las redes backbone paralelas.",
+    "opciones": [
+      "Facilidad de implementación y menor costo de infraestructura.",
+      "Mayor simplicidad de la topología y gestión.",
+      "La velocidad de transmisión de datos será mayor debido a que toda la información no colapsa en un solo equipo.",
+      "Reducción de la latencia para tráfico en tiempo real."
+    ],
+    "respuesta": 2,
+    "explicacion": "Al tener múltiples caminos, el tráfico se distribuye (balanceo de carga), lo que aumenta la capacidad total y mejora el rendimiento general de la red troncal."
+  },
+  {
+    "pregunta": "Cuál es la idea principal de cómo HSRP logra esta redundancia para los dispositivos de la red local?",
+    "opciones": [
+      "Todos los routers anuncian sus rutas a través de EIGRP con la misma métrica.",
+      "Varios routers comparten una única dirección IP virtual y una dirección MAC virtual, con uno Activo y otro en Espera.",
+      "Se utiliza el protocolo STP para bloquear los enlaces redundantes hasta que ocurre una falla.",
+      "Los hosts de la LAN tienen configuradas dos puertas de enlace predeterminadas en su configuración."
+    ],
+    "respuesta": 1,
+    "explicacion": "HSRP utiliza un par IP/MAC virtual para el grupo, asegurando que el host siempre vea la misma puerta de enlace, mientras que el rol Activo es manejado por el router operativo."
+  },
+  {
+    "pregunta": "A diferencia de HSRP y VRRP, que principalmente proporcionan redundancia de puerta de enlace, ¿cuál es la funcionalidad clave adicional que ofrece el protocolo GLBP (Gateway Load Balancing Protocol)?",
+    "opciones": [
+      "Soporte nativo para IPv6.",
+      "Mayor velocidad de convergencia después de una falla.",
+      "Permite la compartición activa de la carga de tráfico (load balancing) entre múltiples routers dentro del mismo grupo.",
+      "Asignación dinámica de direcciones IP a los hosts de la LAN."
+    ],
+    "respuesta": 2,
+    "explicacion": "La característica clave de GLBP es el balanceo de carga activo, a diferencia de HSRP y VRRP que operan en un modelo Activo/Espera."
+  },
+  {
+    "pregunta": "Considerando el panorama digital moderno, ¿Cuál de las siguientes opciones identifica correctamente por qué la escalabilidad es tan importante hoy y los principales factores que están impulsando esta necesidad en el diseño e implementación de redes?",
+    "opciones": [
+      "La escalabilidad solo es relevante para redes de operadores de telecomunicaciones, no para redes empresariales pequeñas.",
+      "Es importante principalmente para reducir la latencia en aplicaciones de voz sobre IP.",
+      "La escalabilidad es vital para que las redes puedan soportar el aumento masivo de dispositivos, el crecimiento exponencial del tráfico generado por servicios cloud y multimedia, y la rápida implementación de nuevas aplicaciones empresariales.",
+      "Su única función es simplificar la configuración de VLANs."
+    ],
+    "respuesta": 2,
+    "explicacion": "La escalabilidad es crucial para manejar el crecimiento constante de la demanda (dispositivos IoT, tráfico multimedia y cloud) sin degradar el rendimiento o requerir rediseños costosos."
+  },
+  {
+    "pregunta": "Qué tipo de switch puede ser utilizado como core de una red troncal colapsada?",
+    "opciones": [
+      "Cisco Catalyst 2960 (Capa 2)",
+      "Cisco Catalyst 9500 (Capa 3, alto rendimiento)",
+      "Cisco Meraki MS220 (Capa 2 gestionado en la nube)",
+      "Switch de Acceso Gigabit (Capa 2)"
+    ],
+    "respuesta": 1,
+    "explicacion": "El Cisco Catalyst 9500 es un switch de la capa de core/agregación de alto rendimiento con capacidad de Capa 3, ideal para la capa combinada de un *backbone* colapsado."
+  },
+  {
+    "pregunta": "¿Cuál de las siguientes afirmaciones NO es una característica inherente a la escalabilidad de las redes troncales en el contexto de las infraestructuras de red Cisco?",
+    "opciones": [
+      "Capacidad para soportar un aumento significativo en el tráfico de red sin degradación del rendimiento.",
+      "Adaptación automática a cambios en la topología de la red, como la adición o eliminación de dispositivos, sin interrupciones en el servicio.",
+      "Distribución eficiente del tráfico entre múltiples enlaces para evitar cuellos de botella.",
+      "Facilidad para integrar nuevas tecnologías y protocolos."
+    ],
+    "respuesta": 1,
+    "explicacion": "Aunque la red busca la alta disponibilidad, la escalabilidad como tal no garantiza una 'adaptación completamente automática' sin interrupciones o reconfiguración; es una característica más de los protocolos de enrutamiento y la administración de red."
+  },
+  {
+    "pregunta": "Desde una perspectiva de diseño de red, ¿Cuál describe con mayor precisión la característica clave que define un \"backbone paralelo\" y el principal beneficio que aporta a la red?",
+    "opciones": [
+      "La capa de distribución y core están unidas, simplificando la topología.",
+      "La presencia de múltiples enlaces o caminos redundantes y simultáneos que interconectan los puntos principales, aumentando la tolerancia a fallos y la capacidad total.",
+      "Utiliza un único enlace de alta velocidad para conectar todos los switches de acceso.",
+      "Se basa en el protocolo STP para asegurar un único camino libre de bucles."
+    ],
+    "respuesta": 1,
+    "explicacion": "El término \"paralelo\" en *backbone* se refiere a la existencia de caminos redundantes y activos que permiten el aumento de la tolerancia a fallos y el incremento de la capacidad."
+  },
+  {
+    "pregunta": "Aunque HSRP y VRRP cumplen funciones similares como protocolos de redundancia de primera milla (FHRP), ¿cuál es una distinción fundamental entre ellos?",
+    "opciones": [
+      "HSRP es un protocolo propietario de Cisco, mientras que VRRP es un estándar abierto definido por la JETF.",
+      "HSRP opera en la Capa 3 del modelo OSI, mientras que VRRP opera en la Capa 2.",
+      "HSRP soporta IPv6 de forma nativa, mientras que VRRP solo soporta IPv4.",
+      "VRRP permite que todos los routers en un grupo forwarding activamente tráfico, mientras que HSRP solo tiene un router activo."
+    ],
+    "respuesta": 0,
+    "explicacion": "La diferencia crucial es la propiedad: HSRP es propietario de Cisco, mientras que VRRP es un estándar abierto (IETF) compatible con cualquier fabricante."
+  },
+  {
+    "pregunta": "¿Cuál describe con mayor precisión la función principal del Protocolo SIP en una comunicación multimedia, como una llamada de voz o una videoconferencia a través de una red IP?",
+    "opciones": [
+      "Transportar los datos de voz y video en tiempo real (RTP).",
+      "Proporcionar la autenticación de usuarios para el acceso a la red.",
+      "Es un protocolo de señalización utilizado para iniciar, mantener y finalizar sesiones de comunicación interactiva entre dos o más participantes.",
+      "Realizar la traducción de direcciones de red (NAT) en el firewall."
+    ],
+    "respuesta": 2,
+    "explicacion": "SIP (*Session Initiation Protocol*) es el protocolo de señalización que establece, modifica y termina la comunicación, mientras que el transporte de datos se maneja por otros protocolos (RTP)."
+  },
+  {
+    "pregunta": "Considerando este contexto, ¿Cuál describe mejor la función principal y el principio operativo clave de la tecnología WDM en una red de fibra óptica?",
+    "opciones": [
+      "Garantizar que todos los routers en la red sincronicen su reloj interno (SDH).",
+      "Permite la transmisión simultánea de múltiples señales ópticas, cada una utilizando una longitud de onda diferente, a través de un único hilo de fibra óptica.",
+      "Define la estructura jerárquica para la multiplexación de señales de bajo nivel (PDH).",
+      "Señalar el inicio y fin de una sesión de comunicación (SIP)."
+    ],
+    "respuesta": 1,
+    "explicacion": "WDM (*Wavelength Division Multiplexing*) maximiza el uso de la fibra transmitiendo datos con diferentes longitudes de onda de luz al mismo tiempo."
+  },
+  {
+    "pregunta": "¿Cuáles son las desventajas de una red troncal distribuida?",
+    "opciones": [
+      "Falta de redundancia.",
+      "Crea un punto único de fallo.",
+      "Baja capacidad de transmisión.",
+      "Complejidad y costo."
+    ],
+    "respuesta": 3,
+    "explicacion": "La arquitectura distribuida requiere más equipos (switches/routers de Capa 3) y una configuración de interconexión más elaborada, lo que resulta en mayor complejidad de gestión y costo."
+  },
+  {
+    "pregunta": "Determine a qué tipo de red troncal corresponde la siguiente descripción: \"Está formada por dos o más dispositivos conectados en cadena que utiliza un único enlace físico para transportar tráfico\"",
+    "opciones": [
+      "Backbone paralela",
+      "Backbone colapsada",
+      "Backbone en serie",
+      "Backbone distribuida"
+    ],
+    "respuesta": 2,
+    "explicacion": "La estructura lineal, donde los dispositivos se conectan en cadena uno detrás de otro, define una 'Backbone en serie', siendo su principal desventaja el punto único de fallo."
+  },
+  {
+    "pregunta": "Dentro de un grupo GLBP (Gateway Load Balancing Protocol), existen dos roles principales: el Gateway Virtual Activo (AVG) y los Forwarders Virtuales Activos (AVF). ¿Cuál es la diferencia principal en la función entre el AVG y los AVFs?",
+    "opciones": [
+      "El AVG se encarga del enrutamiento Inter-VLAN, mientras que los AVFs solo gestionan el tráfico de la VLAN local.",
+      "El AVG gestiona las asignaciones de direcciones MAC virtuales y responde a ARP, mientras que los AVFs reenvían el tráfico de datos real.",
+      "Los AVFs son responsables de la elección del AVG mediante prioridad.",
+      "El AVG envía mensajes de saludo (Hello) y los AVFs solo reciben los mensajes."
+    ],
+    "respuesta": 1,
+    "explicacion": "El AVG es el punto de control (gestión de MACs y ARP), mientras que los AVFs son los routers que activamente reenvían los paquetes de datos para el balanceo de carga."
+  },
+  {
+    "pregunta": "Desde una perspectiva arquitectónica y conceptual, ¿Cuál de las siguientes opciones describe la característica central y el principio que define a una Red de Nueva Generación (NGN)?",
+    "opciones": [
+      "Se basa exclusivamente en líneas T1/E1 para la transmisión de voz.",
+      "Utiliza tecnologías de conmutación de circuitos dedicadas para cada tipo de servicio (voz, datos).",
+      "Unificar el transporte y la provisión de múltiples tipos de servicios sobre una única infraestructura de red basada en paquetes (principalmente IP).",
+      "Depender completamente de la tecnología MPLS sin usar el protocolo IP."
+    ],
+    "respuesta": 2,
+    "explicacion": "La NGN busca migrar a una única red basada en IP (conmutación de paquetes) para transportar y gestionar todos los servicios de forma unificada (voz, datos, video, multimedia)."
+  },
+  {
+    "pregunta": "Considerando su diseño fundamental, ¿Cuál describe mejor la característica clave y el principal beneficio operativo de SDH en comparación con tecnologías de multiplexación digital más antiguas como PDH?",
+    "opciones": [
+      "Permite la multiplexación asíncrona de señales mediante el uso de *justification bits*.",
+      "Su beneficio clave es la capacidad de añadir o extraer (add/drop) señales individuales de bajo nivel sin tener que demultiplexar toda la jerarquía.",
+      "Opera exclusivamente en la capa física con direccionamiento MAC.",
+      "Utiliza el algoritmo DUAL para calcular la ruta más corta."
+    ],
+    "respuesta": 1,
+    "explicacion": "La naturaleza síncrona de SDH permite la inserción o extracción eficiente de canales de bajo nivel (*add/drop*) sin necesidad de procesar toda la señal de alta velocidad, lo que simplifica la gestión."
+  },
+  {
+    "pregunta": "Desde una perspectiva conceptual, ¿Cuál es el mecanismo fundamental que permite a Frame Relay transportar datos entre múltiples sitios a través de un único enlace físico conectado a la red del proveedor y cómo se identifican estas \"conexiones\"?",
+    "opciones": [
+      "Utiliza túneles IPsec en la Capa 3 para encriptar el tráfico.",
+      "Implementa el enrutamiento basado en la dirección IP de destino.",
+      "Permite la creación de múltiples circuitos virtuales (PVCs) identificados mediante DLCIs únicos a través de un único enlace físico.",
+      "Utiliza el método CSMA/CD para evitar colisiones en el enlace de acceso."
+    ],
+    "respuesta": 2,
+    "explicacion": "Frame Relay utiliza Circuitos Virtuales Permanentes (PVCs) sobre un único acceso físico al proveedor, y cada PVC se identifica mediante un DLCI (Data-Link Connection Identifier) localmente significativo."
+  },
+  {
+    "pregunta": "Considerando esta estructura lineal simple, ¿Cuál describe la característica fundamental y la principal desventaja operativa de un \"backbone en serie\" en una red?",
+    "opciones": [
+      "Representa un único camino secuencial para el tráfico del backbone, creando un punto único de fallo significativo.",
+      "Distribuye la carga de tráfico uniformemente a través de múltiples caminos redundantes.",
+      "Combina las capas de distribución y core, simplificando la administración.",
+      "Utiliza un dispositivo central de alta capacidad para gestionar todo el tráfico de la red."
+    ],
+    "respuesta": 0,
+    "explicacion": "Cualquier fallo en un enlace o dispositivo en la cadena de un *backbone* en serie detiene la conectividad para todos los dispositivos posteriores, siendo su principal desventaja."
+  },
+  {
+    "pregunta": "¿Cuál es la relación principal entre el protocolo IP y las redes backbone?",
+    "opciones": [
+      "IP es el protocolo utilizado exclusivamente para el transporte de señales ópticas.",
+      "IP proporciona el esquema de direccionamiento y enrutamiento para el tráfico que viaja a través de las redes backbone.",
+      "IP es un protocolo de Capa 2 que garantiza la entrega de tramas.",
+      "IP es utilizado por HSRP para el balanceo de carga activo."
+    ],
+    "respuesta": 1,
+    "explicacion": "El *backbone* es la capa de enrutamiento principal, por lo que el Protocolo IP es fundamental para el direccionamiento y la toma de decisiones de enrutamiento del tráfico de datos."
+  },
+  {
+    "pregunta": "Considerando este modelo arquitectónico, ¿Cuál describe con mayor precisión la estructura y el propósito fundamental de un \"backbone distribuido\" en una red de campus o empresarial?",
+    "opciones": [
+      "Consiste en un único switch de Capa 2 de alto rendimiento en el centro de la red.",
+      "Consiste en múltiples puntos de conexión (switches L3 de distribución) interconectados, facilitando la modularidad y escalabilidad en redes extensas.",
+      "Utiliza el protocolo HSRP para la redundancia de Capa 2.",
+      "Todos los dispositivos finales se conectan directamente al núcleo (core) de la red."
+    ],
+    "respuesta": 1,
+    "explicacion": "El *backbone* distribuido usa múltiples puntos de agregación (distribución) interconectados, lo que lo hace ideal para redes de campus grandes que requieren modularidad y expansión."
+  },
+  {
+    "pregunta": "Determine a qué tipo de red troncal corresponde la siguiente descripción: Arquitectura de red que utiliza múltiples conexiones troncales para proporcionar redundancia, escalabilidad y rendimiento.",
+    "opciones": [
+      "Backbone en serie",
+      "Backbone colapsada",
+      "Backbone distribuida",
+      "Backbone paralela"
+    ],
+    "respuesta": 2,
+    "explicacion": "Una 'Backbone distribuida' se caracteriza por sus múltiples puntos de conexión troncales interconectados para lograr redundancia, escalabilidad y una gestión más sencilla en redes grandes."
+  },
+  {
+    "pregunta": "Determine a qué tipo de red troncal corresponde la siguiente descripción: Es un tipo de arquitectura de red en la que la función de la red backbone se concentra en un único dispositivo central, generalmente un switch o router de gran capacidad.",
+    "opciones": [
+      "Backbone en serie",
+      "Backbone distribuida",
+      "Backbone paralela",
+      "Backbone colapsada"
+    ],
+    "respuesta": 3,
+    "explicacion": "La 'Backbone colapsada' fusiona las funciones de las capas de núcleo y distribución en un único dispositivo central de alta capacidad."
+  },
+  {
+    "pregunta": "¿Cuál es el propósito fundamental de configurar un enlace físico entre dos switches o entre un switch y un router como un \"enlace troncal\" (trunk link) en un entorno de red con múltiples VLANs?",
+    "opciones": [
+      "Activar el protocolo de árbol de expansión (STP) para prevenir bucles de Capa 2.",
+      "Permitir que un solo enlace físico transporte simultáneamente el tráfico de múltiples VLANs usando etiquetado (tagging).",
+      "Proporcionar alimentación eléctrica a través del cable de red (PoE).",
+      "Configurar una dirección IP virtual para el FHRP."
+    ],
+    "respuesta": 1,
+    "explicacion": "El enlace troncal es esencial para permitir que el tráfico de múltiples VLANs viaje a través de un único enlace, utilizando la encapsulación 802.1Q o ISL para identificar las tramas."
+  },
+  {
+    "pregunta": "¿Cuál es el comando para activar el protocolo HSRP?",
+    "opciones": [
+      "router hsrp 1",
+      "standby 1 ip 192.168.1.1",
+      "standby version 2",
+      "interface hsrp 0/0"
+    ],
+    "respuesta": 2,
+    "explicacion": "El comando 'standby version 2' se usa dentro del modo de configuración de interfaz para especificar la versión del protocolo HSRP."
+  },
+  {
+    "pregunta": "¿Cuáles son los 4 principios de ingeniería estructurada que se analiza para el correcto diseño de una red?",
+    "opciones": [
+      "Simplicidad, centralización, velocidad y bajo costo.",
+      "Modularidad, Capacidad de recuperación, Flexibilidad y Jerarquía.",
+      "Estabilidad, Convergencia, Adyacencia y Enrutamiento.",
+      "Capacidad de banda ancha, alta latencia, unicast y multicast."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los cuatro principios clave en el diseño de redes son: Jerarquía, Modularidad, Capacidad de Recuperación (Resiliencia) y Flexibilidad."
+  },
+  {
+    "pregunta": "En el contexto de redes de telecomunicaciones, ¿cuál es la principal función de una red troncal (backbone) dentro de una infraestructura de red?",
+    "opciones": [
+      "Proporcionar servicio de telefonía IP a los dispositivos finales.",
+      "Configurar el protocolo HSRP en todos los routers.",
+      "Gestionar la asignación dinámica de direcciones IP.",
+      "Interconectar múltiples redes LAN y WAN, facilitando el transporte eficiente de datos a través de grandes distancias."
+    ],
+    "respuesta": 3,
+    "explicacion": "El *backbone* actúa como la columna vertebral de la red, interconectando segmentos más pequeños (LANs) y redes más grandes (WANs) y transportando la mayor parte del tráfico."
+  },
+  {
+    "pregunta": "¿Cuál de los siguientes protocolos FHRP sería la elección más adecuada en este escenario? (Red de múltiples proveedores)",
+    "opciones": [
+      "a. HSRP (Hot Standby Router Protocol)",
+      "b. GLBP (Gateway Load Balancing Protocol)",
+      "c. VRRP (Virtual Router Redundancy Protocol)",
+      "d. RSTP (Rapid Spanning Tree Protocol)"
+    ],
+    "respuesta": 2,
+    "explicacion": "VRRP es el estándar abierto (IETF) y, por lo tanto, la elección preferida para entornos con equipos de diferentes fabricantes (*multivendor*), a diferencia de HSRP y GLBP, que son propietarios de Cisco."
+  },
+  {
+    "pregunta": "¿Para qué se utiliza el comando show ip route en un router?",
+    "opciones": [
+      "Para ver la tabla ARP del router.",
+      "Para examinar las tablas de routing IPv4 y verificar la configuración de protocolos.",
+      "Para verificar el estado físico de las interfaces.",
+      "Para configurar una nueva dirección IP en una interfaz."
+    ],
+    "respuesta": 1,
+    "explicacion": "El comando muestra la tabla de enrutamiento IPv4 del router, la cual contiene todas las rutas conocidas y la mejor ruta hacia cada red de destino."
+  },
+  {
+    "pregunta": "¿Qué algoritmo utiliza OSPF para calcular la mejor ruta hacia cada destino?",
+    "opciones": [
+      "Algoritmo DUAL.",
+      "Algoritmo Bellman-Ford.",
+      "Algoritmo de Dijkstra o SPF (Shortest Path First).",
+      "Algoritmo Round Robin."
+    ],
+    "respuesta": 2,
+    "explicacion": "OSPF (Open Shortest Path First) es un protocolo de estado de enlace que utiliza el algoritmo SPF de Dijkstra para construir el árbol de rutas más cortas."
+  },
+  {
+    "pregunta": "¿Qué tipo de tablas mantiene EIGRP en cada router para tomar decisiones de enrutamiento?",
+    "opciones": [
+      "Tabla de direcciones MAC, Tabla de ARP.",
+      "Tabla de vecinos, tabla de topología y tabla de enrutamiento.",
+      "Tabla de rutas estáticas, Tabla de rutas conectadas.",
+      "Tabla de enlaces (Link State Database)."
+    ],
+    "respuesta": 1,
+    "explicacion": "EIGRP mantiene tres tablas: *Vecinos* (adyacencias), *Topología* (rutas posibles, sucesores y sucesores factibles) y *Enrutamiento* (mejores rutas)."
+  },
+  {
+    "pregunta": "¿Por qué la mayoría de las empresas e instituciones con redes IP no necesitan un número de sistema autónomo (ASN)?",
+    "opciones": [
+      "Porque solo utilizan OSPF como protocolo de enrutamiento interno.",
+      "Porque los ASN solo se usan para IPv6.",
+      "Porque están bajo el control de una entidad más grande, como un ISP.",
+      "Porque gestionan todo su enrutamiento con rutas estáticas."
+    ],
+    "respuesta": 2,
+    "explicacion": "Un ASN es requerido para el enrutamiento externo (BGP) entre diferentes Sistemas Autónomos. Las organizaciones que se conectan a un solo proveedor no lo necesitan, ya que usan el del ISP."
+  },
+  {
+    "pregunta": "¿Cuál es la distancia administrativa predeterminada de EIGRP para las rutas internas y las rutas externas?",
+    "opciones": [
+      "110 para rutas internas y 170 para rutas externas.",
+      "90 para rutas internas y 170 para rutas externas.",
+      "100 para rutas internas y 110 para rutas externas.",
+      "1 para rutas internas y 5 para rutas externas."
+    ],
+    "respuesta": 1,
+    "explicacion": "EIGRP tiene una Distancia Administrativa (AD) de 90 para las rutas aprendidas dentro del Sistema Autónomo (internas) y 170 para las rutas externas (inyecciones de BGP o protocolos externos)."
+  },
+  {
+    "pregunta": "¿Cuándo se configura OSPF para una sola área. cuál es el nombre con el que también se le conoce al área backbone?",
+    "opciones": [
+      "Área 1.",
+      "Área Principal.",
+      "Área 0.",
+      "Área del Stub."
+    ],
+    "respuesta": 2,
+    "explicacion": "En OSPF, el *backbone* o área principal es siempre el Área 0, la cual es obligatoria para interconectar otras áreas en una configuración multiárea."
+  },
+  {
+    "pregunta": "¿Qué tipo de protocolo de enrutamiento es EIGRP?",
+    "opciones": [
+      "Vector Distancia.",
+      "Estado de Enlace.",
+      "Híbrido (Vector Distancia Avanzado).",
+      "Externo (EGP)."
+    ],
+    "respuesta": 2,
+    "explicacion": "EIGRP combina características de protocolos de vector distancia (intercambia información con vecinos) y estado de enlace (utiliza actualizaciones limitadas y disparadas por eventos)."
+  },
+  {
+    "pregunta": "¿Qué condición debe cumplirse para que dos routers formen una vecindad EIGRP correctamente?",
+    "opciones": [
+      "Deben tener el mismo ID de Router.",
+      "Deben estar en la misma red y usar el mismo número de sistema autónomo.",
+      "Deben tener la misma prioridad OSPF.",
+      "Deben tener la misma tabla de topología."
+    ],
+    "respuesta": 1,
+    "explicacion": "Para establecer la adyacencia, ambos routers deben estar directamente conectados en la misma subred y estar configurados con el mismo número de Sistema Autónomo EIGRP."
+  },
+  {
+    "pregunta": "¿Qué característica principal define a los protocolos de estado de enlace (OSPF) en comparación con otros tipos de protocolos de enrutamiento?",
+    "opciones": [
+      "Comparten toda su tabla de enrutamiento periódicamente con sus vecinos.",
+      "Cada router mantiene una base de datos que describe la estructura y estado de los enlaces en toda la red.",
+      "Utilizan una métrica simple basada en el conteo de saltos.",
+      "Solo envían actualizaciones cuando el conteo de saltos cambia."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los protocolos de estado de enlace (OSPF, IS-IS) se caracterizan porque cada router obtiene un mapa completo de la topología de la red a través de su base de datos de enlaces."
+  },
+  {
+    "pregunta": "¿Cuál es el comando correcto para habilitar OSPF en un router Cisco?",
+    "opciones": [
+      "router eigrp 1",
+      "router ospf 1",
+      "network 192.168.1.0 area 0",
+      "enable ospf"
+    ],
+    "respuesta": 1,
+    "explicacion": "El comando 'router ospf [process-id]' inicia el proceso OSPF en el router."
+  },
+  {
+    "pregunta": "¿Qué significan las siglas EIGRP?",
+    "opciones": [
+      "Protocolo de enrutamiento de puerta de enlace interior mejorada.",
+      "Protocolo de enrutamiento externo de puerta de enlace.",
+      "Protocolo de pasarela de enrutamiento interno.",
+      "Protocolo de intercambio de información de enrutamiento mejorado."
+    ],
+    "respuesta": 0,
+    "explicacion": "EIGRP significa *Enhanced Interior Gateway Routing Protocol*."
+  },
+  {
+    "pregunta": "En el protocolo EIGRP, el algoritmo DUAL utiliza el concepto de \"sucesor factible\" para garantizar rutas libres de bucles. ¿Cuál es la condición que debe cumplirse para que una ruta sea considerada como sucesora factible?",
+    "opciones": [
+      "La distancia reportada por el vecino debe ser igual a la Distancia Factible (FD).",
+      "La distancia reportada por un vecino es menor que la distancia factible (FD) actual hacia el destino.",
+      "El conteo de saltos debe ser menor a 15.",
+      "El router debe tener una prioridad más alta que el sucesor actual."
+    ],
+    "respuesta": 1,
+    "explicacion": "La condición de factibilidad establece que la Distancia Reportada (RD) del Sucesor Factible debe ser menor que la Distancia Factible (FD) del Sucesor actual, lo cual garantiza una ruta libre de bucles."
+  },
+  {
+    "pregunta": "¿Por qué se le conoce a EIGRP como un protocolo de routing avanzado?",
+    "opciones": [
+      "Porque utiliza solo un único camino para el tráfico.",
+      "Porque utiliza MPLS para el reenvío de paquetes.",
+      "Porque combina características de protocolos de estado de enlace y vector distancia.",
+      "Porque fue diseñado para redes de Capa 2."
+    ],
+    "respuesta": 2,
+    "explicacion": "EIGRP es considerado avanzado o híbrido porque utiliza conceptos de ambos tipos de protocolos, lo que le permite una convergencia rápida y una gestión eficiente de la topología."
+  },
+  {
+    "pregunta": "¿Cuál es la característica principal de una topología punto a punto en redes?",
+    "opciones": [
+      "Solo intervienen dos routers conectados por un enlace común, sin otros routers en el enlace.",
+      "Todos los dispositivos están conectados a un bus central.",
+      "Requiere una *head-end* para terminar todos los circuitos virtuales.",
+      "Utiliza un diseño de *backbone* colapsada."
+    ],
+    "respuesta": 0,
+    "explicacion": "Una topología punto a punto es la conexión directa y exclusiva entre dos nodos, como dos routers a través de un enlace WAN o serial."
+  },
+  {
+    "pregunta": "¿Por qué el requisito de ancho de banda y la sobrecarga generada en EIGRP son menores que en IGRP?",
+    "opciones": [
+      "Porque EIGRP utiliza mensajes *Hello* más grandes.",
+      "Porque EIGRP solo envía actualizaciones periódicas cada 90 segundos.",
+      "Porque EIGRP no envía actualizaciones periódicas, sino solo cuando hay cambios en la ruta o la métrica.",
+      "Porque EIGRP siempre utiliza rutas estáticas."
+    ],
+    "respuesta": 2,
+    "explicacion": "EIGRP utiliza actualizaciones limitadas (solo la información cambiada) y disparadas por eventos, a diferencia de IGRP, que enviaba la tabla completa periódicamente."
+  },
+  {
+    "pregunta": "¿Cuál es una característica distintiva del protocolo de enrutamiento IS-IS en comparación con OSPF?",
+    "opciones": [
+      "Es un protocolo propietario de Cisco.",
+      "Fue diseñado inicialmente para operar en redes OSI y no utiliza direcciones IP directamente.",
+      "Utiliza el algoritmo DUAL para el cálculo de rutas.",
+      "Es un protocolo de enrutamiento externo (EGP)."
+    ],
+    "respuesta": 1,
+    "explicacion": "IS-IS fue desarrollado inicialmente para enrutar datos OSI (CLNP). Su soporte para IP fue una adición, a diferencia de OSPF, que siempre ha estado basado en IP."
+  },
+  {
+    "pregunta": "¿Qué característica permite a OSPF evitar bucles de enrutamiento?",
+    "opciones": [
+      "Utiliza la técnica de *split-horizon*.",
+      "Cada router mantiene una copia completa de la topología de su área.",
+      "Impone un límite de 15 saltos a todas las rutas.",
+      "Utiliza *holddown timers* para la convergencia."
+    ],
+    "respuesta": 1,
+    "explicacion": "El conocimiento completo de la topología permite a OSPF calcular rutas mediante el algoritmo SPF (Dijkstra) que son inherentemente libres de bucles."
+  },
+  {
+    "pregunta": "¿Cuál es la principal ventaja de OSPF frente a protocolos de vector de distancia como RIP?",
+    "opciones": [
+      "Utiliza una métrica basada en el conteo de saltos.",
+      "Utiliza el algoritmo de estado de enlace para converger más rápido.",
+      "Tiene una distancia administrativa más alta.",
+      "Envía actualizaciones periódicas completas cada 30 segundos."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los protocolos de estado de enlace (como OSPF) convergen más rápido que los de vector distancia al tener una visión completa de la red y utilizar actualizaciones por eventos."
+  },
+  {
+    "pregunta": "¿Por qué el área 0 es fundamental en la arquitectura OSPF?",
+    "opciones": [
+      "Es el área con la prioridad más alta para la elección del DR/BDR.",
+      "Actúa como el backbone que interconecta todas las demás áreas.",
+      "Contiene exclusivamente rutas estáticas.",
+      "Es la única área que soporta IPv6."
+    ],
+    "respuesta": 1,
+    "explicacion": "En OSPF multi-área, el Área 0 es el área de tránsito a la que todas las demás áreas deben conectarse (estructura jerárquica)."
+  },
+  {
+    "pregunta": "¿Cuál es una diferencia clave entre los protocolos IS-IS y BGP?",
+    "opciones": [
+      "IS-IS es propietario de Cisco, mientras que BGP es abierto.",
+      "IS-IS utiliza métricas de ancho de banda y retardo, mientras que BGP usa conteo de saltos.",
+      "IS-IS se utiliza para el enrutamiento interno (IGP), mientras que BGP es un protocolo de enrutamiento externo (EGP) utilizado para conectar diferentes sistemas autónomos.",
+      "BGP converge más rápido que IS-IS."
+    ],
+    "respuesta": 2,
+    "explicacion": "IS-IS es un Protocolo de Pasarela Interior (IGP), mientras que BGP es el Protocolo de Pasarela Exterior (EGP) estándar de Internet."
+  },
+  {
+    "pregunta": "¿Cuál es la función principal del protocolo BGP en redes?",
+    "opciones": [
+      "Administrar el enrutamiento de datos entre diferentes sistemas autónomos en Internet.",
+      "Calcular la ruta más corta dentro de un área local.",
+      "Balancear la carga de tráfico dentro de un FHRP.",
+      "Proporcionar direcciones IP dinámicas a los hosts."
+    ],
+    "respuesta": 0,
+    "explicacion": "BGP (*Border Gateway Protocol*) es el protocolo principal de enrutamiento de Internet, gestionando las rutas entre los Sistemas Autónomos."
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del algoritmo que utiliza EIGRP para calcular la mejor ruta?",
+    "opciones": [
+      "OSPF (Open Shortest Path First).",
+      "DUAL (Diffusing Update Algorithm).",
+      "SPF (Shortest Path First).",
+      "BDR (Backup Designated Router)."
+    ],
+    "respuesta": 1,
+    "explicacion": "El algoritmo DUAL es la base de EIGRP, responsable de calcular las rutas libres de bucles y de asegurar la rápida convergencia."
+  },
+  {
+    "pregunta": "¿Qué condición debe cumplirse para que dos routers OSPF lleguen a ser adyacentes?",
+    "opciones": [
+      "Deben tener el mismo ID de router EIGRP.",
+      "Deben coincidir los valores de área, máscara, tipo de red y mensaje *hello*.",
+      "Deben tener la misma prioridad HSRP.",
+      "Deben estar conectados mediante un cable cruzado."
+    ],
+    "respuesta": 1,
+    "explicacion": "Para que OSPF complete el estado de adyacencia (intercambio de información de estado de enlace), los parámetros de área, máscara, tipo de red y mensajes *hello* deben ser idénticos."
+  },
+  {
+    "pregunta": "¿Cuál es la principal diferencia en la configuración de OSPF con múltiples áreas en comparación con OSPF de una sola área?",
+    "opciones": [
+      "El uso de rutas estáticas en lugar de dinámicas.",
+      "Se configura el área 0 junto con las demás áreas de la topología.",
+      "Se utiliza el algoritmo DUAL en lugar de SPF.",
+      "Solo se utiliza OSPFv3."
+    ],
+    "respuesta": 1,
+    "explicacion": "La principal diferencia es que en la configuración multiárea, el Área 0 es requerida y sirve como nexo de unión para todas las demás áreas."
+  },
+  {
+    "pregunta": "¿En qué capa funciona el protocolo OSPF?",
+    "opciones": [
+      "Capa de Enlace de Datos.",
+      "Capa de Transporte.",
+      "Capa de Red.",
+      "Capa de Aplicación."
+    ],
+    "respuesta": 2,
+    "explicacion": "OSPF, como protocolo de enrutamiento (dirigido a las direcciones IP), opera en la Capa 3 (Red) del modelo OSI."
+  },
+  {
+    "pregunta": "¿Mediante qué algoritmo el protocolo OSPF puede calcular la ruta más corta hacia cada red de destino?",
+    "opciones": [
+      "Bellman-Ford.",
+      "DUAL.",
+      "Dijkstra.",
+      "Round Robin."
+    ],
+    "respuesta": 2,
+    "explicacion": "El algoritmo de Dijkstra es la base del proceso SPF (*Shortest Path First*) utilizado por OSPF."
+  },
+  {
+    "pregunta": "¿Cuál es el comando correcto para activar EIGRP en modo de configuración global usando el número de sistema autónomo 100?",
+    "opciones": [
+      "network eigrp 100",
+      "router eigrp 100",
+      "eigrp enable 100",
+      "enable eigrp 100"
+    ],
+    "respuesta": 1,
+    "explicacion": "El comando 'router eigrp [AS-number]' inicia el proceso de enrutamiento EIGRP en el router, identificándolo con el Sistema Autónomo."
+  },
+  {
+    "pregunta": "¿Para qué se utiliza el comando show ip interface brief en un router?",
+    "opciones": [
+      "Para mostrar la tabla de enrutamiento completa.",
+      "Para verificar el estado de las interfaces y sus direcciones IP/estado.",
+      "Para configurar una nueva máscara de subred en una interfaz.",
+      "Para mostrar la información de las rutas EIGRP."
+    ],
+    "respuesta": 1,
+    "explicacion": "Este comando muestra un resumen de las interfaces del router, incluyendo su dirección IP y su estado operativo (Protocol/Status)."
+  },
+  {
+    "pregunta": "¿Qué es el protocolo BGP?",
+    "opciones": [
+      "Un protocolo de enrutamiento interno basado en vector distancia.",
+      "Un protocolo de enrutamiento externo utilizado para intercambiar rutas entre sistemas autónomos en Internet.",
+      "Un protocolo de redundancia de primera milla (FHRP).",
+      "Un protocolo de transporte de voz sobre IP."
+    ],
+    "respuesta": 1,
+    "explicacion": "BGP (*Border Gateway Protocol*) es el protocolo EGP estándar para intercambiar información de enrutamiento entre diferentes Sistemas Autónomos."
+  },
+  {
+    "pregunta": "¿Para qué se utiliza el comando passive-interface en EIGRP?",
+    "opciones": [
+      "Para habilitar el enrutamiento EIGRP en la interfaz.",
+      "Para inhabilitar la transmisión y recepción de paquetes de saludo EIGRP en ciertas interfaces, mejorando la seguridad.",
+      "Para evitar que el tráfico de datos pase por la interfaz.",
+      "Para convertir la interfaz en un tronco de Capa 2."
+    ],
+    "respuesta": 1,
+    "explicacion": "Al hacer una interfaz pasiva, EIGRP no intenta establecer adyacencia (no envía Hellos) pero la red de esa interfaz se sigue anunciando, lo cual es útil para interfaces conectadas a segmentos de usuarios."
+  },
+  {
+    "pregunta": "¿Cómo organiza el protocolo OSPF una red dentro de un Sistema Autónomo?",
+    "opciones": [
+      "Usando el algoritmo DUAL.",
+      "Divide la red en segmentos pequeños y los enlaza a un *backbone* (área 0) de manera jerárquica.",
+      "De forma plana, sin usar áreas.",
+      "Utilizando el conteo de saltos como métrica."
+    ],
+    "respuesta": 1,
+    "explicacion": "OSPF utiliza una estructura jerárquica con áreas, donde el Área 0 es el *backbone* que conecta todas las demás áreas."
+  },
+  {
+    "pregunta": "¿Qué comando se utiliza para evitar que EIGRP envíe mensajes por una interfaz sin dejar de anunciar su red?",
+    "opciones": [
+      "interface shutdown",
+      "no eigrp enable",
+      "passive-interface [nombre_de_interfaz]",
+      "interface filter"
+    ],
+    "respuesta": 2,
+    "explicacion": "El comando 'passive-interface' evita el envío de paquetes de saludo EIGRP por la interfaz especificada, pero permite que la red sea anunciada en las actualizaciones."
+  },
+  {
+    "pregunta": "¿Cuál es una ventaja clave de los protocolos de enrutamiento de estado de enlace (OSPF) en redes grandes?",
+    "opciones": [
+      "Utilizan un único camino para el tráfico.",
+      "Su métrica es simple (conteo de saltos).",
+      "Son menos susceptibles a bucles de enrutamiento y más estables en redes grandes al conocer la topología completa.",
+      "Envían actualizaciones completas y periódicas a todos los vecinos."
+    ],
+    "respuesta": 2,
+    "explicacion": "La comprensión completa de la topología y el uso del algoritmo SPF hacen que OSPF sea muy estable y escalable en redes de gran tamaño."
+  },
+  {
+    "pregunta": "¿Cuál es la métrica compuesta principal que utiliza EIGRP para seleccionar la mejor ruta?",
+    "opciones": [
+      "Ancho de banda y confiabilidad.",
+      "Ancho de banda y retardo.",
+      "Costo (Cost).",
+      "Conteo de saltos (Hop Count)."
+    ],
+    "respuesta": 1,
+    "explicacion": "Por defecto, EIGRP utiliza una fórmula que combina el ancho de banda mínimo y el retardo acumulado para determinar la métrica."
+  },
+  {
+    "pregunta": "¿Cuál es el primer criterio que utilizan los routers Cisco para derivar la ID del router en EIGRP?",
+    "opciones": [
+      "La dirección IP más alta de una interfaz activa.",
+      "La dirección IP más alta de una interfaz *loopback*.",
+      "La dirección IPv4 configurada con el comando `eigrp router-id`.",
+      "El valor de la MAC Address de la interfaz con la dirección IP más baja."
+    ],
+    "respuesta": 2,
+    "explicacion": "La ID de router se elige primero de forma manual con el comando `eigrp router-id`, si no está configurado, utiliza la IP más alta de una interfaz *loopback*, y por último la IP más alta de una interfaz física activa."
+  },
+  {
+    "pregunta": "¿Para qué se utiliza el comando show ip eigrp neighbors en EIGRP?",
+    "opciones": [
+      "Para mostrar la tabla de enrutamiento.",
+      "Para ver la tabla de vecinos y confirmar que EIGRP ha establecido adyacencias con sus vecinos.",
+      "Para ver la tabla de topología completa.",
+      "Para verificar el estado del protocolo HSRP."
+    ],
+    "respuesta": 1,
+    "explicacion": "Este comando muestra qué routers han establecido una relación de vecindad con el router local, un paso esencial en el funcionamiento de EIGRP."
+  },
+  {
+    "pregunta": "¿Qué mecanismo utiliza EIGRP para garantizar la entrega confiable de sus mensajes?",
+    "opciones": [
+      "UDP.",
+      "TCP.",
+      "RTP (Reliable Transport Protocol).",
+      "DLCI."
+    ],
+    "respuesta": 2,
+    "explicacion": "EIGRP utiliza su propio protocolo de transporte de capa 4, RTP (*Reliable Transport Protocol*), para garantizar la entrega de mensajes importantes a sus vecinos."
+  },
+  {
+    "pregunta": "Aunque EIGRP incluye características de protocolos de routing de estado de enlace y vector distancia, ¿en qué principio clave del protocolo vector distancia aún se basa?",
+    "opciones": [
+      "En el uso exclusivo de la métrica de conteo de saltos.",
+      "En que solo obtiene información sobre la red a través de vecinos conectados directamente.",
+      "En el uso del algoritmo SPF de Dijkstra.",
+      "En el uso de actualizaciones periódicas."
+    ],
+    "respuesta": 1,
+    "explicacion": "Como protocolo de vector distancia, EIGRP solo confía en la información de enrutamiento que le proporciona su vecino directamente conectado."
+  },
+  {
+    "pregunta": "¿Qué comando se usa para anunciar una red en OSPF dentro del modo de configuración de router?",
+    "opciones": [
+      "network 192.168.1.0 255.255.255.0 area 0",
+      "network 192.168.1.0 0.0.0.255 area 0",
+      "router 192.168.1.0",
+      "advertise 192.168.1.0"
+    ],
+    "respuesta": 1,
+    "explicacion": "OSPF requiere la dirección de red, la máscara *wildcard* (máscara invertida) y el área a la que pertenece la interfaz."
+  },
+  {
+    "pregunta": "En el año 2013, ¿Qué cambio significativo ocurrió con EIGRP que afectó su estatus en la industria de redes de telecomunicaciones?",
+    "opciones": [
+      "Se integró en la capa de aplicación.",
+      "Fue abierto como protocolo de routing de múltiples proveedores.",
+      "Dejó de ser compatible con IPv4.",
+      "Adoptó el algoritmo SPF de OSPF."
+    ],
+    "respuesta": 1,
+    "explicacion": "En 2013, Cisco anunció que EIGRP sería un estándar abierto, permitiendo que otros fabricantes lo implementaran."
+  },
+  {
+    "pregunta": "¿Qué comando convierte una interfaz en pasiva dentro del proceso OSPF?",
+    "opciones": [
+      "shutdown GigabitEthernet0/0",
+      "passive-interface GigabitEthernet0/0",
+      "no ospf enable GigabitEthernet0/0",
+      "interface passive GigabitEthernet0/0"
+    ],
+    "respuesta": 1,
+    "explicacion": "El comando 'passive-interface' evita el envío de paquetes *Hello* OSPF por la interfaz, impidiendo la formación de adyacencias de vecino."
+  },
+  {
+    "pregunta": "¿Cuáles son los parámetros que definen la métrica del protocolo IS - IS?",
+    "opciones": [
+      "Conteo de saltos y Retardo.",
+      "Ancho de banda y Confiabilidad.",
+      "Delay o Retardo, Coste, Gasto, Error (Confiabilidad).",
+      "Prioridad y ID de Router."
+    ],
+    "respuesta": 2,
+    "explicacion": "IS-IS utiliza una métrica de costo flexible que puede incluir retardo, costo, gasto y confiabilidad."
+  },
+  {
+    "pregunta": "¿Cuál es la función del comando show ip protocols en un router?",
+    "opciones": [
+      "Muestra el tráfico en vivo en todas las interfaces.",
+      "Muestra los parámetros y el estado actual de los procesos activos de protocolo de routing IPv4 configurados en el router.",
+      "Verifica la tabla de ARP.",
+      "Reinicia el proceso de enrutamiento."
+    ],
+    "respuesta": 1,
+    "explicacion": "Este comando resume la información de configuración de los protocolos de enrutamiento dinámico activos, incluyendo temporizadores y distancias administrativas."
+  },
+  {
+    "pregunta": "¿Qué comando se usa para anunciar la red 192.168.10.0/24 en EIGRP desde la configuración del router?",
+    "opciones": [
+      "network 192.168.10.0 0.0.0.255",
+      "network 192.168.10.0",
+      "network 192.168.10.0 area 0",
+      "router 192.168.10.0"
+    ],
+    "respuesta": 1,
+    "explicacion": "En la configuración moderna de EIGRP, la máscara de subred conectada se utiliza automáticamente a menos que se especifique una máscara *wildcard* (lo cual no es común en EIGRP)."
+  },
+  {
+    "pregunta": "¿Qué comando permite verificar la tabla de enrutamiento OSPF en Packet Tracer?",
+    "opciones": [
+      "show ip route eigrp",
+      "show ip ospf route",
+      "show ip route ospf",
+      "show ospf database"
+    ],
+    "respuesta": 2,
+    "explicacion": "El comando 'show ip route [protocolo]' permite filtrar la tabla de enrutamiento para mostrar solo las rutas aprendidas por el protocolo especificado (en este caso, OSPF)."
+  },
+  {
+    "pregunta": "¿Cómo se visualizan los vecinos OSPF que han formado adyacencia?",
+    "opciones": [
+      "show ip route",
+      "show ip protocols",
+      "show ip ospf neighbor",
+      "show interface brief"
+    ],
+    "respuesta": 2,
+    "explicacion": "El comando 'show ip ospf neighbor' muestra la lista de vecinos con los que se ha establecido una adyacencia completa."
+  },
+  {
+    "pregunta": "¿Cuál es la diferencia principal entre OSPFv2 y OSPFv3?",
+    "opciones": [
+      "OSPFv2 utiliza el algoritmo DUAL y OSPFv3 utiliza SPF.",
+      "OSPFv2 está disponible para IPv4, mientras que OSPFv3 está disponible para IPv6.",
+      "OSPFv2 no soporta áreas, y OSPFv3 sí.",
+      "OSPFv3 es un protocolo propietario de Cisco."
+    ],
+    "respuesta": 1,
+    "explicacion": "OSPFv2 fue diseñado para IPv4, y OSPFv3 es la versión adaptada para soportar IPv6."
+  },
+  {
+    "pregunta": "¿Por qué se considera a EIGRP un protocolo de routing sin clase (classless)?",
+    "opciones": [
+      "Porque no utiliza un número de Sistema Autónomo.",
+      "Porque soporta VLSM y envía información de máscara de subred en sus actualizaciones.",
+      "Porque utiliza la métrica de conteo de saltos.",
+      "Porque fue diseñado antes de la introducción de las clases de red."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los protocolos *classless* (sin clase) incluyen la máscara de subred con la dirección de red en sus actualizaciones, lo que permite el uso de VLSM (*Variable Length Subnet Masking*)."
+  },
+  {
+    "pregunta": "Para establecer las necesidades de infraestructura de red, a continuación establezca el número de dispositivos que corresponde a una red mediana.",
+    "opciones": [
+      "Más de 1000",
+      "1000 a 2000",
+      "Hasta 200",
+      "200 a 1000"
+    ],
+    "respuesta": 3,
+    "explicacion": "Una red mediana generalmente abarca entre 200 y 1000 dispositivos, lo que requiere una infraestructura intermedia entre la de una pequeña y una gran empresa."
+  },
+  {
+    "pregunta": "¿Cuál es la principal característica de los Circuitos Virtuales Permanentes (PVC) en una red Frame Relay en comparación con una conexión dedicada?",
+    "opciones": [
+      "Los PVC en Frame Relay requieren un nuevo establecimiento de conexión para cada transmisión de datos, incrementando la sobrecarga de la red.",
+      "Los PVC garantizan ancho de banda dedicado entre el origen y destino, al igual que una conexión dedicada tradicional.",
+      "Los PVC permiten la creación de rutas lógicas sobre la infraestructura compartida de Frame Relay, lo que reduce costos y aumenta la flexibilidad.",
+      "Los PVC en Frame Relay establecen una ruta física fija entre el origen y el destino, similar a una línea arrendada."
+    ],
+    "respuesta": 2,
+    "explicacion": "Los PVC son conexiones lógicas permanentes dentro de la red Frame Relay, lo que permite compartir infraestructura física sin sacrificar conectividad constante."
+  },
+  {
+    "pregunta": "¿Cuál es una de las principales ventajas de utilizar Frame Relay en lugar de líneas arrendadas tradicionales en redes WAN?",
+    "opciones": [
+      "Frame Relay ofrece una latencia más baja que cualquier otro protocolo WAN, lo que lo convierte en la opción preferida para aplicaciones en tiempo real.",
+      "Frame Relay permite la implementación de enlaces WAN redundantes sin la necesidad de protocolos adicionales.",
+      "Frame Relay garantiza una mayor seguridad de los datos mediante la encriptación nativa en la capa de enlace de datos.",
+      "Frame Relay requiere un único circuito de acceso para conectarse a múltiples sitios dentro de la misma red del proveedor, reduciendo los costos de infraestructura."
+    ],
+    "respuesta": 3,
+    "explicacion": "Frame Relay usa una única conexión física para múltiples PVC, lo que simplifica la conectividad y reduce los costos de red."
+  },
+  {
+    "pregunta": "Según la topología mostrada en la imagen, ¿Cuál es la prioridad por defecto del Router 3 pasivo?",
+    "opciones": [
+      "100",
+      "225",
+      "150",
+      "255"
+    ],
+    "respuesta": 0,
+    "explicacion": "El valor 100 es la prioridad por defecto de HSRP/VRRP en los routers. Este valor determina qué router en el grupo de redundancia es el Activo.",
+    "imagen": "img/topologia-prioridad.png"
+  },
+  {
+    "pregunta": "De acuerdo a la práctica realizada, ¿qué comando se debería ingresar para modificar la IP en S1?",
+    "opciones": [
+      "ip default-gateway 192.168.1.1",
+      "ip default-gateway 192.168.1.254",
+      "ip virtual-gateway 192.168.1.254",
+      "ip default-ip 192.168.1.1"
+    ],
+    "respuesta": 1,
+    "explicacion": "El comando correcto es 'ip default-gateway 192.168.1.254', ya que define la puerta de enlace predeterminada para el switch S1.",
+    "imagen": "imagen/topologia-modificar-ip.png"
+  },
+  {
+    "pregunta": "¿Cuál es el comando para habilitar el protocolo Frame Relay en Packet Tracer?",
+    "opciones": [
+      "encapsulation frame-relay",
+      "frame-relay ON",
+      "frame-realy capsulataion",
+      "active frame-relay"
+    ],
+    "respuesta": 0,
+    "explicacion": "El comando encapsulation frame-relay habilita el protocolo en la interfaz serial del router."
+  },
+  {
+    "pregunta": "¿Qué información debe contener el siguiente comando para determinar qué interfaces del R1 participan en el proceso de routing OSPFv2 para un área?",
+    "opciones": [
+      "network [wildcard] [dirección de red] area [número de área]",
+      "network [dirección de área] [dirección de red] area [número de red]",
+      "network [dirección de red] [wildcard] area [número de área]",
+      "network [dirección MAC] [dirección de red] area [número de área]"
+    ],
+    "respuesta": 2,
+    "explicacion": "La sintaxis correcta requiere primero la IP de red, seguida de la wildcard y finalmente el ID del área."
+  },
+  {
+    "pregunta": "En EIGRP, después de que un router descubre a sus vecinos, ¿qué función cumple la tabla de topología para determinar las rutas?",
+    "opciones": [
+      "Construye la tabla de routing sin necesidad de más información.",
+      "Lista todos los posibles caminos y redes, asignando sucesor y sucesor factible a cada ruta.",
+      "Asigna rutas aleatoriamente a través de sus vecinos conocidos.",
+      "Intercambia actualizaciones completas de routing con todos los routers en la red."
+    ],
+    "respuesta": 1,
+    "explicacion": "La tabla de topología contiene toda la información necesaria para calcular las mejores rutas (sucesores) y las rutas de respaldo (sucesores factibles)."
+  }
+]
+
