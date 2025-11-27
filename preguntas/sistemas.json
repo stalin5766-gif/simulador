@@ -1,0 +1,90 @@
+[
+  {
+    "pregunta": "¿Qué tipo de compuerta tiene como salida 1 solo si ambas entradas son diferentes?",
+    "opciones": [
+      "Compuerta AND",
+      "Compuerta OR",
+      "Compuerta XNOR",
+      "Compuerta XOR"
+    ],
+    "respuesta": 3,
+    "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
+  },
+  {
+    "pregunta": "¿Cuál es la salida de una compuerta OR si ambas entradas son 0?",
+    "opciones": [
+      "1",
+      "0",
+      "Alta impedancia (Z)",
+      "Indefinido"
+    ],
+    "respuesta": 1,
+    "explicacion": "La compuerta OR requiere que al menos una entrada sea 1 para activarse. Si ambas son 0, la salida es 0."
+  },
+  {
+    "pregunta": "¿En cuál de los siguientes casos se utilizaría un valor don't care (X)?",
+    "opciones": [
+      "Para forzar la salida a 1 en todo momento.",
+      "Cuando un sensor de movimiento esté en nivel alto y bajo simultáneamente (estado imposible).",
+      "Cuando se necesita reiniciar el sistema.",
+      "Cuando se desconecta la fuente de poder."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los estados 'don't care' se usan en mapas de Karnaugh para combinaciones de entrada que físicamente no pueden ocurrir o no importan."
+  },
+  {
+    "pregunta": "¿Cómo se representa la función lógica NOT en un diagrama lógico?",
+    "opciones": [
+      "Un círculo pequeño o burbuja en la salida",
+      "Un cuadrado con una X dentro",
+      "Una línea curva sin cierre",
+      "Un rectángulo con el símbolo &"
+    ],
+    "respuesta": 0,
+    "explicacion": "Gráficamente, la inversión (NOT) se denota con un pequeño círculo (burbuja), usualmente a la salida de un triángulo."
+  },
+  {
+    "pregunta": "En el álgebra booleana, ¿cuál es la expresión simplificada de A + A'?",
+    "opciones": [
+      "0",
+      "A",
+      "A'",
+      "1"
+    ],
+    "respuesta": 3,
+    "explicacion": "Es una ley fundamental: sumar una variable con su inverso (A + A') siempre cubre todas las posibilidades, resultando en 1 (Verdadero)."
+  },
+  {
+    "pregunta": "¿Cuál es la salida de una compuerta AND si ambas entradas son 1?",
+    "opciones": [
+      "0",
+      "1",
+      "Oscilante",
+      "Null"
+    ],
+    "respuesta": 1,
+    "explicacion": "La compuerta AND solo entrega una salida de 1 (Verdadero) cuando TODAS sus entradas son 1."
+  },
+  {
+    "pregunta": "En un mapa de Karnaugh de dos variables, ¿cuántas celdas hay?",
+    "opciones": [
+      "2 celdas",
+      "4 celdas",
+      "8 celdas",
+      "16 celdas"
+    ],
+    "respuesta": 1,
+    "explicacion": "El número de celdas es 2 elevado al número de variables. Para 2 variables: 2^2 = 4."
+  },
+  {
+    "pregunta": "¿Cuál es la salida de una compuerta NAND cuando ambas entradas son 0?",
+    "opciones": [
+      "0",
+      "1",
+      "Flotante",
+      "Error de lógica"
+    ],
+    "respuesta": 1,
+    "explicacion": "La NAND es la inversa de la AND. Si las entradas son 0 y 0, la AND daría 0. Al invertirlo, la NAND da 1."
+  }
+]
