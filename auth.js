@@ -1,12 +1,7 @@
 // LISTA BLANCA
 const correosPermitidos = [
-  "dpachecog2@unemi.edu.ec", "cnavarretem4@unemi.edu.ec", "htigrer@unemi.edu.ec",
-  "gorellanas2@unemi.edu.ec", "iastudillol@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec",
-  "jzamoram9@unemi.edu.ec", "fcarrillop@unemi.edu.ec", "naguilarb@unemi.edu.ec",
-  "ehidalgoc4@unemi.edu.ec", "lbrionesg3@unemi.edu.ec", "xsalvadorv@unemi.edu.ec",
-  "nbravop4@unemi.edu.ec", "jmoreirap6@unemi.edu.ec", "kholguinb2@unemi.edu.ec",
-  "jcastrof8@unemi.edu.ec", "cgomezy2@unemi.edu.ec", "mvegaa2@unemi.edu.ec", "earrobas@unemi.edu.ec",
-  "ccedenov6@unemi.edu.ec",
+  "cgomezy2@unemi.edu.ec", "mvegaa2@unemi.edu.ec", "earrobas@unemi.edu.ec",
+  "ccedenov6@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec", "dzambranod6@unemi.edu.ec"
 
   // Gmail añadido
   "apoyochat.trabajosocial@gmail.com"
