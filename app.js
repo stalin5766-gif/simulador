@@ -32,6 +32,11 @@ let respuestasUsuario = [];
 let seleccionTemporal = null;
 let interval = null;
 
+// --- NUEVO: CARGAR SONIDOS ---
+const audioCorrecto = new Audio('./sonidos/correcta.mp3');
+const audioIncorrecto = new Audio('./sonidos/incorrecta.mp3');
+// -----------------------------
+
 // ==========================================
 // UTILIDADES UI (CONTADOR AL LADO DEL RELOJ)
 // ==========================================
@@ -40,13 +45,13 @@ let divContador = document.getElementById("contadorPreguntas");
 if (!divContador) {
     divContador = document.createElement("span");
     divContador.id = "contadorPreguntas";
-    divContador.style.marginRight = "15px";       
-    divContador.style.paddingRight = "15px";      
+    divContador.style.marginRight = "15px";        
+    divContador.style.paddingRight = "15px";       
     divContador.style.borderRight = "2px solid #e5e7eb"; 
-    divContador.style.color = "#4b5563";          
+    divContador.style.color = "#4b5563";           
     divContador.style.fontWeight = "bold";
-    divContador.style.fontSize = "1.1rem";        
-    divContador.style.display = "none";           
+    divContador.style.fontSize = "1.1rem";         
+    divContador.style.display = "none";            
     divContador.textContent = "Pregunta 1 / --";
 
     if (timerEl && timerEl.parentNode) {
@@ -290,10 +295,21 @@ function seleccionar(index, btnRef) {
         // Modo Estudio: Feedback inmediato
         if (index === q.respuesta) {
             btnRef.classList.add("ans-correct");
+            
+            // --- NUEVO: SONIDO CORRECTO ---
+            audioCorrecto.currentTime = 0;
+            audioCorrecto.play().catch(e => console.log(e));
+            // ------------------------------
+            
         } else {
             btnRef.classList.add("ans-wrong");
             // Mostrar la correcta
             if (all[q.respuesta]) all[q.respuesta].classList.add("ans-correct");
+            
+            // --- NUEVO: SONIDO INCORRECTO ---
+            audioIncorrecto.currentTime = 0;
+            audioIncorrecto.play().catch(e => console.log(e));
+            // --------------------------------
         }
 
         // Mostrar explicación si existe
