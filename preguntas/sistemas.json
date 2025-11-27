@@ -86,5 +86,17 @@
     ],
     "respuesta": 1,
     "explicacion": "La NAND es la inversa de la AND. Si las entradas son 0 y 0, la AND daría 0. Al invertirlo, la NAND da 1."
+  },
+  {
+    "pregunta": "De acuerdo a la compuerta lógica OR mostrada en la imagen, ¿cuál de las siguientes opciones representa correctamente la secuencia de sus salidas (S) para las combinaciones 00, 01, 10 y 11?",
+    "opciones": [
+      "0000",
+      "0111",
+      "1000",
+      "1111"
+    ],
+    "respuesta": 1,
+    "explicacion": "La compuerta OR produce una salida de 1 si al menos una de las entradas (A o B) es 1. Por lo tanto, la secuencia de salidas es S=0 para (0,0); S=1 para (0,1); S=1 para (1,0); y S=1 para (1,1)."
+    "imagen": "imagen/Compuerta-or.png"
   }
 ]
