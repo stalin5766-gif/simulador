@@ -98,5 +98,17 @@
     "respuesta": 1,
     "explicacion": "La compuerta OR produce una salida de 1 si al menos una de las entradas (A o B) es 1. Por lo tanto, la secuencia de salidas es S=0 para (0,0); S=1 para (0,1); S=1 para (1,0); y S=1 para (1,1).",
     "imagen": "imagen/Compuerta-or.png" 
-  } 
+  },
+  {
+    "pregunta": "¿Cuál sería el valor de las salidas Q y Qn si en el circuito biestable RS (Flip-Flop) mostrado, el valor del LOGICSTATE en la transición es R=0 y S=0, asumiendo que el circuito estaba previamente en un estado de Set (Q=1, Qn=0)?",
+    "opciones": [
+      "La salida Q cambia a cero y Qn cambia a uno.",
+      "La salida Q y Qn cambian a cero.",
+      "La salida Q permanece en uno y Qn permanece en cero.",
+      "La salida Q y Qn cambian a uno."
+    ],
+    "respuesta": 2,
+    "explicacion": "El circuito mostrado es un biestable RS. La condición R=0 y S=0 corresponde a la 'zona de memoria' del biestable (ya que usa compuertas NAND y NOR en cascada). Cuando las entradas R y S son 0, el biestable retiene el último estado. Dado que el estado anterior era Set (Q=1, Qn=0), este estado se mantiene.",
+    "imagen": "imagen/salida-q.png"
+  }
 ] 
