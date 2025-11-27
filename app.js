@@ -1,7 +1,7 @@
 // ==========================================
 // CONFIGURACIÓN Y REFERENCIAS
 // ==========================================
-const MATERIA_URL = './preguntas/escalabilidad.json'; // Asegúrate de que esta ruta sea correcta
+// Nota: La URL ya no es fija, se define al presionar "Empezar"
 const CANTIDAD_EXAMEN = 30;
 const STORAGE_KEY = 'simulador_data_v2'; // Clave única para guardar/cargar
 
@@ -20,9 +20,22 @@ const estado = document.getElementById('estado');
 const btnEmpezar = document.getElementById('btnEmpezar');
 const btnReview = document.getElementById('btnReview');
 const btnGuardar = document.getElementById('btnGuardar'); 
-const btnCargar = document.getElementById('btnCargar'); 
+const btnCargar = document.getElementById('btnCargar');   
 const modoSel = document.getElementById('modo');
 const minutosSel = document.getElementById('minutos');
+
+// --- NUEVO: BOTÓN DE MUTE ---
+const btnMute = document.getElementById('btnMute');
+let sonidoHabilitado = true; // Por defecto el sonido está activado
+
+if (btnMute) {
+    btnMute.onclick = () => {
+        sonidoHabilitado = !sonidoHabilitado; // Alternar estado
+        // Cambiar el ícono
+        btnMute.textContent = sonidoHabilitado ? "🔊" : "🔇";
+    };
+}
+// ----------------------------
 
 // Variables de Estado
 let banco = [];
@@ -32,57 +45,32 @@ let respuestasUsuario = [];
 let seleccionTemporal = null;
 let interval = null;
 
-// ==========================================
-// CONFIGURACIÓN DE AUDIO
-// ==========================================
-const SOUND_CORRECTA = new Audio('./sonidos/correcta.mp3');
-const SOUND_INCORRECTA = new Audio('./sonidos/incorrecta.mp3');
-const btnToggleSound = document.getElementById('btnToggleSound');
-const iconSound = document.getElementById('iconSound');
+// CARGAR SONIDOS
+const audioCorrecto = new Audio('./sonidos/correcta.mp3');
+const audioIncorrecto = new Audio('./sonidos/incorrecta.mp3');
 
-let sonidoActivado = localStorage.getItem('sonidoActivado') !== 'false';
-
-function reproducirSonido(tipo) {
-    if (!sonidoActivado) return;
-    tipo.currentTime = 0;
-    tipo.play().catch(e => console.log("Error al reproducir sonido:", e));
-}
-
-function actualizarBotonSonido() {
-    if (iconSound) {
-        iconSound.textContent = sonidoActivado ? '🔊' : '🔇';
-    }
-}
-
-if (btnToggleSound) {
-    actualizarBotonSonido();
-    btnToggleSound.onclick = () => {
-        sonidoActivado = !sonidoActivado;
-        localStorage.setItem('sonidoActivado', sonidoActivado);
-        actualizarBotonSonido();
-    };
-}
 
 // ==========================================
-// CONTADOR AL LADO DEL RELOJ
+// UTILIDADES UI (CONTADOR AL LADO DEL RELOJ)
 // ==========================================
 let divContador = document.getElementById("contadorPreguntas");
 
 if (!divContador) {
     divContador = document.createElement("span");
     divContador.id = "contadorPreguntas";
-    divContador.style.marginRight = "15px";
-    divContador.style.paddingRight = "15px";
-    divContador.style.borderRight = "2px solid #e5e7eb";
-    divContador.style.color = "#4b5563";
+    divContador.style.marginRight = "15px";        
+    divContador.style.paddingRight = "15px";       
+    divContador.style.borderRight = "2px solid #e5e7eb"; 
+    divContador.style.color = "#4b5563";           
     divContador.style.fontWeight = "bold";
-    divContador.style.fontSize = "1.1rem";
-    divContador.style.display = "none";
+    divContador.style.fontSize = "1.1rem";         
+    divContador.style.display = "none";            
     divContador.textContent = "Pregunta 1 / --";
 
     if (timerEl && timerEl.parentNode) {
         timerEl.parentNode.style.display = "flex";
         timerEl.parentNode.style.alignItems = "center";
+        timerEl.parentNode.style.justifyContent = "center"; 
         timerEl.parentNode.insertBefore(divContador, timerEl);
     } else {
         divContador.style.position = "fixed";
@@ -99,12 +87,12 @@ function actualizarContadorPreguntas() {
 }
 
 // ==========================================
-// CARGA DE DATOS
+// 1. CARGA DE DATOS (JSON)
 // ==========================================
-async function cargarMateria() {
+async function cargarMateria(url) {
     try {
-        const res = await fetch(MATERIA_URL);
-        if (!res.ok) throw new Error(`No se pudo cargar ${MATERIA_URL}`);
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`No se pudo cargar ${url}`);
         banco = await res.json();
         return true;
     } catch (e) {
@@ -115,13 +103,17 @@ async function cargarMateria() {
 }
 
 // ==========================================
-// INICIAR QUIZ
+// 2. INICIAR QUIZ
 // ==========================================
 btnEmpezar.onclick = async () => {
     btnEmpezar.disabled = true;
     btnEmpezar.innerText = "Cargando...";
 
-    const exito = await cargarMateria();
+    const archivoSeleccionado = document.getElementById('materiaSelect').value;
+    const rutaCompleta = `./preguntas/${archivoSeleccionado}`;
+
+    const exito = await cargarMateria(rutaCompleta);
+    
     if (!exito) {
         btnEmpezar.disabled = false;
         btnEmpezar.innerText = "Reintentar";
@@ -143,7 +135,7 @@ btnEmpezar.onclick = async () => {
 function iniciarInterfazQuiz() {
     startScreen.classList.add('hidden');
     quizContainer.classList.remove('hidden');
-
+    
     btnEmpezar.disabled = false;
     btnEmpezar.innerText = "Empezar";
 
@@ -152,7 +144,7 @@ function iniciarInterfazQuiz() {
 }
 
 // ==========================================
-// CARGAR PROGRESO
+// 3. CARGAR PROGRESO
 // ==========================================
 btnCargar.onclick = () => {
     const savedData = localStorage.getItem(STORAGE_KEY);
@@ -164,7 +156,6 @@ btnCargar.onclick = () => {
 
     try {
         const data = JSON.parse(savedData);
-        
         ronda = data.ronda || [];
         respuestasUsuario = data.respuestasUsuario || [];
         idx = data.idx || 0;
@@ -186,7 +177,7 @@ btnCargar.onclick = () => {
 };
 
 // ==========================================
-// TIMER
+// 4. TIMER
 // ==========================================
 function iniciarTimer() {
     clearInterval(interval);
@@ -216,7 +207,7 @@ function fmt(s) {
 }
 
 // ==========================================
-// RENDERIZAR PREGUNTA
+// 5. RENDERIZADO DE PREGUNTAS
 // ==========================================
 function mostrarPregunta() {
     seleccionTemporal = null;
@@ -259,7 +250,7 @@ function mostrarPregunta() {
         btn.textContent = op;
         
         if (respuestasUsuario[idx] !== undefined && respuestasUsuario[idx] === i) {
-            btn.classList.add('option-selected');
+             btn.classList.add('option-selected');
         }
         
         btn.onclick = () => seleccionar(i, btn);
@@ -286,7 +277,7 @@ function mostrarPregunta() {
 }
 
 // ==========================================
-// SELECCIÓN DE RESPUESTA
+// 6. LÓGICA DE RESPUESTA
 // ==========================================
 function seleccionar(index, btnRef) {
     const q = ronda[idx];
@@ -300,11 +291,24 @@ function seleccionar(index, btnRef) {
     if (modoSel.value === "estudio") {
         if (index === q.respuesta) {
             btnRef.classList.add("ans-correct");
-            reproducirSonido(SOUND_CORRECTA);
+            
+            // --- SONIDO CORRECTO (CON CHECK DE SILENCIO) ---
+            if (sonidoHabilitado) {
+                audioCorrecto.currentTime = 0;
+                audioCorrecto.play().catch(e => console.log(e));
+            }
+            // -----------------------------------------------
+            
         } else {
             btnRef.classList.add("ans-wrong");
             if (all[q.respuesta]) all[q.respuesta].classList.add("ans-correct");
-            reproducirSonido(SOUND_INCORRECTA);
+            
+            // --- SONIDO INCORRECTO (CON CHECK DE SILENCIO) ---
+            if (sonidoHabilitado) {
+                audioIncorrecto.currentTime = 0;
+                audioIncorrecto.play().catch(e => console.log(e));
+            }
+            // -------------------------------------------------
         }
 
         if (q.explicacion) {
@@ -325,31 +329,20 @@ function seleccionar(index, btnRef) {
 
 function avanzar() {
     if (seleccionTemporal === null) return;
-
-    if (modoSel.value === "examen") {
-        const preguntaActual = ronda[idx];
-        if (seleccionTemporal === preguntaActual.respuesta) {
-            reproducirSonido(SOUND_CORRECTA);
-        } else {
-            reproducirSonido(SOUND_INCORRECTA);
-        }
-    }
-
     respuestasUsuario[idx] = seleccionTemporal;
-
     idx++;
     mostrarPregunta();
 }
 
 // ==========================================
-// FINALIZAR QUIZ
+// 7. FINALIZACIÓN Y REVISIÓN
 // ==========================================
 function finalizarQuiz(tiempoTerminado) {
     clearInterval(interval);
     quizContainer.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     divContador.style.display = "none";
-
+    
     localStorage.removeItem(STORAGE_KEY);
 
     let aciertos = 0;
@@ -405,7 +398,6 @@ btnReview.onclick = () => {
     });
 };
 
-// Guardado manual
 if (btnGuardar) {
     btnGuardar.onclick = () => {
         if(ronda.length === 0) {
