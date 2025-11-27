@@ -11,6 +11,26 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+  "pregunta": "¿Qué es un mapa de Karnaugh?",
+  "opciones": [
+    "Una herramienta para simplificar expresiones booleanas",
+    "Un método para medir la frecuencia de un circuito",
+    "Un sistema para convertir señales analógicas a digitales"
+  ],
+  "respuesta": 0,
+  "explicacion": "Un mapa de Karnaugh permite simplificar expresiones booleanas de manera visual."
+},
+{
+  "pregunta": "¿Cuál es la función principal de un DAC (convertidor Digital-Analógico)?",
+  "opciones": [
+    "Convertir señales digitales a una forma analógica",
+    "Almacenar datos temporales como una memoria RAM",
+    "Aumentar la velocidad de procesamiento del microcontrolador"
+  ],
+  "respuesta": 0,
+  "explicacion": "Un DAC convierte una señal digital en una señal analógica equivalente."
+},
+{
     "pregunta": "¿Qué función realiza un circuito combinatorio?",
     "opciones": [
       "Almacena el estado de la salida anterior para usarlo en la siguiente operación.",
