@@ -11,6 +11,315 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+    "pregunta": "¿Qué función realiza un circuito combinatorio?",
+    "opciones": [
+      "Almacena el estado de la salida anterior para usarlo en la siguiente operación.",
+      "Realiza una operación lógica basada únicamente en las entradas actuales.",
+      "Depende de una señal de reloj para cambiar de estado.",
+      "Convierte datos binarios en señales analógicas."
+    ],
+    "respuesta": 1,
+    "explicacion": "Un circuito combinatorio (o combinacional) produce una salida que es el resultado directo y exclusivo de las entradas que recibe en ese mismo instante, sin depender del tiempo ni de estados anteriores."
+  },
+  {
+    "pregunta": "¿Cuál es la principal ventaja de un velocímetro digital frente a uno analógico?",
+    "opciones": [
+      "El digital es más robusto a los cambios de temperatura.",
+      "El digital permite que los datos puedan ser procesados y transmitidos de forma precisa, fiable y eficiente.",
+      "El analógico es más sencillo de calibrar después de la instalación.",
+      "El digital tiene un rango de medición más pequeño."
+    ],
+    "respuesta": 1,
+    "explicacion": "La principal ventaja de la tecnología digital no es solo la visualización, sino la capacidad de transmitir el dato a otros sistemas (computadoras de a bordo, sistemas de control) con alta precisión y baja interferencia."
+  },
+  {
+    "pregunta": "¿Cómo se representa la función lógica NOT en un diagrama lógico?",
+    "opciones": [
+      "Con un símbolo de punto grande.",
+      "Con un triángulo en la salida.",
+      "Con un círculo pequeño (burbuja) en la salida.",
+      "Con el símbolo & dentro de la compuerta."
+    ],
+    "respuesta": 2,
+    "explicacion": "La función NOT (inversor) se representa usando un pequeño círculo o 'burbuja' en la línea de salida o entrada de cualquier compuerta. "
+  },
+  {
+    "pregunta": "¿Cuál es la función principal de la compuerta lógica NOR?",
+    "opciones": [
+      "Realizar la operación AND de las negaciones de las entradas.",
+      "Negar el resultado de una compuerta OR.",
+      "Negar el resultado de una compuerta AND.",
+      "Solo genera un 1 si las entradas son diferentes."
+    ],
+    "respuesta": 1,
+    "explicacion": "La compuerta NOR (Not OR) es la negación del resultado de la operación OR. Solo produce un 1 cuando todas sus entradas son 0."
+  },
+  [
+  {
+    "pregunta": "¿Cuál es la principal característica de un flip-flop tipo T (Toggle)?",
+    "opciones": [
+      "Almacena la entrada D en el flanco de reloj.",
+      "Cambia su estado (complementa Q) con cada pulso de reloj cuando su entrada T es alta.",
+      "Permite las entradas R=0 y S=0 como estado de conmutación.",
+      "Su salida es función del estado presente y de la entrada."
+    ],
+    "respuesta": 1,
+    "explicacion": "El flip-flop tipo T (Toggle) opera en modo de conmutación o 'Toggle', alternando su estado Q al estado opuesto en cada ciclo de reloj si su entrada de control T está activa."
+  },
+  {
+    "pregunta": "¿Qué concepto es equivalente al 'factor de proporcionalidad' dentro de un Convertidor Digital-Analógico (DAC)?",
+    "opciones": [
+      "Tiempo de asentamiento (Settling Time).",
+      "Error de cuantización.",
+      "Frecuencia de muestreo.",
+      "Resolución (o tamaño del paso)."
+    ],
+    "respuesta": 3,
+    "explicacion": "La resolución define la menor cantidad de voltaje analógico que corresponde a un cambio de un bit en la entrada digital, estableciendo el factor de proporcionalidad entre el valor digital y el valor analógico de salida. "
+  },
+  {
+    "pregunta": "¿Cuál es el número total de pasos discretos (o valores diferentes) disponibles en la salida de un Convertidor Digital-Analógico (DAC) de 8 bits?",
+    "opciones": [
+      "256 pasos.",
+      "8 pasos.",
+      "255 pasos.",
+      "16 pasos."
+    ],
+    "respuesta": 2,
+    "explicacion": "El número de pasos posibles es $2^N - 1$, donde $N=8$, lo que resulta en $2^8 - 1 = 255$ pasos discretos."
+  },
+  {
+    "pregunta": "¿Cuál es la función de una LUT (Look-up Table) dentro de un FPGA?",
+    "opciones": [
+      "Es el circuito que gestiona la distribución de la señal de reloj principal.",
+      "Es la memoria RAM utilizada para almacenar grandes bloques de datos.",
+      "Es un tipo de memoria programable que se utiliza para generar funciones lógicas combinacionales.",
+      "Gestiona las interconexiones entre diferentes bloques lógicos del chip."
+    ],
+    "respuesta": 2,
+    "explicacion": "La LUT (Tabla de Búsqueda) es el componente básico del FPGA que almacena la tabla de verdad de una función lógica, permitiendo implementar lógica combinacional reconfigurable."
+  },
+  {
+    "pregunta": "¿Qué tipo de programación se utiliza comúnmente para programar FPGAs?",
+    "opciones": [
+      "Programación de alto nivel (como C o Python) enfocada en la ejecución secuencial.",
+      "Programación de hardware utilizando lenguajes como VHDL o Verilog.",
+      "Programación de ensamblador para sistemas operativos embebidos.",
+      "Diagramas de flujo basados en la lógica de relevadores (Ladder Logic)."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los FPGAs se configuran usando Lenguajes de Descripción de Hardware (HDLs) que definen la estructura y el comportamiento paralelo del hardware."
+  },
+  {
+    "pregunta": "¿Cuál es una característica clave de los sistemas embebidos?",
+    "opciones": [
+      "Utilizan sistemas operativos estándar como Windows o Linux.",
+      "Son altamente personalizables y específicos para una aplicación o tarea particular.",
+      "Su diseño se basa exclusivamente en microprocesadores de alto rendimiento.",
+      "Son fácilmente modificables y reutilizables para cualquier tipo de tarea futura."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los sistemas embebidos están diseñados con hardware y software a medida para realizar una función muy específica, optimizando recursos y costo."
+  },
+  {
+    "pregunta": "¿Cuál es la salida de una compuerta NAND cuando ambas entradas son 0?",
+    "opciones": [
+      "0",
+      "1",
+      "Flotante (Alta impedancia)",
+      "Error de lógica"
+    ],
+    "respuesta": 1,
+    "explicacion": "La compuerta NAND niega la operación AND. Como 0 AND 0 es 0, la negación (NAND) es 1."
+  },
+  {
+    "pregunta": "¿Cuál es la función principal de un flip-flop tipo D?",
+    "opciones": [
+      "Permitir la conmutación de la salida (Toggle) con cada pulso de reloj.",
+      "Almacenar una entrada (Dato) cuando se activa una señal de reloj.",
+      "Establecer la salida Q a 1 y Q' a 0 sin depender del reloj.",
+      "Sincronizar dos señales de reloj diferentes en un mismo circuito."
+    ],
+    "respuesta": 1,
+    "explicacion": "El flip-flop tipo D (Data) funciona como una celda de memoria que transfiere el valor presente en su entrada D a la salida Q al recibir un pulso de reloj."
+  },
+  {
+    "pregunta": "Señale el concepto que más se ajusta al modelo de Mealy",
+    "opciones": [
+      "Las salidas dependen únicamente del estado presente en los biestables.",
+      "Las salidas dependen del estado presente y de las entradas actuales.",
+      "El siguiente estado depende solo de las entradas actuales y no del reloj.",
+      "El circuito se construye exclusivamente con flip-flops tipo JK."
+    ],
+    "respuesta": 1,
+    "explicacion": "En el modelo de Mealy, la salida se determina por el estado actual de los biestables Y por las entradas externas que recibe el circuito en ese instante."
+  },
+  {
+    "pregunta": "¿Cuál de las siguientes afirmaciones es correcta sobre las FPGAs?",
+    "opciones": [
+      "Son procesadores que utilizan un sistema operativo estándar.",
+      "Son memorias no volátiles utilizadas para almacenar firmware.",
+      "Son circuitos integrados que pueden ser configurados para realizar tareas específicas a nivel de hardware.",
+      "Son dispositivos predefinidos (ASIC) que no permiten modificación."
+    ],
+    "respuesta": 2,
+    "explicacion": "Los FPGAs son configurables por el usuario (programables en campo) para implementar lógica dedicada y personalizada."
+  },
+  {
+    "pregunta": "¿Qué lenguaje de programación se utiliza comúnmente para programar FPGAs?",
+    "opciones": [
+      "Python o Java.",
+      "Programación de ensamblador.",
+      "VHDL o Verilog (Lenguajes de Descripción de Hardware).",
+      "C o C++."
+    ],
+    "respuesta": 2,
+    "explicacion": "VHDL y Verilog son los lenguajes de descripción de hardware (HDLs) más usados para definir la lógica paralela de los FPGAs."
+  },
+  {
+    "pregunta": "¿Qué tipo de programación es común para programar microcontroladores?",
+    "opciones": [
+      "Programación de hardware utilizando VHDL.",
+      "Programación de alto nivel (como C o C++).",
+      "Programación basada en lógica de fluidos.",
+      "Programación por interconexión de nodos lógicos."
+    ],
+    "respuesta": 1,
+    "explicacion": "Los microcontroladores se programan comúnmente con lenguajes de alto nivel como C/C++ por su eficiencia y su sintaxis clara."
+  },
+  {
+    "pregunta": "¿Qué operación lógica representa la expresión $A \\cdot B$ en álgebra booleana?",
+    "opciones": [
+      "A OR B (Disyunción)",
+      "A AND B (Conjunción)",
+      "A XOR B (O Exclusiva)",
+      "A NOT B (Inversión)"
+    ],
+    "respuesta": 1,
+    "explicacion": "En álgebra booleana, el punto medio ($\cdot$) o la simple yuxtaposición (AB) representa la operación de multiplicación lógica, que es la operación AND o conjunción."
+  },
+  {
+    "pregunta": "¿Qué tipo de conversión realiza un sistema PISO (Parallel-In, Serial-Out)?",
+    "opciones": [
+      "Convierte datos en serie a un formato paralelo.",
+      "Convierte datos paralelos a un formato en serie (serial).",
+      "Convierte señales analógicas a digitales.",
+      "Convierte señales digitales a analógicas."
+    ],
+    "respuesta": 1,
+    "explicacion": "Un registro de desplazamiento PISO toma varios bits de datos simultáneamente (en paralelo) y los envía uno por uno (en serie)."
+  },
+  {
+    "pregunta": "¿Qué tipo de máquina secuencial utiliza la lógica combinacional para determinar el siguiente estado?",
+    "opciones": [
+      "Máquina secuencial asíncrona.",
+      "Máquina secuencial síncrona.",
+      "Máquina de Turing.",
+      "Máquina de estados de Mealy."
+    ],
+    "respuesta": 1,
+    "explicacion": "Las máquinas secuenciales síncronas utilizan lógica combinacional para calcular el 'siguiente estado' basándose en el estado actual y las entradas, pero solo cambian de estado cuando reciben un pulso de reloj (sincronización)."
+  },
+  {
+    "pregunta": "¿Qué es un convertidor Analógico-Digital (AD)?",
+    "opciones": [
+      "Un dispositivo que convierte señales digitales a analógicas (DAC).",
+      "Un dispositivo que convierte señales analógicas a digitales (ADC).",
+      "Un dispositivo que convierte datos paralelos a seriales.",
+      "Un dispositivo que convierte la frecuencia de la señal."
+    ],
+    "respuesta": 1,
+    "explicacion": "Un Convertidor Analógico-Digital (ADC) convierte una señal analógica continua (como voltaje o temperatura) en una representación digital discreta."
+  },
+  {
+    "pregunta": "¿Qué significa la 'distancia unitaria' en una Máquina Secuencial Asíncrona (MSA)?",
+    "opciones": [
+      "Que el reloj debe tener una frecuencia de 1 Hz.",
+      "Que solo se puede pasar entre estados cuyas entradas difieren en un único bit.",
+      "Que no se puede pasar de las entradas 00 a 11 directamente.",
+      "Que el tiempo de transición entre estados es constante."
+    ],
+    "respuesta": 1,
+    "explicacion": "La distancia unitaria o código Gray asegura que entre estados adyacentes de la MSA, solo cambie el valor de una variable de entrada a la vez, evitando estados intermedios impredecibles (riesgos)."
+  },
+  {
+    "pregunta": "¿Cuál es la característica principal de un microcontrolador?",
+    "opciones": [
+      "Es un CPU con disco duro y tarjeta de video integrados.",
+      "Es un procesador con memoria RAM y ROM integradas en el mismo chip.",
+      "Es un dispositivo diseñado exclusivamente para el control de potencia.",
+      "Es un circuito integrado que solo implementa lógica combinacional."
+    ],
+    "respuesta": 1,
+    "explicacion": "Un microcontrolador es una computadora compacta que incluye el procesador (CPU), memoria RAM, memoria ROM (para firmware) y periféricos de entrada/salida, todo en un único chip."
+  },
+  {
+    "pregunta": "Señale dos elementos que componen la arquitectura de un FPGA.",
+    "opciones": [
+      "CLB (Bloque Lógico Configurable) y Matrices de Interconexión.",
+      "CPU de alto rendimiento y sistema operativo RTOS.",
+      "Disco duro SSD y memoria cache L3.",
+      "Unidades de Punto Flotante y Microprocesador."
+    ],
+    "respuesta": 0,
+    "explicacion": "Los bloques lógicos configurables (CLB) y las matrices de interconexión programables son los elementos fundamentales que permiten a un FPGA ser reconfigurable."
+  },
+  {
+    "pregunta": "En un registro SIPO (Serial-In, Parallel-Out), ¿cómo se presentan las salidas?",
+    "opciones": [
+      "Una a la vez, de forma serial.",
+      "Todas a la vez en forma paralela.",
+      "Solo cuando la entrada serial es 1.",
+      "La salida es un valor analógico."
+    ],
+    "respuesta": 1,
+    "explicacion": "El registro SIPO recibe los datos bit a bit (en serie) y, una vez que el registro está lleno, presenta todos los bits almacenados simultáneamente en sus salidas paralelas."
+  },
+  {
+    "pregunta": "En una máquina secuencial asincrónica, ¿cómo se determina el siguiente estado?",
+    "opciones": [
+      "A través del flanco positivo de la señal de reloj principal.",
+      "A través de los cambios en las entradas (sin depender del reloj).",
+      "Mediante una tabla de verdad fija grabada en la memoria.",
+      "Por medio de un temporizador interno programable."
+    ],
+    "respuesta": 1,
+    "explicacion": "Una máquina secuencial asíncrona no utiliza una señal de reloj global; sus cambios de estado se disparan inmediatamente por los cambios en las variables de entrada."
+  },
+  {
+    "pregunta": "¿Cuál es la característica clave de las memorias EEPROM?",
+    "opciones": [
+      "Es una memoria RAM volátil que se borra al apagar el equipo.",
+      "Es una ROM programable y borrable por luz ultravioleta.",
+      "Es una ROM programable y borrable eléctricamente.",
+      "Es una memoria de solo lectura que nunca puede ser modificada."
+    ],
+    "respuesta": 2,
+    "explicacion": "EEPROM (Electrically Erasable Programmable Read-Only Memory) es un tipo de memoria ROM que puede ser borrada y reprogramada mediante señales eléctricas, sin necesidad de retirar el chip del circuito."
+  },
+  {
+    "pregunta": "¿Cuál es la diferencia esencial entre la arquitectura de Harvard y Von Neumann?",
+    "opciones": [
+      "Von Neumann es usada por microcontroladores, Harvard por PCs.",
+      "Von Neumann utiliza memorias separadas para datos e instrucciones; Harvard utiliza una memoria unificada.",
+      "Von Neumann utiliza una memoria unificada para datos e instrucciones; Harvard utiliza memorias separadas.",
+      "Harvard es más lenta que Von Neumann debido a su estructura de buses."
+    ],
+    "respuesta": 2,
+    "explicacion": "La arquitectura de Von Neumann utiliza un único bus de datos y direcciones para la memoria, mientras que la arquitectura de Harvard utiliza buses y memorias separadas para datos e instrucciones."
+  },
+  {
+    "pregunta": "Señale dos aplicaciones principales de los FPGAs.",
+    "opciones": [
+      "Virtual Reality (Realidad Virtual) y Datacenter Systems (Servidores).",
+      "Procesadores de texto (Word Processors) y bases de datos personales.",
+      "Sistemas de aire acondicionado residencial y calculadoras de bolsillo.",
+      "Sistemas operativos de propósito general y navegadores web."
+    ],
+    "respuesta": 0,
+    "explicacion": "Los FPGAs destacan en aplicaciones que requieren procesamiento masivo en paralelo y baja latencia, como la aceleración de datos en centros de datos, sistemas de Realidad Virtual y el procesamiento de señales en tiempo real."
+  },
+  {
     "pregunta": "¿Cuál es la función principal de la compuerta lógica NOR?",
     "opciones": [
       "Negar el resultado de una compuerta OR.",
