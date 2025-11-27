@@ -9,7 +9,7 @@ const correosPermitidos = [
   "ccedenov6@unemi.edu.ec", "dzambranod6@unemi.edu.ec",
 
   // Gmail añadido
-  "apoyochat.trabajosocial@gmail.com"
+  "apoyochat.trabajosocial@gmail.com", "stalin5766@gmail.com",
 ];
 
 // Referencias
