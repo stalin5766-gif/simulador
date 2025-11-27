@@ -1,7 +1,7 @@
 // ==========================================
 // CONFIGURACIÓN Y REFERENCIAS
 // ==========================================
-const MATERIA_URL = './preguntas/escalabilidad.json'; // Asegúrate de que esta ruta sea correcta
+// Nota: La URL ya no es fija, se define al presionar "Empezar"
 const CANTIDAD_EXAMEN = 30;
 const STORAGE_KEY = 'simulador_data_v2'; // Clave única para guardar/cargar
 
@@ -19,8 +19,8 @@ const estado = document.getElementById('estado');
 // Botones Principales
 const btnEmpezar = document.getElementById('btnEmpezar');
 const btnReview = document.getElementById('btnReview');
-const btnGuardar = document.getElementById('btnGuardar'); // Botón guardar del menú (si existe)
-const btnCargar = document.getElementById('btnCargar');   // Botón cargar del menú
+const btnGuardar = document.getElementById('btnGuardar'); 
+const btnCargar = document.getElementById('btnCargar');   
 const modoSel = document.getElementById('modo');
 const minutosSel = document.getElementById('minutos');
 
@@ -38,31 +38,23 @@ let interval = null;
 let divContador = document.getElementById("contadorPreguntas");
 
 if (!divContador) {
-    // Usamos 'span' para que se comporte bien en línea
     divContador = document.createElement("span");
     divContador.id = "contadorPreguntas";
-    
-    // Estilos para integrarlo junto al reloj
-    divContador.style.marginRight = "15px";       // Separación con el reloj
-    divContador.style.paddingRight = "15px";      // Aire interno
-    divContador.style.borderRight = "2px solid #e5e7eb"; // Línea separadora gris
-    divContador.style.color = "#4b5563";          // Color gris profesional
+    divContador.style.marginRight = "15px";       
+    divContador.style.paddingRight = "15px";      
+    divContador.style.borderRight = "2px solid #e5e7eb"; 
+    divContador.style.color = "#4b5563";          
     divContador.style.fontWeight = "bold";
-    divContador.style.fontSize = "1.1rem";        // Tamaño similar al del reloj
-    divContador.style.display = "none";           // Oculto al inicio
+    divContador.style.fontSize = "1.1rem";        
+    divContador.style.display = "none";           
     divContador.textContent = "Pregunta 1 / --";
 
-    // Inserción en el DOM: Buscamos al padre del reloj
     if (timerEl && timerEl.parentNode) {
-        // Ajustamos el contenedor padre para que alinee los elementos en fila
         timerEl.parentNode.style.display = "flex";
         timerEl.parentNode.style.alignItems = "center";
-        timerEl.parentNode.style.justifyContent = "center"; // Centrado (opcional)
-        
-        // Insertamos el contador ANTES del reloj
+        timerEl.parentNode.style.justifyContent = "center"; 
         timerEl.parentNode.insertBefore(divContador, timerEl);
     } else {
-        // Fallback: Si no encuentra el reloj, lo pone flotante arriba a la derecha
         divContador.style.position = "fixed";
         divContador.style.top = "10px";
         divContador.style.right = "10px";
@@ -72,7 +64,6 @@ if (!divContador) {
 
 function actualizarContadorPreguntas() {
     if (!ronda.length) return;
-    // Mostramos el contador
     divContador.style.display = "block";
     divContador.textContent = `Pregunta ${idx + 1} / ${ronda.length}`;
 }
@@ -80,10 +71,11 @@ function actualizarContadorPreguntas() {
 // ==========================================
 // 1. CARGA DE DATOS (JSON)
 // ==========================================
-async function cargarMateria() {
+// AHORA RECIBE LA URL COMO PARÁMETRO
+async function cargarMateria(url) {
     try {
-        const res = await fetch(MATERIA_URL);
-        if (!res.ok) throw new Error(`No se pudo cargar ${MATERIA_URL}`);
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`No se pudo cargar ${url}`);
         banco = await res.json();
         return true;
     } catch (e) {
@@ -94,13 +86,19 @@ async function cargarMateria() {
 }
 
 // ==========================================
-// 2. INICIAR QUIZ (NUEVO)
+// 2. INICIAR QUIZ (LÓGICA ACTUALIZADA)
 // ==========================================
 btnEmpezar.onclick = async () => {
     btnEmpezar.disabled = true;
     btnEmpezar.innerText = "Cargando...";
 
-    const exito = await cargarMateria();
+    // 1. OBTENEMOS EL NOMBRE DEL ARCHIVO DEL SELECTOR HTML
+    const archivoSeleccionado = document.getElementById('materiaSelect').value;
+    const rutaCompleta = `./preguntas/${archivoSeleccionado}`;
+
+    // 2. CARGAMOS ESE ARCHIVO ESPECÍFICO
+    const exito = await cargarMateria(rutaCompleta);
+    
     if (!exito) {
         btnEmpezar.disabled = false;
         btnEmpezar.innerText = "Reintentar";
@@ -321,7 +319,6 @@ function avanzar() {
     if (seleccionTemporal === null) return;
 
     // Guardar respuesta en el array
-    // Si estamos re-visitando una pregunta, actualizamos la respuesta
     respuestasUsuario[idx] = seleccionTemporal;
 
     idx++;
@@ -411,4 +408,3 @@ if (btnGuardar) {
         alert("Guardado global exitoso.");
     };
 }
-
