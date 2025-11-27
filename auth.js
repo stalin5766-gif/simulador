@@ -1,31 +1,25 @@
-// --- LAS VARIABLES DE FIREBASE DEBEN VENIR DE FIREBASE-INIT.JS ---
-// Ya no definimos auth y db aquí, solo las usamos.
-
-// ==========================================
-// 1. LISTA BLANCA (Correos Autorizados)
-// ==========================================
+// LISTA BLANCA
 const correosPermitidos = [
-  "cgomezy2@unemi.edu.ec", "mvegaa2@unemi.edu.ec", "earrobas@unemi.edu.ec",
-  "ccedenov6@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec", "dzambranod6@unemi.edu.ec",
-  
+  "dpachecog2@unemi.edu.ec", "cnavarretem4@unemi.edu.ec", "htigrer@unemi.edu.ec",
+  "gorellanas2@unemi.edu.ec", "iastudillol@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec",
+  "jzamoram9@unemi.edu.ec", "fcarrillop@unemi.edu.ec", "naguilarb@unemi.edu.ec",
+  "ehidalgoc4@unemi.edu.ec", "lbrionesg3@unemi.edu.ec", "xsalvadorv@unemi.edu.ec",
+  "nbravop4@unemi.edu.ec", "jmoreirap6@unemi.edu.ec", "kholguinb2@unemi.edu.ec",
+  "jcastrof8@unemi.edu.ec", "cgomezy2@unemi.edu.ec", "mvegaa2@unemi.edu.ec", "earrobas@unemi.edu.ec",
+  "ccedenov6@unemi.edu.ec",
+
   // Gmail añadido
   "apoyochat.trabajosocial@gmail.com"
 ];
 
-// ==========================================
-// 2. REFERENCIAS AL DOM
-// ==========================================
+// Referencias
 const authPanel = document.getElementById("authPanel");
 const appPanel = document.getElementById("appPanel");
 const authMsg = document.getElementById("authMsg");
 const btnGoogle = document.getElementById("btnGoogle");
-const btnLogoutHeader = document.getElementById("btnLogoutHeader"); 
-const userEmailDisplay = document.getElementById("userEmailDisplay");
-const verificationMsg = document.getElementById("verificationMsg");
+const btnLogout = document.getElementById("btnLogoutHeader"); 
 
-// ==========================================
-// 3. SEGURIDAD DE DISPOSITIVO
-// ==========================================
+// ID Dispositivo
 function getDeviceId() {
   let id = localStorage.getItem("deviceId_secure");
   if (!id) {
@@ -35,9 +29,10 @@ function getDeviceId() {
   return id;
 }
 
+// Validar Seguridad
 async function validarSeguridad(user) {
   try {
-    const userRef = db.collection("autorizados").doc(user.email); 
+    const userRef = db.collection("usuarios_seguros").doc(user.email); 
     const snap = await userRef.get();
     const miDispositivo = getDeviceId();
 
@@ -70,96 +65,66 @@ async function validarSeguridad(user) {
   }
 }
 
-// ==========================================
-// 4. LÓGICA DE REDIRECCIÓN (IMPORTANTE)
-// ==========================================
-// 1. Intentar iniciar sesión con la redirección
-async function handleRedirectResult() {
-    try {
-        const result = await auth.getRedirectResult();
-        if (result.user) {
-            // Si hay un usuario, la función onAuthStateChanged lo manejará
-            return;
-        }
-    } catch (error) {
-        console.error("Error al obtener resultado de redirección:", error);
-        if(authMsg) authMsg.textContent = "Error de autenticación: " + error.message;
+// Botón Google
+btnGoogle.onclick = async () => {
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await auth.signInWithPopup(provider);
+    let correo = result.user.email.toLowerCase();
+
+    // Validación final
+    if (!correosPermitidos.includes(correo)) {
+      await auth.signOut();
+      authMsg.textContent = "Correo no autorizado.";
+      return;
     }
-}
 
-// 2. Manejar el inicio de sesión del usuario
-function handleUser(user) {
-    if (user) {
-        const correo = user.email.toLowerCase();
-        const estaEnLista = correosPermitidos.includes(correo);
-
-        if (!estaEnLista) {
-            alert("🚫 Tu cuenta no está autorizada para acceder al simulador.");
-            auth.signOut();
-            return;
-        }
-
-        // Validación de seguridad (asumiendo que authPanel existe)
-        if(authPanel) authPanel.classList.add("hidden");
-        
-        validarSeguridad(user).then((validacion) => {
-            if (validacion.permitido) {
-                if(appPanel) appPanel.classList.remove("hidden");
-                if(btnLogoutHeader) btnLogoutHeader.classList.remove("hidden");
-                
-                if(userEmailDisplay) userEmailDisplay.textContent = user.email;
-                if(verificationMsg) verificationMsg.classList.remove("hidden"); 
-
-            } else {
-                alert(validacion.msg);
-                auth.signOut();
-                window.location.reload();
-            }
-        });
-
-    } else {
-        // No hay usuario, mostrar login
-        if(authPanel) authPanel.classList.remove("hidden");
-        if(appPanel) appPanel.classList.add("hidden");
-        if(btnLogoutHeader) btnLogoutHeader.classList.add("hidden");
-    }
-}
-
-// ==========================================
-// 5. BOTONES Y EVENTOS
-// ==========================================
-
-// Botón Google: Inicia el proceso de redirección
-if(btnGoogle) {
-    btnGoogle.onclick = async () => {
-      try {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        
-        // Usamos Redirect para evitar problemas de popups en navegadores
-        await auth.signInWithRedirect(provider); 
-        
-      } catch (e) {
-        if(authMsg) authMsg.textContent = "Error de redirección: " + e.message;
-        console.error("Error en signInWithRedirect:", e);
-      }
-    };
-}
+  } catch (e) {
+    authMsg.textContent = e.message;
+  }
+};
 
 // Botón Logout
-if (btnLogoutHeader) {
-  btnLogoutHeader.onclick = () => {
-    if(confirm("¿Cerrar sesión?")) {
-        auth.signOut().then(() => window.location.reload());
-    }
+if (btnLogout) {
+  btnLogout.onclick = () => {
+    auth.signOut().then(() => window.location.reload());
   };
 }
 
-// ==========================================
-// 6. MONITOR DE SESIÓN
-// ==========================================
+// MONITOR DE SESIÓN
+auth.onAuthStateChanged(async (user) => {
+  if (user) {
 
-// 1. Ejecutar el manejo de redirección al cargar la página
-handleRedirectResult();
+    // Validación reforzada (solo si está en la lista, sin dominio obligatorio)
+    const correo = user.email.toLowerCase();
+    const estaEnLista = correosPermitidos.includes(correo);
 
-// 2. Establecer el monitor principal
-auth.onAuthStateChanged(handleUser);
+    if (!estaEnLista) {
+      alert("Tu cuenta no está autorizada para acceder al simulador.");
+      await auth.signOut();
+      return;
+    }
+
+    authPanel.classList.add("hidden");
+    const validacion = await validarSeguridad(user);
+
+    if (validacion.permitido) {
+      appPanel.classList.remove("hidden");
+      if(btnLogout) btnLogout.classList.remove("hidden"); 
+      
+      const userEmailDisplay = document.getElementById("userEmailDisplay");
+      const verificationMsg = document.getElementById("verificationMsg");
+      
+      if(userEmailDisplay) userEmailDisplay.textContent = user.email;
+      if(verificationMsg) verificationMsg.classList.remove("hidden"); 
+
+    } else {
+      alert(validacion.msg);
+      await auth.signOut();
+      window.location.reload();
+    }
+  } else {
+    authPanel.classList.remove("hidden");
+    appPanel.classList.add("hidden");
+    if(btnLogout) btnLogout.classList.add("hidden"); 
+  }
