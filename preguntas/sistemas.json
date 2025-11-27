@@ -11,6 +11,73 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+    "pregunta": "¿Cuál es la principal ventaja de un velocímetro digital (electrónico) frente a uno analógico (mecánico)?",
+    "opciones": [
+      "El digital requiere menos energía para funcionar.",
+      "El digital permite que los datos sean procesados y transmitidos de forma precisa, fiable y eficiente.",
+      "El analógico es intrínsecamente más preciso a altas velocidades.",
+      "El digital es más barato de fabricar que el analógico."
+    ],
+    "respuesta": 1,
+    "explicacion": "La principal ventaja de los datos digitales es su capacidad para ser procesados, almacenados y transmitidos a otros sistemas (como la ECU o sistemas de navegación) con alta precisión y sin interferencias."
+  },
+  {
+    "pregunta": "¿Qué se obtiene al negar (o invertir) la salida de una compuerta AND?",
+    "opciones": [
+      "Una compuerta OR",
+      "Una compuerta XOR",
+      "Una compuerta NAND",
+      "Una compuerta NOR"
+    ],
+    "respuesta": 2,
+    "explicacion": "La compuerta NAND es la forma negada (NOT) de la compuerta AND. Su función es la negación de la conjunción lógica, es decir, solo produce un 0 cuando todas las entradas son 1."
+  },
+  {
+    "pregunta": "¿Cuál es la función principal de un mapa de Karnaugh (K-map) en la lógica digital?",
+    "opciones": [
+      "Es una herramienta para simular el comportamiento de un microprocesador.",
+      "Es una herramienta para simplificar expresiones booleanas complejas.",
+      "Es un método para convertir números binarios a código BCD.",
+      "Es un diagrama para visualizar el flujo de datos en un circuito secuencial."
+    ],
+    "respuesta": 1,
+    "explicacion": "El mapa de Karnaugh es una técnica gráfica que permite simplificar o minimizar expresiones lógicas booleanas, lo que reduce el número de compuertas necesarias en el circuito final."
+  },
+  {
+    "pregunta": "¿Cuál es la forma simplificada de la expresión booleana A + A · B?",
+    "opciones": [
+      "A",
+      "B",
+      "A · B",
+      "A + B"
+    ],
+    "respuesta": 0,
+    "explicacion": "Esta expresión se simplifica utilizando la Ley de Absorción del Álgebra Booleana, donde A + (A · B) es igual a A. Esto es porque si A ya es 1, la salida es 1; si A es 0, la expresión es 0 + 0·B, que es 0. La salida siempre sigue el valor de A. "
+  },
+  {
+    "pregunta": "¿A qué compuerta lógica corresponde la señal digital de salida 'X' basada en el diagrama de tiempos de las entradas 'A' y 'B'?",
+    "opciones": [
+      "Compuerta NAND",
+      "Compuerta NOR",
+      "Compuerta XNOR",
+      "Compuerta XOR"
+    ],
+    "respuesta": 3,
+    "explicacion": "Al analizar el diagrama, la salida 'X' se activa (valor 1) únicamente cuando las entradas 'A' y 'B' tienen valores lógicos diferentes. Este comportamiento es la definición funcional de la compuerta XOR (O Exclusiva).",
+    "imagen": "imagen/salida-xor.png" 
+  },
+  {
+    "pregunta": "En un circuito de compuertas OR, ¿cuál es la salida si al menos una entrada es 1?",
+    "opciones": [
+      "La salida siempre es 0.",
+      "La salida es 1.",
+      "La salida es de alta impedancia (Z).",
+      "La salida se mantiene en su estado anterior."
+    ],
+    "respuesta": 1,
+    "explicacion": "La compuerta OR (disyunción lógica) se activa o produce un 1 lógico si y solo si una o más de sus entradas están en estado 1 (Verdadero). Esta es su característica principal."
+  },
+  {
     "pregunta": "¿Qué representa una tabla de verdad, como la mostrada en la imagen, en el contexto de un circuito lógico?",
     "opciones": [
       "La secuencia de bits de entrada en el tiempo.",
