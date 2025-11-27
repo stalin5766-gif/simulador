@@ -19,7 +19,7 @@
       "Convierte datos binarios en señales analógicas."
     ],
     "respuesta": 1,
-    "explicacion": "Un circuito combinatorio (o combinacional) produce una salida que es el resultado directo y exclusivo de las entradas que recibe en ese mismo instante, sin depender del tiempo ni de estados anteriores."
+    "explicacion": "Un circuito combinatorio produce una salida basada solamente en las entradas actuales, sin memoria de estados anteriores."
   },
   {
     "pregunta": "¿Cuál es la principal ventaja de un velocímetro digital frente a uno analógico?",
@@ -30,7 +30,7 @@
       "El digital tiene un rango de medición más pequeño."
     ],
     "respuesta": 1,
-    "explicacion": "La principal ventaja de la tecnología digital no es solo la visualización, sino la capacidad de transmitir el dato a otros sistemas (computadoras de a bordo, sistemas de control) con alta precisión y baja interferencia."
+    "explicacion": "La tecnología digital permite transmisión precisa y confiable a otros sistemas."
   },
   {
     "pregunta": "¿Cómo se representa la función lógica NOT en un diagrama lógico?",
@@ -41,7 +41,7 @@
       "Con el símbolo & dentro de la compuerta."
     ],
     "respuesta": 2,
-    "explicacion": "La función NOT (inversor) se representa usando un pequeño círculo o 'burbuja' en la línea de salida o entrada de cualquier compuerta. "
+    "explicacion": "La función NOT se representa con una burbuja en la salida."
   },
   {
     "pregunta": "¿Cuál es la función principal de la compuerta lógica NOR?",
@@ -52,9 +52,8 @@
       "Solo genera un 1 si las entradas son diferentes."
     ],
     "respuesta": 1,
-    "explicacion": "La compuerta NOR (Not OR) es la negación del resultado de la operación OR. Solo produce un 1 cuando todas sus entradas son 0."
+    "explicacion": "La compuerta NOR es la negación del resultado OR."
   },
-  [
   {
     "pregunta": "¿Cuál es la principal característica de un flip-flop tipo T (Toggle)?",
     "opciones": [
@@ -64,7 +63,7 @@
       "Su salida es función del estado presente y de la entrada."
     ],
     "respuesta": 1,
-    "explicacion": "El flip-flop tipo T (Toggle) opera en modo de conmutación o 'Toggle', alternando su estado Q al estado opuesto en cada ciclo de reloj si su entrada de control T está activa."
+    "explicacion": "El flip-flop T alterna su salida Q cuando T está activado."
   },
   {
     "pregunta": "¿Qué concepto es equivalente al 'factor de proporcionalidad' dentro de un Convertidor Digital-Analógico (DAC)?",
@@ -75,472 +74,343 @@
       "Resolución (o tamaño del paso)."
     ],
     "respuesta": 3,
-    "explicacion": "La resolución define la menor cantidad de voltaje analógico que corresponde a un cambio de un bit en la entrada digital, estableciendo el factor de proporcionalidad entre el valor digital y el valor analógico de salida. "
+    "explicacion": "La resolución define el tamaño del paso analógico por cada bit digital."
   },
   {
-    "pregunta": "¿Cuál es el número total de pasos discretos (o valores diferentes) disponibles en la salida de un Convertidor Digital-Analógico (DAC) de 8 bits?",
+    "pregunta": "¿Cuál es el número total de pasos discretos disponibles en un DAC de 8 bits?",
     "opciones": [
-      "256 pasos.",
-      "8 pasos.",
-      "255 pasos.",
-      "16 pasos."
+      "256 pasos",
+      "8 pasos",
+      "255 pasos",
+      "16 pasos"
     ],
     "respuesta": 2,
-    "explicacion": "El número de pasos posibles es $2^N - 1$, donde $N=8$, lo que resulta en $2^8 - 1 = 255$ pasos discretos."
+    "explicacion": "Un DAC de 8 bits tiene 2^8 - 1 = 255 pasos."
   },
   {
-    "pregunta": "¿Cuál es la función de una LUT (Look-up Table) dentro de un FPGA?",
+    "pregunta": "¿Cuál es la función de una LUT dentro de un FPGA?",
     "opciones": [
-      "Es el circuito que gestiona la distribución de la señal de reloj principal.",
-      "Es la memoria RAM utilizada para almacenar grandes bloques de datos.",
-      "Es un tipo de memoria programable que se utiliza para generar funciones lógicas combinacionales.",
-      "Gestiona las interconexiones entre diferentes bloques lógicos del chip."
+      "Gestiona la señal de reloj.",
+      "Es memoria RAM para almacenar datos.",
+      "Es una memoria programable para generar funciones lógicas combinacionales.",
+      "Gestiona las interconexiones."
     ],
     "respuesta": 2,
-    "explicacion": "La LUT (Tabla de Búsqueda) es el componente básico del FPGA que almacena la tabla de verdad de una función lógica, permitiendo implementar lógica combinacional reconfigurable."
+    "explicacion": "Una LUT almacena tablas de verdad para implementar lógica."
   },
   {
     "pregunta": "¿Qué tipo de programación se utiliza comúnmente para programar FPGAs?",
     "opciones": [
-      "Programación de alto nivel (como C o Python) enfocada en la ejecución secuencial.",
-      "Programación de hardware utilizando lenguajes como VHDL o Verilog.",
-      "Programación de ensamblador para sistemas operativos embebidos.",
-      "Diagramas de flujo basados en la lógica de relevadores (Ladder Logic)."
+      "Programación de alto nivel (C/Python).",
+      "Lenguajes HDL como VHDL o Verilog.",
+      "Ensamblador.",
+      "Ladder Logic."
     ],
     "respuesta": 1,
-    "explicacion": "Los FPGAs se configuran usando Lenguajes de Descripción de Hardware (HDLs) que definen la estructura y el comportamiento paralelo del hardware."
+    "explicacion": "Los FPGAs se programan con HDLs."
   },
   {
     "pregunta": "¿Cuál es una característica clave de los sistemas embebidos?",
     "opciones": [
-      "Utilizan sistemas operativos estándar como Windows o Linux.",
-      "Son altamente personalizables y específicos para una aplicación o tarea particular.",
-      "Su diseño se basa exclusivamente en microprocesadores de alto rendimiento.",
-      "Son fácilmente modificables y reutilizables para cualquier tipo de tarea futura."
+      "Usan sistemas operativos estándar.",
+      "Son específicos para una tarea.",
+      "Usan solo microprocesadores de alto rendimiento.",
+      "Son modificables para cualquier tarea."
     ],
     "respuesta": 1,
-    "explicacion": "Los sistemas embebidos están diseñados con hardware y software a medida para realizar una función muy específica, optimizando recursos y costo."
+    "explicacion": "Los sistemas embebidos están diseñados para funciones específicas."
   },
   {
     "pregunta": "¿Cuál es la salida de una compuerta NAND cuando ambas entradas son 0?",
-    "opciones": [
-      "0",
-      "1",
-      "Flotante (Alta impedancia)",
-      "Error de lógica"
-    ],
+    "opciones": ["0", "1", "Z", "Error"],
     "respuesta": 1,
-    "explicacion": "La compuerta NAND niega la operación AND. Como 0 AND 0 es 0, la negación (NAND) es 1."
+    "explicacion": "0 AND 0 = 0, negado es 1."
   },
   {
     "pregunta": "¿Cuál es la función principal de un flip-flop tipo D?",
     "opciones": [
-      "Permitir la conmutación de la salida (Toggle) con cada pulso de reloj.",
-      "Almacenar una entrada (Dato) cuando se activa una señal de reloj.",
-      "Establecer la salida Q a 1 y Q' a 0 sin depender del reloj.",
-      "Sincronizar dos señales de reloj diferentes en un mismo circuito."
+      "Toggle.",
+      "Almacenar la entrada D al reloj.",
+      "Set/Reset sin reloj.",
+      "Sincronizar dos señales."
     ],
     "respuesta": 1,
-    "explicacion": "El flip-flop tipo D (Data) funciona como una celda de memoria que transfiere el valor presente en su entrada D a la salida Q al recibir un pulso de reloj."
+    "explicacion": "El FF-D transfiere D → Q en el flanco de reloj."
   },
   {
     "pregunta": "Señale el concepto que más se ajusta al modelo de Mealy",
     "opciones": [
-      "Las salidas dependen únicamente del estado presente en los biestables.",
-      "Las salidas dependen del estado presente y de las entradas actuales.",
-      "El siguiente estado depende solo de las entradas actuales y no del reloj.",
-      "El circuito se construye exclusivamente con flip-flops tipo JK."
+      "Depende solo del estado presente.",
+      "Depende de estado e entradas.",
+      "No depende del reloj.",
+      "Usa FF JK."
     ],
     "respuesta": 1,
-    "explicacion": "En el modelo de Mealy, la salida se determina por el estado actual de los biestables Y por las entradas externas que recibe el circuito en ese instante."
+    "explicacion": "Mealy: salida = estado + entradas."
   },
   {
     "pregunta": "¿Cuál de las siguientes afirmaciones es correcta sobre las FPGAs?",
     "opciones": [
-      "Son procesadores que utilizan un sistema operativo estándar.",
-      "Son memorias no volátiles utilizadas para almacenar firmware.",
-      "Son circuitos integrados que pueden ser configurados para realizar tareas específicas a nivel de hardware.",
-      "Son dispositivos predefinidos (ASIC) que no permiten modificación."
+      "Usan sistema operativo.",
+      "Son memorias no volátiles.",
+      "Son hardware configurable.",
+      "Son ASICs sin modificación."
     ],
     "respuesta": 2,
-    "explicacion": "Los FPGAs son configurables por el usuario (programables en campo) para implementar lógica dedicada y personalizada."
-  },
-  {
-    "pregunta": "¿Qué lenguaje de programación se utiliza comúnmente para programar FPGAs?",
-    "opciones": [
-      "Python o Java.",
-      "Programación de ensamblador.",
-      "VHDL o Verilog (Lenguajes de Descripción de Hardware).",
-      "C o C++."
-    ],
-    "respuesta": 2,
-    "explicacion": "VHDL y Verilog son los lenguajes de descripción de hardware (HDLs) más usados para definir la lógica paralela de los FPGAs."
+    "explicacion": "Una FPGA es reconfigurable por hardware."
   },
   {
     "pregunta": "¿Qué tipo de programación es común para programar microcontroladores?",
     "opciones": [
-      "Programación de hardware utilizando VHDL.",
-      "Programación de alto nivel (como C o C++).",
-      "Programación basada en lógica de fluidos.",
-      "Programación por interconexión de nodos lógicos."
+      "VHDL",
+      "C / C++",
+      "Lógica de fluidos",
+      "Nodos lógicos"
     ],
     "respuesta": 1,
-    "explicacion": "Los microcontroladores se programan comúnmente con lenguajes de alto nivel como C/C++ por su eficiencia y su sintaxis clara."
+    "explicacion": "Los MCUs se programan usualmente en C/C++."
   },
   {
-    "pregunta": "¿Qué operación lógica representa la expresión $A \\cdot B$ en álgebra booleana?",
+    "pregunta": "¿Qué tipo de conversión realiza un sistema PISO?",
     "opciones": [
-      "A OR B (Disyunción)",
-      "A AND B (Conjunción)",
-      "A XOR B (O Exclusiva)",
-      "A NOT B (Inversión)"
+      "Serie → paralelo",
+      "Paralelo → serie",
+      "Analógico → digital",
+      "Digital → analógico"
     ],
     "respuesta": 1,
-    "explicacion": "En álgebra booleana, el punto medio ($\cdot$) o la simple yuxtaposición (AB) representa la operación de multiplicación lógica, que es la operación AND o conjunción."
+    "explicacion": "PISO convierte datos paralelos en serie."
   },
   {
-    "pregunta": "¿Qué tipo de conversión realiza un sistema PISO (Parallel-In, Serial-Out)?",
+    "pregunta": "¿Qué tipo de máquina secuencial utiliza lógica combinacional para determinar el siguiente estado?",
     "opciones": [
-      "Convierte datos en serie a un formato paralelo.",
-      "Convierte datos paralelos a un formato en serie (serial).",
-      "Convierte señales analógicas a digitales.",
-      "Convierte señales digitales a analógicas."
+      "Asíncrona",
+      "Síncrona",
+      "Turing",
+      "Mealy"
     ],
     "respuesta": 1,
-    "explicacion": "Un registro de desplazamiento PISO toma varios bits de datos simultáneamente (en paralelo) y los envía uno por uno (en serie)."
-  },
-  {
-    "pregunta": "¿Qué tipo de máquina secuencial utiliza la lógica combinacional para determinar el siguiente estado?",
-    "opciones": [
-      "Máquina secuencial asíncrona.",
-      "Máquina secuencial síncrona.",
-      "Máquina de Turing.",
-      "Máquina de estados de Mealy."
-    ],
-    "respuesta": 1,
-    "explicacion": "Las máquinas secuenciales síncronas utilizan lógica combinacional para calcular el 'siguiente estado' basándose en el estado actual y las entradas, pero solo cambian de estado cuando reciben un pulso de reloj (sincronización)."
+    "explicacion": "La síncrona usa lógica combinacional y reloj."
   },
   {
     "pregunta": "¿Qué es un convertidor Analógico-Digital (AD)?",
     "opciones": [
-      "Un dispositivo que convierte señales digitales a analógicas (DAC).",
-      "Un dispositivo que convierte señales analógicas a digitales (ADC).",
-      "Un dispositivo que convierte datos paralelos a seriales.",
-      "Un dispositivo que convierte la frecuencia de la señal."
+      "DAC",
+      "ADC",
+      "Paralelo a serie",
+      "Conversor de frecuencia"
     ],
     "respuesta": 1,
-    "explicacion": "Un Convertidor Analógico-Digital (ADC) convierte una señal analógica continua (como voltaje o temperatura) en una representación digital discreta."
+    "explicacion": "Convierte señales analógicas a digitales."
   },
   {
-    "pregunta": "¿Qué significa la 'distancia unitaria' en una Máquina Secuencial Asíncrona (MSA)?",
+    "pregunta": "¿Qué significa distancia unitaria en una MSA?",
     "opciones": [
-      "Que el reloj debe tener una frecuencia de 1 Hz.",
-      "Que solo se puede pasar entre estados cuyas entradas difieren en un único bit.",
-      "Que no se puede pasar de las entradas 00 a 11 directamente.",
-      "Que el tiempo de transición entre estados es constante."
+      "Reloj de 1 Hz",
+      "Solo cambia 1 bit entre estados",
+      "No se puede pasar 00 → 11",
+      "Transición constante"
     ],
     "respuesta": 1,
-    "explicacion": "La distancia unitaria o código Gray asegura que entre estados adyacentes de la MSA, solo cambie el valor de una variable de entrada a la vez, evitando estados intermedios impredecibles (riesgos)."
+    "explicacion": "Asegura cambios de un solo bit (código Gray)."
   },
   {
     "pregunta": "¿Cuál es la característica principal de un microcontrolador?",
     "opciones": [
-      "Es un CPU con disco duro y tarjeta de video integrados.",
-      "Es un procesador con memoria RAM y ROM integradas en el mismo chip.",
-      "Es un dispositivo diseñado exclusivamente para el control de potencia.",
-      "Es un circuito integrado que solo implementa lógica combinacional."
+      "CPU + disco + video",
+      "CPU + RAM + ROM en un chip",
+      "Control de potencia",
+      "Solo lógica combinacional"
     ],
     "respuesta": 1,
-    "explicacion": "Un microcontrolador es una computadora compacta que incluye el procesador (CPU), memoria RAM, memoria ROM (para firmware) y periféricos de entrada/salida, todo en un único chip."
+    "explicacion": "Un MCU integra CPU, RAM, ROM y periféricos."
   },
   {
     "pregunta": "Señale dos elementos que componen la arquitectura de un FPGA.",
     "opciones": [
-      "CLB (Bloque Lógico Configurable) y Matrices de Interconexión.",
-      "CPU de alto rendimiento y sistema operativo RTOS.",
-      "Disco duro SSD y memoria cache L3.",
-      "Unidades de Punto Flotante y Microprocesador."
+      "CLB y matriz de interconexión",
+      "CPU y RTOS",
+      "SSD y cache L3",
+      "FPU y microprocesador"
     ],
     "respuesta": 0,
-    "explicacion": "Los bloques lógicos configurables (CLB) y las matrices de interconexión programables son los elementos fundamentales que permiten a un FPGA ser reconfigurable."
+    "explicacion": "CLB + interconexión = base del FPGA."
   },
   {
-    "pregunta": "En un registro SIPO (Serial-In, Parallel-Out), ¿cómo se presentan las salidas?",
+    "pregunta": "En un registro SIPO, ¿cómo se presentan las salidas?",
     "opciones": [
-      "Una a la vez, de forma serial.",
-      "Todas a la vez en forma paralela.",
-      "Solo cuando la entrada serial es 1.",
-      "La salida es un valor analógico."
+      "Serial",
+      "Paralelo",
+      "Solo si la entrada es 1",
+      "Analógica"
     ],
     "respuesta": 1,
-    "explicacion": "El registro SIPO recibe los datos bit a bit (en serie) y, una vez que el registro está lleno, presenta todos los bits almacenados simultáneamente en sus salidas paralelas."
+    "explicacion": "SIPO recibe serie y entrega paralelo."
   },
   {
     "pregunta": "En una máquina secuencial asincrónica, ¿cómo se determina el siguiente estado?",
     "opciones": [
-      "A través del flanco positivo de la señal de reloj principal.",
-      "A través de los cambios en las entradas (sin depender del reloj).",
-      "Mediante una tabla de verdad fija grabada en la memoria.",
-      "Por medio de un temporizador interno programable."
+      "Flanco de reloj",
+      "Cambios en entradas",
+      "Tabla fija",
+      "Temporizador"
     ],
     "respuesta": 1,
-    "explicacion": "Una máquina secuencial asíncrona no utiliza una señal de reloj global; sus cambios de estado se disparan inmediatamente por los cambios en las variables de entrada."
+    "explicacion": "Las asíncronas no usan reloj."
   },
   {
     "pregunta": "¿Cuál es la característica clave de las memorias EEPROM?",
     "opciones": [
-      "Es una memoria RAM volátil que se borra al apagar el equipo.",
-      "Es una ROM programable y borrable por luz ultravioleta.",
-      "Es una ROM programable y borrable eléctricamente.",
-      "Es una memoria de solo lectura que nunca puede ser modificada."
+      "RAM volátil",
+      "ROM borrable por UV",
+      "ROM borrable eléctricamente",
+      "No se puede modificar"
     ],
     "respuesta": 2,
-    "explicacion": "EEPROM (Electrically Erasable Programmable Read-Only Memory) es un tipo de memoria ROM que puede ser borrada y reprogramada mediante señales eléctricas, sin necesidad de retirar el chip del circuito."
+    "explicacion": "EEPROM se borra y reprograma eléctricamente."
   },
   {
-    "pregunta": "¿Cuál es la diferencia esencial entre la arquitectura de Harvard y Von Neumann?",
+    "pregunta": "¿Cuál es la diferencia esencial entre la arquitectura Harvard y Von Neumann?",
     "opciones": [
-      "Von Neumann es usada por microcontroladores, Harvard por PCs.",
-      "Von Neumann utiliza memorias separadas para datos e instrucciones; Harvard utiliza una memoria unificada.",
-      "Von Neumann utiliza una memoria unificada para datos e instrucciones; Harvard utiliza memorias separadas.",
-      "Harvard es más lenta que Von Neumann debido a su estructura de buses."
+      "Harvard se usa en PCs",
+      "Von Neumann usa memorias separadas",
+      "Harvard usa memorias separadas",
+      "Harvard es más lenta"
     ],
     "respuesta": 2,
-    "explicacion": "La arquitectura de Von Neumann utiliza un único bus de datos y direcciones para la memoria, mientras que la arquitectura de Harvard utiliza buses y memorias separadas para datos e instrucciones."
+    "explicacion": "Harvard usa memorias separadas para datos e instrucciones."
   },
   {
     "pregunta": "Señale dos aplicaciones principales de los FPGAs.",
     "opciones": [
-      "Virtual Reality (Realidad Virtual) y Datacenter Systems (Servidores).",
-      "Procesadores de texto (Word Processors) y bases de datos personales.",
-      "Sistemas de aire acondicionado residencial y calculadoras de bolsillo.",
-      "Sistemas operativos de propósito general y navegadores web."
+      "VR y datacenters",
+      "Procesadores de texto",
+      "Aire acondicionado",
+      "Sistemas operativos"
     ],
     "respuesta": 0,
-    "explicacion": "Los FPGAs destacan en aplicaciones que requieren procesamiento masivo en paralelo y baja latencia, como la aceleración de datos en centros de datos, sistemas de Realidad Virtual y el procesamiento de señales en tiempo real."
+    "explicacion": "FPGAs destacan en paralelismo masivo."
   },
   {
-    "pregunta": "¿Cuál es la función principal de la compuerta lógica NOR?",
-    "opciones": [
-      "Negar el resultado de una compuerta OR.",
-      "Realizar la suma binaria de sus entradas.",
-      "Negar individualmente cada entrada y luego realizar la operación AND.",
-      "Solo genera un 1 si las entradas son iguales."
-    ],
-    "respuesta": 0,
-    "explicacion": "La compuerta NOR (Not OR) es el inverso de la compuerta OR. Su función es negar (invertir) la salida de la operación OR, produciendo un 1 solo cuando ambas entradas son 0."
-  },
-  {
-    "pregunta": "¿Qué expresión simplificada se obtiene al aplicar el teorema de De Morgan a la expresión $\\overline{A \\cdot B}$ (A AND B negada)?",
-    "opciones": [
-      "A \\cdot B'",
-      "A' + B'",
-      "A + B",
-      "A' \\cdot B"
-    ],
+    "pregunta": "¿Qué expresión simplificada se obtiene al aplicar el teorema de De Morgan a ¯(A · B)?",
+    "opciones": ["A · B'", "A' + B'", "A + B", "A' · B"],
     "respuesta": 1,
-    "explicacion": "El primer teorema de De Morgan establece que la negación de un producto (AND) es igual a la suma (OR) de las negaciones de las variables. "
+    "explicacion": "¬(A·B) = A' + B'."
   },
   {
-    "pregunta": "¿Qué operación lógica representa la expresión $A \\cdot B$ en álgebra booleana?",
+    "pregunta": "¿Cuál sería la salida Q y Q' en un flip-flop D cuando D=1 en el flanco de reloj?",
     "opciones": [
-      "A OR B (Disyunción)",
-      "A AND B (Conjunción)",
-      "A XOR B (O Exclusiva)",
-      "A NOT B (Inversión)"
-    ],
-    "respuesta": 1,
-    "explicacion": "En álgebra booleana, el punto medio ($\cdot$) o la simple yuxtaposición (AB) representa la operación de multiplicación lógica, que es la operación AND o conjunción."
-  },
-  {
-    "pregunta": "¿Cuál sería el valor de las salidas Q y Q negada (Q') en el circuito biestable D (Flip-Flop D) síncrono mostrado, cuando se aplica un pulso de reloj y la entrada D (SET) es 1?",
-    "opciones": [
-      "Q = 0, Q' = 1",
-      "Q = 1, Q' = 1 (Estado inválido)",
-      "Q = 1, Q' = 0",
-      "Q y Q' mantienen su estado anterior (Memoria)"
+      "Q=0, Q'=1",
+      "Q=1, Q'=1",
+      "Q=1, Q'=0",
+      "Mantiene estado"
     ],
     "respuesta": 2,
-    "explicacion": "El biestable D (Data) transfiere el valor de su entrada D a la salida Q durante el pulso de reloj. Si la entrada D es 1, la salida Q será 1 y su negación Q' será 0. ",
-    "imagen": "imagen/salida-de-q.png" 
+    "explicacion": "Si D=1 → Q=1 y Q'=0.",
+    "imagen": "imagen/salida-de-q.png"
   },
   {
-    "pregunta": "¿Cuál es la principal ventaja de un velocímetro digital (electrónico) frente a uno analógico (mecánico)?",
+    "pregunta": "¿Cuál es la ventaja de un velocímetro digital frente a uno analógico?",
     "opciones": [
-      "El digital requiere menos energía para funcionar.",
-      "El digital permite que los datos sean procesados y transmitidos de forma precisa, fiable y eficiente.",
-      "El analógico es intrínsecamente más preciso a altas velocidades.",
-      "El digital es más barato de fabricar que el analógico."
+      "Requiere menos energía",
+      "Transmite datos precisos",
+      "Más preciso a alta velocidad",
+      "Más barato"
     ],
     "respuesta": 1,
-    "explicacion": "La principal ventaja de los datos digitales es su capacidad para ser procesados, almacenados y transmitidos a otros sistemas (como la ECU o sistemas de navegación) con alta precisión y sin interferencias."
+    "explicacion": "Los datos digitales permiten procesamiento y transmisión precisa."
   },
   {
-    "pregunta": "¿Qué se obtiene al negar (o invertir) la salida de una compuerta AND?",
-    "opciones": [
-      "Una compuerta OR",
-      "Una compuerta XOR",
-      "Una compuerta NAND",
-      "Una compuerta NOR"
-    ],
+    "pregunta": "¿Qué se obtiene al negar la salida de una compuerta AND?",
+    "opciones": ["OR", "XOR", "NAND", "NOR"],
     "respuesta": 2,
-    "explicacion": "La compuerta NAND es la forma negada (NOT) de la compuerta AND. Su función es la negación de la conjunción lógica, es decir, solo produce un 0 cuando todas las entradas son 1."
+    "explicacion": "La negación de AND es NAND."
   },
   {
-    "pregunta": "¿Cuál es la función principal de un mapa de Karnaugh (K-map) en la lógica digital?",
+    "pregunta": "¿Cuál es la función principal de un mapa de Karnaugh?",
     "opciones": [
-      "Es una herramienta para simular el comportamiento de un microprocesador.",
-      "Es una herramienta para simplificar expresiones booleanas complejas.",
-      "Es un método para convertir números binarios a código BCD.",
-      "Es un diagrama para visualizar el flujo de datos en un circuito secuencial."
+      "Simular un microprocesador",
+      "Simplificar expresiones booleanas",
+      "Convertir binario a BCD",
+      "Visualizar flujo de datos"
     ],
     "respuesta": 1,
-    "explicacion": "El mapa de Karnaugh es una técnica gráfica que permite simplificar o minimizar expresiones lógicas booleanas, lo que reduce el número de compuertas necesarias en el circuito final."
+    "explicacion": "Un K-map simplifica expresiones lógicas."
   },
   {
-    "pregunta": "¿Cuál es la forma simplificada de la expresión booleana A + A · B?",
-    "opciones": [
-      "A",
-      "B",
-      "A · B",
-      "A + B"
-    ],
+    "pregunta": "¿Cuál es la forma simplificada de A + A·B?",
+    "opciones": ["A", "B", "A·B", "A+B"],
     "respuesta": 0,
-    "explicacion": "Esta expresión se simplifica utilizando la Ley de Absorción del Álgebra Booleana, donde A + (A · B) es igual a A. Esto es porque si A ya es 1, la salida es 1; si A es 0, la expresión es 0 + 0·B, que es 0. La salida siempre sigue el valor de A. "
+    "explicacion": "Ley de absorción."
   },
   {
-    "pregunta": "¿A qué compuerta lógica corresponde la señal digital de salida 'X' basada en el diagrama de tiempos de las entradas 'A' y 'B'?",
-    "opciones": [
-      "Compuerta NAND",
-      "Compuerta NOR",
-      "Compuerta XNOR",
-      "Compuerta XOR"
-    ],
+    "pregunta": "¿A qué compuerta corresponde una salida que es 1 solo cuando A y B son diferentes?",
+    "opciones": ["NAND", "NOR", "XNOR", "XOR"],
     "respuesta": 3,
-    "explicacion": "Al analizar el diagrama, la salida 'X' se activa (valor 1) únicamente cuando las entradas 'A' y 'B' tienen valores lógicos diferentes. Este comportamiento es la definición funcional de la compuerta XOR (O Exclusiva).",
-    "imagen": "imagen/salida-xor.png" 
+    "explicacion": "La salida descrita es XOR.",
+    "imagen": "imagen/salida-xor.png"
   },
   {
-    "pregunta": "En un circuito de compuertas OR, ¿cuál es la salida si al menos una entrada es 1?",
-    "opciones": [
-      "La salida siempre es 0.",
-      "La salida es 1.",
-      "La salida es de alta impedancia (Z).",
-      "La salida se mantiene en su estado anterior."
-    ],
+    "pregunta": "En un circuito OR, ¿cuál es la salida si al menos una entrada es 1?",
+    "opciones": ["0", "1", "Z", "Memoria"],
     "respuesta": 1,
-    "explicacion": "La compuerta OR (disyunción lógica) se activa o produce un 1 lógico si y solo si una o más de sus entradas están en estado 1 (Verdadero). Esta es su característica principal."
+    "explicacion": "OR = 1 si alguna entrada es 1."
   },
   {
-    "pregunta": "¿Qué representa una tabla de verdad, como la mostrada en la imagen, en el contexto de un circuito lógico?",
+    "pregunta": "¿Qué representa una tabla de verdad?",
     "opciones": [
-      "La secuencia de bits de entrada en el tiempo.",
-      "La salida de un circuito en función de sus entradas.",
-      "El número de transistores utilizados en la compuerta.",
-      "La simplificación del diagrama de un mapa de Karnaugh."
+      "Secuencia de bits",
+      "Salida en función de entradas",
+      "Número de transistores",
+      "Simplificación K-map"
     ],
     "respuesta": 1,
-    "explicacion": "Una tabla de verdad es una herramienta utilizada en la lógica booleana para mostrar el comportamiento de un circuito lógico; lista todas las posibles combinaciones de las entradas y la salida resultante para cada combinación."
+    "explicacion": "Una tabla de verdad describe el comportamiento de un circuito lógico."
   },
   {
     "pregunta": "¿Cuál es la salida de una compuerta OR si ambas entradas son 0?",
-    "opciones": [
-      "1",
-      "0",
-      "Alta impedancia (Z)",
-      "Indefinido"
-    ],
+    "opciones": ["1", "0", "Z", "Indefinido"],
     "respuesta": 1,
-    "explicacion": "La compuerta OR requiere que al menos una entrada sea 1 para activarse. Si ambas son 0, la salida es 0."
+    "explicacion": "OR solo da 1 si alguna entrada es 1."
   },
   {
-    "pregunta": "¿En cuál de los siguientes casos se utilizaría un valor don't care (X)?",
+    "pregunta": "¿Cuándo se utiliza un valor Don't Care (X)?",
     "opciones": [
-      "Para forzar la salida a 1 en todo momento.",
-      "Cuando un sensor de movimiento esté en nivel alto y bajo simultáneamente (estado imposible).",
-      "Cuando se necesita reiniciar el sistema.",
-      "Cuando se desconecta la fuente de poder."
+      "Para forzar la salida",
+      "Cuando una combinación de entrada es imposible",
+      "Para reiniciar",
+      "Cuando no hay alimentación"
     ],
     "respuesta": 1,
-    "explicacion": "Los estados 'don't care' se usan en mapas de Karnaugh para combinaciones de entrada que físicamente no pueden ocurrir o no importan."
+    "explicacion": "Los don't care se usan en combinaciones imposibles o irrelevantes."
   },
   {
-    "pregunta": "¿Cómo se representa la función lógica NOT en un diagrama lógico?",
+    "pregunta": "¿Cómo se representa NOT en un diagrama lógico?",
     "opciones": [
-      "Un círculo pequeño o burbuja en la salida",
-      "Un cuadrado con una X dentro",
-      "Una línea curva sin cierre",
-      "Un rectángulo con el símbolo &"
+      "Burbuja",
+      "Cuadrado con X",
+      "Línea curva",
+      "Rectángulo con &"
     ],
     "respuesta": 0,
-    "explicacion": "Gráficamente, la inversión (NOT) se denota con un pequeño círculo (burbuja), usualmente a la salida de un triángulo."
+    "explicacion": "NOT se representa con una burbuja."
   },
   {
-    "pregunta": "En el álgebra booleana, ¿cuál es la expresión simplificada de A + A'?",
-    "opciones": [
-      "0",
-      "A",
-      "A'",
-      "1"
-    ],
+    "pregunta": "Expresión simplificada de A + A' en álgebra booleana",
+    "opciones": ["0", "A", "A'", "1"],
     "respuesta": 3,
-    "explicacion": "Es una ley fundamental: sumar una variable con su inverso (A + A') siempre cubre todas las posibilidades, resultando en 1 (Verdadero)."
+    "explicacion": "A + A' = 1."
   },
   {
     "pregunta": "¿Cuál es la salida de una compuerta AND si ambas entradas son 1?",
-    "opciones": [
-      "0",
-      "1",
-      "Oscilante",
-      "Null"
-    ],
+    "opciones": ["0", "1", "Oscilante", "Null"],
     "respuesta": 1,
-    "explicacion": "La compuerta AND solo entrega una salida de 1 (Verdadero) cuando TODAS sus entradas son 1."
+    "explicacion": "AND solo da 1 si todas las entradas son 1."
   },
   {
-    "pregunta": "En un mapa de Karnaugh de dos variables, ¿cuántas celdas hay?",
-    "opciones": [
-      "2 celdas",
-      "4 celdas",
-      "8 celdas",
-      "16 celdas"
-    ],
+    "pregunta": "¿Cuántas celdas tiene un mapa de Karnaugh de dos variables?",
+    "opciones": ["2", "4", "8", "16"],
     "respuesta": 1,
-    "explicacion": "El número de celdas es 2 elevado al número de variables. Para 2 variables: 2^2 = 4."
-  },
-  {
-    "pregunta": "¿Cuál es la salida de una compuerta NAND cuando ambas entradas son 0?",
-    "opciones": [
-      "0",
-      "1",
-      "Flotante",
-      "Error de lógica"
-    ],
-    "respuesta": 1,
-    "explicacion": "La NAND es la inversa de la AND. Si las entradas son 0 y 0, la AND daría 0. Al invertirlo, la NAND da 1."
-  },
-  {
-    "pregunta": "De acuerdo a la compuerta lógica OR mostrada en la imagen, ¿cuál de las siguientes opciones representa correctamente la secuencia de sus salidas (S) para las combinaciones 00, 01, 10 y 11?",
-    "opciones": [
-      "0000",
-      "0111",
-      "1000",
-      "1111"
-    ],
-    "respuesta": 1,
-    "explicacion": "La compuerta OR produce una salida de 1 si al menos una de las entradas (A o B) es 1. Por lo tanto, la secuencia de salidas es S=0 para (0,0); S=1 para (0,1); S=1 para (1,0); y S=1 para (1,1).",
-    "imagen": "imagen/Compuerta-or.png" 
-  },
-  {
-    "pregunta": "¿Cuál sería el valor de las salidas Q y Qn si en el circuito biestable RS (Flip-Flop) mostrado, el valor del LOGICSTATE en la transición es R=0 y S=0, asumiendo que el circuito estaba previamente en un estado de Set (Q=1, Qn=0)?",
-    "opciones": [
-      "La salida Q cambia a cero y Qn cambia a uno.",
-      "La salida Q y Qn cambian a cero.",
-      "La salida Q permanece en uno y Qn permanece en cero.",
-      "La salida Q y Qn cambian a uno."
-    ],
-    "respuesta": 2,
-    "explicacion": "El circuito mostrado es un biestable RS. La condición R=0 y S=0 corresponde a la 'zona de memoria' del biestable (ya que usa compuertas NAND y NOR en cascada). Cuando las entradas R y S son 0, el biestable retiene el último estado. Dado que el estado anterior era Set (Q=1, Qn=0), este estado se mantiene.",
-    "imagen": "imagen/salida-q.png"
+    "explicacion": "Un K-map de 2 variables tiene 4 celdas."
   }
-] 
+]
