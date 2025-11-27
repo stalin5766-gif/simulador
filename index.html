@@ -1,120 +1,121 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simulador - Escalabilidad</title>
-  
-  <link rel="stylesheet" href="stilos.css">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulador - Escalabilidad</title>
+  
+  <link rel="stylesheet" href="stilos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
 <body>
 
 <header class="holo-header">
-  <h1>🌐Simulador Escalabilidad de Redes🛜</h1>
-  <div class="header-right-group">
-    <button class="holo-btn">STALIN 🦗 SOFTWARE</button>
-    <button id="btnLogoutHeader" class="btn-logout-integrated hidden">Cerrar Sesión</button>
-  </div>
+  <h1>🌐Simulador Escalabilidad de Redes🛜</h1>
+  <div class="header-right-group">
+    <button class="holo-btn">STALIN 🦗 SOFTWARE</button>
+    
+        <button id="btnToggleSound" class="btn-sound-integrated" title="Silenciar / Activar Sonido">
+        <span id="iconSound">🔊</span> 
+    </button>
+    
+    <button id="btnLogoutHeader" class="btn-logout-integrated hidden">Cerrar Sesión</button>
+  </div>
 </header>
 
 <section id="authPanel" class="app-card" style="margin-top: 60px;">
-  <h2 class="text-2xl font-bold text-gray-800 mb-2">Iniciar sesión</h2>
-  <p class="text-gray-500 mb-6 text-sm">Accede con tu cuenta institucional</p>
-  <p id="authMsg" class="text-red-600 text-sm mb-4 font-bold"></p>
+  <h2 class="text-2xl font-bold text-gray-800 mb-2">Iniciar sesión</h2>
+  <p class="text-gray-500 mb-6 text-sm">Accede con tu cuenta institucional</p>
+  <p id="authMsg" class="text-red-600 text-sm mb-4 font-bold"></p>
 
-  <button id="btnGoogle" class="google-btn">
-    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20">
-    Ingresar con Google
-  </button>
+  <button id="btnGoogle" class="google-btn">
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20">
+    Ingresar con Google
+  </button>
 </section>
 
 <section id="appPanel" class="app-card hidden">
-    
-    <div id="startScreen">
-        
-        <div class="input-group">
-            <label>Materia</label>
-            <select disabled class="input-box" style="background-color: #f3f4f6; color: #666;">
-                <option>Escalabilidad de Redes</option>
-            </select>
-        </div>
+    
+    <div id="startScreen">
+        
+        <div class="input-group">
+            <label>Materia</label>
+            <select disabled class="input-box" style="background-color: #f3f4f6; color: #666;">
+                <option>Escalabilidad de Redes</option>
+            </select>
+        </div>
 
-        <div class="input-group">
-            <label>Modo</label>
-            <select id="modo" class="input-box">
-                <option value="examen">📝 Examen (30 Preguntas)</option>
-                <option value="estudio">📚 Estudio (Todas)</option>
-            </select>
-        </div>
+        <div class="input-group">
+            <label>Modo</label>
+            <select id="modo" class="input-box">
+                <option value="examen">📝 Examen (30 Preguntas)</option>
+                <option value="estudio">📚 Estudio (Todas)</option>
+            </select>
+        </div>
 
-        <div class="input-group">
-            <label>Tiempo</label>
-            <select id="minutos" class="input-box">
-                <option value="60">60 minutos</option>
-                <option value="30">30 minutos</option>
-                <option value="15">15 minutos</option>
-                <option value="0">Sin tiempo</option>
-            </select>
-        </div>
+        <div class="input-group">
+            <label>Tiempo</label>
+            <select id="minutos" class="input-box">
+                <option value="60">60 minutos</option>
+                <option value="30">30 minutos</option>
+                <option value="15">15 minutos</option>
+                <option value="0">Sin tiempo</option>
+            </select>
+        </div>
 
-        <div class="user-info">
-            <p class="text-sm text-gray-600">Hola, <span id="userEmailDisplay" class="font-bold text-blue-600">...</span></p>
-            
-            <p id="verificationMsg" class="text-sm text-green-600 font-bold hidden mt-2 bg-green-50 py-1 px-2 rounded inline-block border border-green-200">
-                ✅ Dispositivo verificado
-            </p>
-        </div>
+        <div class="user-info">
+            <p class="text-sm text-gray-600">Hola, <span id="userEmailDisplay" class="font-bold text-blue-600">...</span></p>
+            
+            <p id="verificationMsg" class="text-sm text-green-600 font-bold hidden mt-2 bg-green-50 py-1 px-2 rounded inline-block border border-green-200">
+                ✅ Dispositivo verificado
+            </p>
+        </div>
 
-        <button id="btnEmpezar" class="btn-start">Empezar</button>
+        <button id="btnEmpezar" class="btn-start">Empezar</button>
 
-        <div class="flex justify-center gap-4 mt-4">
-            <button id="btnGuardar" class="text-xs text-gray-500 underline hover:text-blue-600">Guardar Progreso</button>
-            <button id="btnCargar" class="text-xs text-gray-500 underline hover:text-blue-600">Cargar Progreso</button>
-        </div>
-        <p id="estado" class="text-xs text-blue-600 mt-2 h-4"></p>
-    </div>
+        <div class="flex justify-center gap-4 mt-4">
+            <button id="btnGuardar" class="text-xs text-gray-500 underline hover:text-blue-600">Guardar Progreso</button>
+            <button id="btnCargar" class="text-xs text-gray-500 underline hover:text-blue-600">Cargar Progreso</button>
+        </div>
+        <p id="estado" class="text-xs text-blue-600 mt-2 h-4"></p>
+    </div>
 
-    <!-- ============================ -->
-    <!-- CONTENEDOR PRINCIPAL DEL QUIZ -->
-    <!-- ============================ -->
-    <div id="quizContainer" class="hidden text-left mt-2">
+                <div id="quizContainer" class="hidden text-left mt-2">
 
-        <!-- INDICADORES DE PROGRESO -->
-        <div id="indicadores" style="position:absolute; top:70px; right:30px; text-align:right;">
-            <div id="indicadorNumero" class="font-bold text-blue-600 text-sm"></div>
-            <div id="indicadorRestantes" class="text-gray-600 text-xs"></div>
-        </div>
+                <div id="indicadores" style="position:absolute; top:70px; right:30px; text-align:right;">
+            <div id="indicadorNumero" class="font-bold text-blue-600 text-sm"></div>
+            <div id="indicadorRestantes" class="text-gray-600 text-xs"></div>
+        </div>
 
-        <div class="flex justify-between items-center mb-4">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Pregunta en curso</span>
-            <div id="timerDisplay" class="font-mono font-bold text-blue-600">
-                ⏱ <span id="timer">--:--</span>
-            </div>
-        </div>
+        <div class="flex justify-between items-center mb-4">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Pregunta en curso</span>
+            <div id="timerDisplay" class="font-mono font-bold text-blue-600">
+                ⏱ <span id="timer">--:--</span>
+            </div>
+        </div>
 
-        <div id="preguntaRender"></div>
+        <div id="preguntaRender"></div>
 
-    </div>
+    </div>
 
-    <div id="resultScreen" class="hidden text-center py-5">
-        <h2 class="text-3xl font-bold text-gray-800">¡Finalizado!</h2>
-        <div id="scoreDisplay" class="text-6xl font-black text-blue-600 my-6">0 / 0</div>
-        <div class="flex justify-center gap-4">
-            <button id="btnReview" class="btn-action yellow">🔍 Revisar</button>
-            <button onclick="location.reload()" class="btn-action gray">🏠 Salir</button>
-        </div>
-    </div>
+    <div id="resultScreen" class="hidden text-center py-5">
+        <h2 class="text-3xl font-bold text-gray-800">¡Finalizado!</h2>
+        <div id="scoreDisplay" class="text-6xl font-black text-blue-600 my-6">0 / 0</div>
+        <div class="flex justify-center gap-4">
+            <button id="btnReview" class="btn-action yellow">🔍 Revisar</button>
+            <button onclick="location.reload()" class="btn-action gray">🏠 Salir</button>
+        </div>
+    </div>
 
-    <div id="reviewContainer" class="hidden mt-4 text-left max-h-96 overflow-y-auto p-1"></div>
-    <div id="reviewActions" class="hidden text-center mt-4 pt-4 border-t">
-        <button onclick="location.reload()" class="btn-action blue">Terminar</button>
-    </div>
+    <div id="reviewContainer" class="hidden mt-4 text-left max-h-96 overflow-y-auto p-1"></div>
+    <div id="reviewActions" class="hidden text-center mt-4 pt-4 border-t">
+        <button onclick="location.reload()" class="btn-action blue">Terminar</button>
+    </div>
 
 </section>
 
