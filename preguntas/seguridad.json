@@ -1,0 +1,167 @@
+[
+  {
+    "pregunta": "¿El término SSRF significa?",
+    "opciones": [
+      "Safe Session Reset Form",
+      "Simple Service Relay Feature",
+      "Secure Software Risk Framework",
+      "Server-Side Request Forgery"
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "SSRF (Server-Side Request Forgery) es una vulnerabilidad web que permite a un atacante inducir a la aplicación del servidor a realizar peticiones HTTP a un dominio arbitrario[cite: 1470, 1474]."
+  },
+  {
+    "pregunta": "El proyecto OWASP tiene como finalidad principal:",
+    "opciones": [
+      "Vender cortafuegos",
+      "Producir malware de prueba",
+      "Crear estándares de hardware",
+      "Mejorar la seguridad de aplicaciones web de forma abierta"
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "OWASP (Open Web Application Security Project) es una fundación sin fines de lucro que trabaja para mejorar la seguridad del software[cite: 1475, 1479]."
+  },
+  {
+    "pregunta": "¿Qué categoría de activo abarca servidores, routers y estaciones de trabajo?",
+    "opciones": [
+      "Data",
+      "Lines & Networks",
+      "Hardware",
+      "Software"
+    ],
+    "respuesta": 2,
+    [cite_start]"explicacion": "Los elementos físicos como servidores, enrutadores y computadoras se clasifican como activos de Hardware[cite: 1495, 1499]."
+  },
+  {
+    "pregunta": "Los ataques pasivos se caracterizan por:",
+    "opciones": [
+      "Inyectar malware",
+      "Ejecutar DoS",
+      "Destruir hardware",
+      "Escuchar y capturar tráfico"
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "Un ataque pasivo (como el sniffing) intercepta y monitorea el tráfico sin alterarlo ni destruir recursos[cite: 1516, 1519]."
+  },
+  {
+    "pregunta": "En el Top 10 OWASP 2021, la vulnerabilidad que ocupa el primer lugar es:",
+    "opciones": [
+      "Inyección",
+      "XSS",
+      "Broken Access Control",
+      "SSRF"
+    ],
+    "respuesta": 2,
+    [cite_start]"explicacion": "En la actualización de 2021, la Pérdida de Control de Acceso (Broken Access Control) ascendió a la categoría número uno de riesgos de seguridad[cite: 1520, 1523]."
+  },
+  {
+    "pregunta": "Dentro de las fases del hacking ético, la primera etapa es:",
+    "opciones": [
+      "Reconocimiento (recon)",
+      "Mantenimiento de acceso",
+      "Escalada de privilegios",
+      "Borrado de huellas"
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "La primera fase es el Reconocimiento (o Footprinting), donde se recopila información sobre el objetivo antes de lanzar cualquier ataque[cite: 1536, 1537]."
+  },
+  {
+    "pregunta": "El principio 'C' del trípode CIA significa:",
+    "opciones": [
+      "Confidencialidad",
+      "Conectividad",
+      "Capacidad",
+      "Continuidad"
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "El modelo CIA se compone de Confidencialidad, Integridad y Disponibilidad (Availability)[cite: 1541, 1542]."
+  },
+  {
+    "pregunta": "El algoritmo RSA fue propuesto por:",
+    "opciones": [
+      "Diffie & Hellman",
+      "Rivest, Shamir y Adleman",
+      "ElGamal",
+      "Miller & Koblitz"
+    ],
+    "respuesta": 1,
+    [cite_start]"explicacion": "RSA son las siglas de los apellidos de sus inventores: Ron Rivest, Adi Shamir y Leonard Adleman[cite: 1546, 1548]."
+  },
+  {
+    "pregunta": "En un par de claves RSA, la clave que debe mantenerse secreta es la:",
+    "opciones": [
+      "Compartida",
+      "Certificada",
+      "Pública",
+      "Privada"
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "En la criptografía asimétrica, la clave pública se distribuye, pero la clave privada debe ser conocida únicamente por el propietario[cite: 1561, 1565]."
+  },
+  {
+    "pregunta": "La propiedad que asegura que solo personas autorizadas lean un mensaje es la:",
+    "opciones": [
+      "Confidencialidad",
+      "Integridad",
+      "No repudio",
+      "Disponibilidad"
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "La confidencialidad garantiza que la información no sea divulgada a usuarios, entidades o procesos no autorizados[cite: 1576, 1577]."
+  },
+  {
+    "pregunta": "La enumeración se emplea para listar:",
+    "opciones": [
+      "Temperatura CPU",
+      "Usuarios, hosts y servicios del sistema",
+      "Parches instalados",
+      "Logs de impresora"
+    ],
+    "respuesta": 1,
+    [cite_start]"explicacion": "La enumeración es una fase activa donde el atacante intenta obtener listas de nombres de usuario, nombres de máquinas, recursos compartidos y servicios[cite: 1672, 1674]."
+  },
+  {
+    "pregunta": "SNMP se transporta habitualmente sobre:",
+    "opciones": [
+      "ICMP",
+      "UDP",
+      "SCTP",
+      "TCP puerto 80"
+    ],
+    "respuesta": 1,
+    [cite_start]"explicacion": "El Protocolo Simple de Administración de Red (SNMP) utiliza típicamente el protocolo UDP (puertos 161 y 162) para su transporte[cite: 1692, 1694]."
+  },
+  {
+    "pregunta": "En seguridad lógica, el control AAA incluye:",
+    "opciones": [
+      "Autenticación, autorización y auditoría",
+      "API, App, Audit",
+      "Asignar ACLs automáticas",
+      "Antispam, antivirus, antimalware"
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "El modelo AAA se refiere a los servicios de seguridad: Autenticación (quién eres), Autorización (qué puedes hacer) y Auditoría/Contabilidad (qué hiciste)[cite: 1727, 1728]."
+  },
+  {
+    "pregunta": "En una WLAN, ¿qué dispositivo conecta clientes Wi-Fi con la LAN cableada?",
+    "opciones": [
+      "Firewall",
+      "Repetidor",
+      "Switch",
+      "Punto de acceso (AP)"
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "Un Punto de Acceso (Access Point) actúa como un puente central que conecta a los dispositivos inalámbricos con la red cableada[cite: 1738, 1742]."
+  },
+  {
+    "pregunta": "Herramienta que identifica puertos abiertos y sistema operativo desde consola:",
+    "opciones": [
+      "OpenVAS",
+      "Wireshark",
+      "Nessus",
+      "Nmap"
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "Nmap (Network Mapper) es la herramienta estándar de facto para el escaneo de puertos, descubrimiento de servicios y detección de sistemas operativos[cite: 1765, 1769]."
+  }
+]
