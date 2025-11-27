@@ -11,6 +11,46 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+    "pregunta": "¿Qué aplicación es común para un sistema embebido?",
+    "opciones": [
+      "Control de procesos industriales",
+      "Edición de video profesional",
+      "Renderizado 3D en tiempo real"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los sistemas embebidos se utilizan frecuentemente para el control de procesos industriales debido a su capacidad de operar de forma autónoma y en tiempo real."
+  },
+  {
+    "pregunta": "¿Qué lenguaje nos ayuda a programar los sistemas electrónicos de los FPGAs?",
+    "opciones": [
+      "Python",
+      "VHDL",
+      "Java"
+    ],
+    "respuesta": 1,
+    "explicacion": "VHDL es un lenguaje de descripción de hardware ampliamente utilizado para programar y diseñar circuitos en FPGAs."
+  },
+  {
+    "pregunta": "¿Cuál es una de las aplicaciones más comunes de las FPGAs?",
+    "opciones": [
+      "Realización de operaciones matemáticas complejas de alto rendimiento",
+      "Navegación web",
+      "Reproducción de audio"
+    ],
+    "respuesta": 0,
+    "explicacion": "Las FPGAs son ideales para realizar operaciones matemáticas complejas gracias a su capacidad de paralelismo y personalización del hardware."
+  },
+  {
+    "pregunta": "¿Qué es un flip-flop?",
+    "opciones": [
+      "Un dispositivo de almacenamiento",
+      "Un amplificador de señal",
+      "Un tipo de oscilador"
+    ],
+    "respuesta": 0,
+    "explicacion": "Un flip-flop es un dispositivo de almacenamiento digital capaz de mantener un estado lógico hasta que sea modificado por una señal de control."
+  },
+  {
   "pregunta": "¿Qué es un mapa de Karnaugh?",
   "opciones": [
     "Una herramienta para simplificar expresiones booleanas",
