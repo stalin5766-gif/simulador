@@ -11,6 +11,51 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+    "pregunta": "¿Cuál es la función principal de la compuerta lógica NOR?",
+    "opciones": [
+      "Negar el resultado de una compuerta OR.",
+      "Realizar la suma binaria de sus entradas.",
+      "Negar individualmente cada entrada y luego realizar la operación AND.",
+      "Solo genera un 1 si las entradas son iguales."
+    ],
+    "respuesta": 0,
+    "explicacion": "La compuerta NOR (Not OR) es el inverso de la compuerta OR. Su función es negar (invertir) la salida de la operación OR, produciendo un 1 solo cuando ambas entradas son 0."
+  },
+  {
+    "pregunta": "¿Qué expresión simplificada se obtiene al aplicar el teorema de De Morgan a la expresión $\\overline{A \\cdot B}$ (A AND B negada)?",
+    "opciones": [
+      "A \\cdot B'",
+      "A' + B'",
+      "A + B",
+      "A' \\cdot B"
+    ],
+    "respuesta": 1,
+    "explicacion": "El primer teorema de De Morgan establece que la negación de un producto (AND) es igual a la suma (OR) de las negaciones de las variables. "
+  },
+  {
+    "pregunta": "¿Qué operación lógica representa la expresión $A \\cdot B$ en álgebra booleana?",
+    "opciones": [
+      "A OR B (Disyunción)",
+      "A AND B (Conjunción)",
+      "A XOR B (O Exclusiva)",
+      "A NOT B (Inversión)"
+    ],
+    "respuesta": 1,
+    "explicacion": "En álgebra booleana, el punto medio ($\cdot$) o la simple yuxtaposición (AB) representa la operación de multiplicación lógica, que es la operación AND o conjunción."
+  },
+  {
+    "pregunta": "¿Cuál sería el valor de las salidas Q y Q negada (Q') en el circuito biestable D (Flip-Flop D) síncrono mostrado, cuando se aplica un pulso de reloj y la entrada D (SET) es 1?",
+    "opciones": [
+      "Q = 0, Q' = 1",
+      "Q = 1, Q' = 1 (Estado inválido)",
+      "Q = 1, Q' = 0",
+      "Q y Q' mantienen su estado anterior (Memoria)"
+    ],
+    "respuesta": 2,
+    "explicacion": "El biestable D (Data) transfiere el valor de su entrada D a la salida Q durante el pulso de reloj. Si la entrada D es 1, la salida Q será 1 y su negación Q' será 0. ",
+    "imagen": "imagen/salida-de-q.png" 
+  },
+  {
     "pregunta": "¿Cuál es la principal ventaja de un velocímetro digital (electrónico) frente a uno analógico (mecánico)?",
     "opciones": [
       "El digital requiere menos energía para funcionar.",
