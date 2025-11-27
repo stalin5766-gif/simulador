@@ -1,216 +1,124 @@
 /* =========================================
-   1. ESTILOS BASE Y FONDO
-   ========================================= */
+   1. FONDO BASE
+========================================= */
 body {
-    background-color: #f3f4f6; /* Fondo gris claro */
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #eef0f3;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* =========================================
-   2. HEADER HOLOGRÁFICO (CON BOTÓN INTEGRADO)
-   ========================================= */
+   2. HEADER ESTILO HOLOGRÁFICO — IGUAL A LA IMAGEN
+========================================= */
 .holo-header {
-    width: 100%;
-    /* CORRECCIÓN 1: Centrado y Compactación */
-    display: flex;
-    justify-content: center; /* Centra los hijos inicialmente */
-    align-items: center;
-    padding: 8px 30px; /* Reducido de 15px a 8px para hacerlo más compacto */
-    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
-    border-bottom: 2px solid #66eaff;
-    box-shadow: 0 0 15px #66eaff55;
-    position: fixed; /* CAMBIO: de sticky a FIXED para que el contenido fluya debajo */
-    top: 0;
-    left: 0; /* Asegura que esté fijo en la parte superior izquierda */
-    z-index: 1000; /* Aumentado z-index */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1b1b1b 100%);
+    border-bottom: 2px solid #66eaff;
+    box-shadow: 0 0 10px #66eaff55;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
+/* Centrado absoluto del título — EXACTO A LA IMAGEN */
 .holo-header h1 {
-    color: #66eaff;
-    margin: 0;
-    font-size: 1.4rem;
-    text-shadow: 0 0 8px #66eaff;
-    text-align: center;
-    flex-grow: 0; /* Desactiva el crecimiento */
-    /* CORRECCIÓN 2: Centrado de título usando posición absoluta */
+    color: #66eaff;
+    font-size: 1.6rem;
+    margin: 0;
+    text-shadow: 0 0 10px #66eaff;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-weight: 600;
 }
 
 .header-right-group {
-    /* CORRECCIÓN 3: Poner los botones en línea (horizontal) */
-    display: flex;
-    flex-direction: row; /* CAMBIO CLAVE: de column a ROW */
-    align-items: center;
-    gap: 10px; /* Separación entre botones */
-    margin-left: auto; /* Empuja el grupo a la derecha */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
+/* Botón simple estilo holográfico */
 .holo-btn {
-    background: transparent;
-    border: 1px solid #66eaff;
-    color: #66eaff;
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    cursor: default;
+    background: transparent;
+    border: 1px solid #66eaff;
+    color: #66eaff;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
 }
 
-/* Estilo para el Botón de Sonido (Icono con borde) */
+/* Botón de sonido (cuadro) */
 .btn-sound-integrated {
-    background-color: transparent; 
-    border: 1px solid #66eaff; 
-    color: #66eaff; 
-    padding: 3px 8px; /* Compacto, similar a los otros botones */
-    font-size: 0.8rem;
-    border-radius: 4px;
-    line-height: 1.5;
+    background: transparent;
+    border: 1px solid #66eaff;
+    padding: 6px 10px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s;
 }
-
-.btn-sound-integrated:hover {
-    background-color: #66eaff1a; 
-}
-
-
-/* Botón Cerrar Sesión Integrado (Rojo, pequeño) */
-.btn-logout-integrated {
-    background-color: #ef4444; 
-    color: white;
-    border: none;
-    padding: 3px 8px; 
-    border-radius: 4px;
-    font-weight: 500; 
-    font-size: 0.75rem; 
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    transition: background 0.2s;
-    line-height: 1.5; 
-}
-.btn-logout-integrated:hover { background-color: #dc2626; }
 
 /* =========================================
-   3. TARJETA BLANCA CENTRAL Y AJUSTES DE ESPACIO
-   ========================================= */
+   3. TARJETA BLANCA DEL LOGIN — IGUAL A LA IMAGEN
+========================================= */
 
-/* CORRECCIÓN 4: Compensar la altura del header fijo */
-#appPanel, #authPanel {
-    margin-top: 65px !important; /* Añadir espacio para que el contenido no quede debajo del header */
+#authPanel {
+    margin-top: 110px !important; /* Mover abajo por el header */
 }
 
 .app-card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-    border: 1px solid #e5e7eb;
-    width: 90%;
-    max-width: 450px; 
-    margin: 10px auto 40px auto; 
-    padding: 30px;
-    text-align: center;
-    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    border: none;
 }
 
-/* Inputs y Selects */
-.input-group { text-align: left; margin-bottom: 15px; }
-.input-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #555; margin-bottom: 5px; }
-.input-box { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #333; }
-.input-box:focus { outline: 2px solid #1a73e8; border-color: transparent; }
-.google-btn { width: 100%; background: white; border: 1px solid #ccc; padding: 12px; border-radius: 50px; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; font-weight: 500; color: #444; }
-.btn-start { width: 100%; background-color: #1a73e8; color: white; font-weight: bold; padding: 12px; border-radius: 25px; border: none; font-size: 1rem; cursor: pointer; margin-top: 15px; box-shadow: 0 4px 6px rgba(26, 115, 232, 0.2); }
-.btn-start:hover { background-color: #1557b0; }
-.user-info { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; }
+/* Título Login */
+.app-card h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+/* Subtítulo */
+.app-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Botón Google estilo exacto */
+.google-btn {
+    width: 100%;
+    background: white;
+    border: 2px solid #dcdcdc;
+    padding: 14px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.google-btn:hover {
+    background: #f1f1f1;
+}
+
+/* =========================================
+   4. (Opcional) Ajustes generales
+========================================= */
 .hidden { display: none !important; }
-
-/* AJUSTES PARA LA PANTALLA DE PREGUNTAS (COMPACTACIÓN) */
-
-/* Contenedor de la Pregunta */
-#quizContainer .app-card, #resultScreen {
-    max-width: 800px; /* Expandir para que las preguntas grandes quepan */
-}
-
-/* 1. Reducir padding de las opciones */
-.opt {
-    padding: 10px 15px !important; /* Más compacto verticalmente */
-    margin-bottom: 5px !important; /* Menos espacio entre opciones */
-}
-
-/* 2. Reducir márgenes internos de la pregunta */
-#preguntaRender h2 {
-    margin-bottom: 10px !important; 
-    font-size: 1.15rem; /* Ajuste sutil del tamaño de fuente */
-}
-
-/* 3. Asegurar que el botón Siguiente/Finalizar no se oculte */
-.quiz-navigation {
-    padding-top: 10px; /* Espacio para el botón de navegación */
-    margin-top: 0;
-}
-
-/* Estilos de Respuesta */
-.quiz-image { max-width: 100%; border-radius: 8px; border: 1px solid #eee; margin: 10px auto; display: block; }
-.option-selected { background: #e0e7ff !important; border: 2px solid #4f46e5 !important; font-weight: bold; }
-.ans-correct { background: #dcfce7 !important; border: 2px solid #22c55e !important; color: #14532d; }
-.ans-wrong { background: #fee2e2 !important; border: 2px solid #ef4444 !important; color: #7f1d1d; text-decoration: line-through; }
-.btn-action { padding: 8px 20px; border-radius: 8px; border: none; color: white; font-weight: bold; cursor: pointer; }
-.yellow { background: #eab308; } .gray { background: #4b5563; } .blue { background: #1a73e8; }
-/* Estilo base de cada opción */
-.opt {
-    display: block;              /* Ocupa todo el ancho */
-    width: 100%;
-    padding: 15px 20px;          /* Espacio interno para que el texto respire */
-    margin-bottom: 12px;         /* Separación entre opciones */
-    background-color: #ffffff;   /* Fondo blanco */
-    border: 2px solid #e2e8f0;   /* Borde gris muy suave */
-    border-radius: 12px;         /* Esquinas redondeadas */
-    
-    font-size: 1rem;
-    color: #334155;              /* Color de texto gris oscuro (más legible) */
-    text-align: left;            /* Alinear a la izquierda se lee mejor */
-    line-height: 1.5;            /* Altura de línea para textos largos */
-    
-    cursor: pointer;
-    transition: all 0.2s ease;   /* Animación suave */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil */
-}
-
-/* Efecto al pasar el mouse por encima (Hover) */
-.opt:hover {
-    background-color: #f8fafc;
-    border-color: #94a3b8;
-    transform: translateY(-2px); /* Se levanta un poquito */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* --- ESTADOS LOGICOS (Agregados por JS) --- */
-
-/* Cuando el usuario selecciona una opción (antes de confirmar si es correcta o no) */
-.opt.option-selected {
-    background-color: #eff6ff;   /* Azul muy claro */
-    border-color: #3b82f6;       /* Borde azul */
-    color: #1e40af;              /* Texto azul oscuro */
-    font-weight: 600;
-}
-
-/* Respuesta CORRECTA (Verde) - Para modo estudio/revisión */
-.opt.ans-correct {
-    background-color: #dcfce7 !important;
-    border-color: #22c55e !important;
-    color: #14532d !important;
-}
-
-/* Respuesta INCORRECTA (Rojo) - Para modo estudio/revisión */
-.opt.ans-wrong {
-    background-color: #fee2e2 !important;
-    border-color: #ef4444 !important;
-    color: #7f1d1d !important;
-    opacity: 0.8;
-}
