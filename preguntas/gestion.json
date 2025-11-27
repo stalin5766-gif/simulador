@@ -1,0 +1,112 @@
+[
+  {
+    "pregunta": "¿Cómo influye una mala definición del alcance en el éxito de un proyecto informático?",
+    "opciones": [
+      "Reduce los costos si se omiten tareas no necesarias.",
+      "No afecta si el equipo es suficientemente experimentado.",
+      "Permite mayor flexibilidad en la planificación del cronograma.",
+      "Genera ambigüedad en entregables y retrasa decisiones clave."
+    ],
+    "respuesta": 3,
+    "explicacion": "Una mala definición del alcance genera incertidumbre y retrasa la toma de decisiones."
+  },
+  {
+    "pregunta": "¿Qué debe priorizar un gerente de proyecto cuando el presupuesto y tiempo son fijos, pero surge una nueva necesidad?",
+    "opciones": [
+      "Reevaluar el alcance y negociar con el patrocinador.",
+      "Suspender el proyecto hasta obtener más fondos.",
+      "Eliminar la necesidad sin documentarla.",
+      "Asignar más recursos sin aprobación."
+    ],
+    "respuesta": 0,
+    "explicacion": "Si tiempo y costo son fijos, la única variable flexible es el alcance, que debe renegociarse."
+  },
+  {
+    "pregunta": "¿Cuál es un atributo esencial del ciclo de vida de un proyecto según el enfoque PMBOK?",
+    "opciones": [
+      "Consiste en una única fase que agrupa todo el trabajo.",
+      "Consta de fases secuenciales como iniciación, planificación, ejecución, seguimiento y cierre.",
+      "Solo aplica a proyectos del sector público.",
+      "Es idéntico al ciclo de vida del producto generado."
+    ],
+    "respuesta": 1,
+    "explicacion": "El ciclo de vida se define mediante grupos de procesos secuenciales o solapados."
+  },
+  {
+    "pregunta": "¿Cuál es una diferencia clave entre proyectos y operaciones dentro de las organizaciones?",
+    "opciones": [
+      "Las operaciones tienen un alcance limitado.",
+      "Los proyectos tienen procesos repetitivos.",
+      "Los proyectos son esfuerzos temporales.",
+      "Las operaciones producen productos únicos."
+    ],
+    "respuesta": 2,
+    "explicacion": "Los proyectos son temporales (tienen inicio y fin), las operaciones son continuas."
+  },
+  {
+    "pregunta": "¿Cuál es el objetivo principal de la fase de planificación en el ciclo de vida de un proyecto TI?",
+    "opciones": [
+      "Organizar y preparar los planes para ejecutar el proyecto.",
+      "Establecer relaciones con los stakeholders.",
+      "Cerrar contratos con proveedores.",
+      "Desarrollar los entregables definidos."
+    ],
+    "respuesta": 0,
+    "explicacion": "La planificación define el curso de acción y prepara los documentos necesarios para guiar la ejecución."
+  },
+  {
+    "pregunta": "¿Cuál es el propósito del Project Charter (Acta de Constitución del Proyecto)?",
+    "opciones": [
+      "Definir los entregables detallados del proyecto.",
+      "Dar al gerente del proyecto la autoridad para aplicar los recursos de la organización.",
+      "Autorizar formalmente la existencia de un proyecto.",
+      "Establecer el cronograma detallado del proyecto."
+    ],
+    "respuesta": 2,
+    "explicacion": "El propósito principal es autorizar formalmente la existencia del proyecto."
+  },
+  {
+    "pregunta": "Un proyecto requiere una inversión de $50,000 y genera un flujo de efectivo neto de $10,000 por año. ¿Cuál es el PRI o período de recuperación de la inversión?",
+    "opciones": [
+      "5 años",
+      "10 años",
+      "3 años",
+      "7 años"
+    ],
+    "respuesta": 0,
+    "explicacion": "50,000 dividido para 10,000 es igual a 5 años."
+  },
+  {
+    "pregunta": "¿Qué rol se espera que cumpla un gerente de proyecto según la guía PMBOK?",
+    "opciones": [
+      "Guiar al equipo para cumplir los objetivos del proyecto aplicando conocimientos y liderazgo.",
+      "Aprobar cambios en la política organizacional.",
+      "Evaluar el desempeño financiero anual de la organización.",
+      "Decidir sobre la contratación del personal de toda la empresa."
+    ],
+    "respuesta": 0,
+    "explicacion": "El gerente lidera al equipo para alcanzar los objetivos del proyecto."
+  },
+  {
+    "pregunta": "¿Qué elemento NO debe faltar en un acta de constitución del proyecto?",
+    "opciones": [
+      "Resumen del currículo de cada miembro del equipo.",
+      "Plan de marketing del producto generado.",
+      "Identificación de los objetivos del negocio.",
+      "Horario detallado de todas las reuniones técnicas."
+    ],
+    "respuesta": 2,
+    "explicacion": "El acta debe incluir los objetivos del negocio y la justificación del proyecto."
+  },
+  {
+    "pregunta": "¿Cuál es una característica distintiva del ciclo de vida adaptativo (Ágil) en proyectos de TI?",
+    "opciones": [
+      "Se prohíbe cualquier cambio posterior a la planificación.",
+      "El producto final se entrega en una única fase.",
+      "No se requiere validación del cliente en cada etapa.",
+      "El alcance detallado se define en cada iteración."
+    ],
+    "respuesta": 3,
+    "explicacion": "En ciclos adaptativos, el alcance se refina y detalla al comienzo de cada iteración."
+  }
+]
