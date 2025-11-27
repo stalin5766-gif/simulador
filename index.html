@@ -18,11 +18,9 @@
 <header class="holo-header">
   <h1>🌐Simulador Escalabilidad de Redes🛜</h1>
   
-    <div class="header-right-group">
+  <div class="header-right-group" style="display: flex; align-items: center; gap: 10px;">
     
-        <button id="btnToggleSound" class="btn-sound-integrated" title="Silenciar / Activar Sonido">
-        <span id="iconSound">🔊</span> 
-    </button>
+    <button id="btnMute" class="holo-btn" style="font-size: 1.2rem; padding: 5px 10px;" title="Activar/Desactivar Sonido">🔊</button>
     
     <button class="holo-btn">STALIN 🦗 SOFTWARE</button>
     <button id="btnLogoutHeader" class="btn-logout-integrated hidden">Cerrar Sesión</button>
@@ -46,8 +44,10 @@
         
         <div class="input-group">
             <label>Materia</label>
-            <select disabled class="input-box" style="background-color: #f3f4f6; color: #666;">
-                <option>Escalabilidad de Redes</option>
+            <select id="materiaSelect" class="input-box">
+                <option value="escalabilidad.json">Escalabilidad de Redes</option>
+                <option value="gestion.json">Gestión de Proyectos Informáticos</option>
+                <option value="seguridad.json">Seguridad Informática</option>
             </select>
         </div>
 
@@ -86,9 +86,9 @@
         <p id="estado" class="text-xs text-blue-600 mt-2 h-4"></p>
     </div>
 
-                <div id="quizContainer" class="hidden text-left mt-2">
+    <div id="quizContainer" class="hidden text-left mt-2">
 
-                <div id="indicadores" style="position:absolute; top:70px; right:30px; text-align:right;">
+        <div id="indicadores" style="position:absolute; top:70px; right:30px; text-align:right;">
             <div id="indicadorNumero" class="font-bold text-blue-600 text-sm"></div>
             <div id="indicadorRestantes" class="text-gray-600 text-xs"></div>
         </div>
@@ -116,7 +116,7 @@
     <div id="reviewContainer" class="hidden mt-4 text-left max-h-96 overflow-y-auto p-1"></div>
     <div id="reviewActions" class="hidden text-center mt-4 pt-4 border-t">
         <button onclick="location.reload()" class="btn-action blue">Terminar</button>
-            </div>
+    </div>
 
 </section>
 
