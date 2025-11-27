@@ -128,3 +128,4 @@ auth.onAuthStateChanged(async (user) => {
     appPanel.classList.add("hidden");
     if(btnLogout) btnLogout.classList.add("hidden"); 
   }
+}); // <-- ¡ESTE CIERRE FALTABA!
