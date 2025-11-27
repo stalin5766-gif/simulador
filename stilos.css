@@ -1,90 +1,106 @@
 /* =========================================
-   1. ESTILOS BASE Y FONDO
-   ========================================= */
+   1. ESTILOS BASE Y FONDO
+   ========================================= */
 body {
-    background-color: #f3f4f6; /* Fondo gris claro */
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #f3f4f6; /* Fondo gris claro */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* =========================================
-   2. HEADER HOLOGRÁFICO (CON BOTÓN INTEGRADO)
-   ========================================= */
+   2. HEADER HOLOGRÁFICO (CON BOTÓN INTEGRADO)
+   ========================================= */
 .holo-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
-    border-bottom: 2px solid #66eaff;
-    box-shadow: 0 0 15px #66eaff55;
-    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* << CORRECCIÓN 1: Reducir altura del header >> */
+    padding: 8px 30px; /* Reducir padding vertical de 15px a 8px */
+    position: fixed; /* Cambiar a 'fixed' para que flote siempre y aplicar margin-top al body */
+    /* position: sticky; /* Deshabilitado a favor de fixed para asegurar el flujo */
     top: 0;
-    z-index: 100;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Añadir box-shadow para que se vea sobre el contenido */
+    /* Fin CORRECCIÓN 1 */
+
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    border-bottom: 2px solid #66eaff;
+    box-shadow: 0 0 15px #66eaff55;
+    z-index: 1000; /* Asegurar que esté por encima de todo */
 }
 
 .holo-header h1 {
-    color: #66eaff;
-    margin: 0;
-    font-size: 1.4rem;
-    text-shadow: 0 0 8px #66eaff;
-    text-align: center;
-    flex-grow: 1;
+    color: #66eaff;
+    margin: 0;
+    font-size: 1.4rem;
+    text-shadow: 0 0 8px #66eaff;
+    text-align: left; /* Alineado a la izquierda */
+    flex-grow: 1;
 }
 
 .header-right-group {
-    display: flex;
-    flex-direction: column; /* Apila verticalmente */
-    align-items: flex-end; /* Alinea todo a la derecha */
-    gap: 5px;
+    /* << CORRECCIÓN 2: Mostrar botones en línea >> */
+    display: flex;
+    flex-direction: row; /* Cambiar a fila (horizontal) para que los botones no se apilen */
+    align-items: center; /* Alinear verticalmente los botones en el centro */
+    gap: 10px; /* Aumentar ligeramente la separación entre los botones */
+    /* Fin CORRECCIÓN 2 */
 }
 
 .holo-btn {
-    background: transparent;
-    border: 1px solid #66eaff;
-    color: #66eaff;
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    cursor: default;
+    background: transparent;
+    border: 1px solid #66eaff;
+    color: #66eaff;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: default;
 }
 
 /* Botón Cerrar Sesión Integrado (Rojo, pequeño) */
 .btn-logout-integrated {
-    background-color: #ef4444; 
-    color: white;
-    border: none;
-    padding: 3px 8px; 
-    border-radius: 4px;
-    font-weight: 500; 
-    font-size: 0.75rem; 
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    transition: background 0.2s;
-    line-height: 1.5; 
+    background-color: #ef4444; 
+    color: white;
+    border: none;
+    padding: 3px 8px; 
+    border-radius: 4px;
+    font-weight: 500; 
+    font-size: 0.75rem; 
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s;
+    line-height: 1.5; 
 }
 .btn-logout-integrated:hover { background-color: #dc2626; }
 
 /* =========================================
-   3. TARJETA BLANCA CENTRAL Y AJUSTES DE ESPACIO
-   ========================================= */
+   3. TARJETA BLANCA CENTRAL Y AJUSTES DE ESPACIO
+   ========================================= */
+
+/* << CORRECCIÓN 3: Compensar la altura del header fijo >> */
+#appPanel, #authPanel {
+    margin-top: 65px !important; /* Añadir espacio para que el contenido no quede debajo del header */
+}
+/* Fin CORRECCIÓN 3 */
+
 .app-card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-    border: 1px solid #e5e7eb;
-    width: 90%;
-    max-width: 450px; 
-    margin: 10px auto 40px auto; /* Reducido para subir el contenido */
-    padding: 30px;
-    text-align: center;
-    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    border: 1px solid #e5e7eb;
+    width: 90%;
+    max-width: 450px; 
+    margin: 10px auto 40px auto; /* Mantener la base, pero el margin-top se controla arriba */
+    padding: 30px;
+    text-align: center;
+    position: relative;
 }
 
 /* Inputs y Selects */
@@ -102,25 +118,25 @@ body {
 
 /* Contenedor de la Pregunta */
 #quizContainer .app-card, #resultScreen {
-    max-width: 800px; /* Expandir para que las preguntas grandes quepan */
+    max-width: 800px; /* Expandir para que las preguntas grandes quepan */
 }
 
 /* 1. Reducir padding de las opciones */
 .opt {
-    padding: 10px 15px !important; /* Más compacto verticalmente */
-    margin-bottom: 5px !important; /* Menos espacio entre opciones */
+    padding: 10px 15px !important; /* Más compacto verticalmente */
+    margin-bottom: 5px !important; /* Menos espacio entre opciones */
 }
 
 /* 2. Reducir márgenes internos de la pregunta */
 #preguntaRender h2 {
-    margin-bottom: 10px !important; 
-    font-size: 1.15rem; /* Ajuste sutil del tamaño de fuente */
+    margin-bottom: 10px !important; 
+    font-size: 1.15rem; /* Ajuste sutil del tamaño de fuente */
 }
 
 /* 3. Asegurar que el botón Siguiente/Finalizar no se oculte */
 .quiz-navigation {
-    padding-top: 10px; /* Espacio para el botón de navegación */
-    margin-top: 0;
+    padding-top: 10px; /* Espacio para el botón de navegación */
+    margin-top: 0;
 }
 
 /* Estilos de Respuesta */
@@ -132,65 +148,73 @@ body {
 .yellow { background: #eab308; } .gray { background: #4b5563; } .blue { background: #1a73e8; }
 /* Estilo base de cada opción */
 .opt {
-    display: block;              /* Ocupa todo el ancho */
-    width: 100%;
-    padding: 15px 20px;          /* Espacio interno para que el texto respire */
-    margin-bottom: 12px;         /* Separación entre opciones */
-    background-color: #ffffff;   /* Fondo blanco */
-    border: 2px solid #e2e8f0;   /* Borde gris muy suave */
-    border-radius: 12px;         /* Esquinas redondeadas */
-    
-    font-size: 1rem;
-    color: #334155;              /* Color de texto gris oscuro (más legible) */
-    text-align: left;            /* Alinear a la izquierda se lee mejor */
-    line-height: 1.5;            /* Altura de línea para textos largos */
-    
-    cursor: pointer;
-    transition: all 0.2s ease;   /* Animación suave */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil */
+    display: block;              
+    width: 100%;
+    padding: 15px 20px;          
+    margin-bottom: 12px;         
+    background-color: #ffffff;   
+    border: 2px solid #e2e8f0;   
+    border-radius: 12px;         
+    
+    font-size: 1rem;
+    color: #334155;              
+    text-align: left;            
+    line-height: 1.5;            
+    
+    cursor: pointer;
+    transition: all 0.2s ease;   
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
 }
 
 /* Efecto al pasar el mouse por encima (Hover) */
 .opt:hover {
-    background-color: #f8fafc;
-    border-color: #94a3b8;
-    transform: translateY(-2px); /* Se levanta un poquito */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* --- ESTADOS LOGICOS (Agregados por JS) --- */
 
 /* Cuando el usuario selecciona una opción (antes de confirmar si es correcta o no) */
 .opt.option-selected {
-    background-color: #eff6ff;   /* Azul muy claro */
-    border-color: #3b82f6;       /* Borde azul */
-    color: #1e40af;              /* Texto azul oscuro */
-    font-weight: 600;
+    background-color: #eff6ff;   
+    border-color: #3b82f6;       
+    color: #1e40af;              
+    font-weight: 600;
 }
 
 /* Respuesta CORRECTA (Verde) - Para modo estudio/revisión */
 .opt.ans-correct {
-    background-color: #dcfce7 !important;
-    border-color: #22c55e !important;
-    color: #14532d !important;
+    background-color: #dcfce7 !important;
+    border-color: #22c55e !important;
+    color: #14532d !important;
 }
 
 /* Respuesta INCORRECTA (Rojo) - Para modo estudio/revisión */
 .opt.ans-wrong {
-    background-color: #fee2e2 !important;
-    border-color: #ef4444 !important;
-    color: #7f1d1d !important;
-    opacity: 0.8;
+    background-color: #fee2e2 !important;
+    border-color: #ef4444 !important;
+    color: #7f1d1d !important;
+    opacity: 0.8;
 }
-/* stilos.css - EJEMPLO DE AJUSTE */
 
+/* ESTILOS DEL BOTÓN DE SONIDO (ajustados para integración horizontal) */
 .btn-sound-integrated {
-    /* Mismo aspecto que los otros botones de cabecera */
-    padding: 8px; /* Hazlo cuadrado o de tamaño similar */
-    background-color: transparent;
-    border: none;
+    /* Usaremos los mismos estilos base que el botón de cerrar sesión para consistencia */
+    background-color: #66eaff1a; /* Fondo muy sutil del holo-color */
+    color: #66eaff;
+    border: 1px solid #66eaff;
+    padding: 3px 8px; /* Mismo padding que btn-logout-integrated */
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.75rem;
     cursor: pointer;
-    font-size: 1.5rem; /* Ajusta el tamaño del ícono (emoji) */
-    line-height: 1; /* Para que el ícono esté centrado */
-    margin-right: 10px; /* Separación de los otros botones */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    line-height: 1.5;
+}
+
+.btn-sound-integrated:hover {
+    background-color: #66eaff33;
 }
