@@ -3,7 +3,7 @@
 // ==========================================
 const correosPermitidos = [
   "cgomezy2@unemi.edu.ec", "mvegaa2@unemi.edu.ec", "earrobas@unemi.edu.ec",
-  "ccedenov6@unemi.edu.ec", "dzambranod6@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec" // <-- Aquí terminan los UNEMI
+  "ccedenov6@unemi.edu.ec", "dzambranod6@unemi.edu.ec", "sgavilanezp2@unemi.edu.ec", // <-- Aquí terminan los UNEMI
 
   // Gmail añadido (Separados por coma dentro del array)
   "apoyochat.trabajosocial@gmail.com", 
