@@ -96,7 +96,7 @@
       "1111"
     ],
     "respuesta": 1,
-    "explicacion": "La compuerta OR produce una salida de 1 si al menos una de las entradas (A o B) es 1. Por lo tanto, la secuencia de salidas es S=0 para (0,0); S=1 para (0,1); S=1 para (1,0); y S=1 para (1,1)."
-    "imagen": "imagen/Compuerta-or.png"
-  }
-]
+    "explicacion": "La compuerta OR produce una salida de 1 si al menos una de las entradas (A o B) es 1. Por lo tanto, la secuencia de salidas es S=0 para (0,0); S=1 para (0,1); S=1 para (1,0); y S=1 para (1,1).",
+    "imagen": "imagen/Compuerta-or.png" // <-- La coma anterior estaba mal colocada, aquí ya está corregido.
+  } // <-- ¡NO HAY COMA AQUÍ!
+] // <-- Cierre correcto del array
