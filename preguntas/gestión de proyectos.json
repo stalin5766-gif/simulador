@@ -1,0 +1,222 @@
+[
+  {
+    "pregunta": "¿Cómo influye una mala definición del alcance en el éxito de un proyecto informático?",
+    "opciones": [
+      "Reduce los costos si se omiten tareas no necesarias.",
+      "No afecta si el equipo es suficientemente experimentado.",
+      "Permite mayor flexibilidad en la planificación del cronograma.",
+      "Genera ambigüedad en entregables y retrasa decisiones clave."
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "Una mala definición del alcance es una de las causas principales del fracaso, ya que genera incertidumbre (ambigüedad), 'scope creep' y retrasa la toma de decisiones[cite: 3, 11]."
+  },
+  {
+    "pregunta": "¿Qué debe priorizar un gerente de proyecto cuando el presupuesto y tiempo son fijos, pero surge una nueva necesidad?",
+    "opciones": [
+      "Reevaluar el alcance y negociar con el patrocinador.",
+      "Suspender el proyecto hasta obtener más fondos.",
+      "Eliminar la necesidad sin documentarla.",
+      "Asignar más recursos sin aprobación."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "En la triple restricción, si el tiempo y el costo son inamovibles, la única variable flexible es el alcance, el cual debe renegociarse formalmente[cite: 13, 16]."
+  },
+  {
+    "pregunta": "¿Cuál es un atributo esencial del ciclo de vida de un proyecto según el enfoque PMBOK?",
+    "opciones": [
+      "Consiste en una única fase que agrupa todo el trabajo.",
+      "Consta de fases secuenciales como iniciación, planificación, ejecución, seguimiento y cierre.",
+      "Solo aplica a proyectos del sector público.",
+      "Es idéntico al ciclo de vida del producto generado."
+    ],
+    "respuesta": 1,
+    [cite_start]"explicacion": "El PMBOK define el ciclo de vida del proyecto mediante grupos de procesos que generalmente ocurren de forma secuencial o solapada: Inicio, Planificación, Ejecución, Monitoreo/Control y Cierre[cite: 23, 27]."
+  },
+  {
+    "pregunta": "¿Cuál es una diferencia clave entre proyectos y operaciones dentro de las organizaciones?",
+    "opciones": [
+      "Las operaciones tienen un alcance limitado.",
+      "Los proyectos tienen procesos repetitivos.",
+      "Los proyectos son esfuerzos temporales.",
+      "Las operaciones producen productos únicos."
+    ],
+    "respuesta": 2,
+    [cite_start]"explicacion": "La definición fundamental de un proyecto es que es un esfuerzo temporal (tiene inicio y fin definidos) para crear un resultado único, mientras que las operaciones son continuas y repetitivas[cite: 34, 39]."
+  },
+  {
+    "pregunta": "¿Cuál es el objetivo principal de la fase de planificación en el ciclo de vida de un proyecto TI?",
+    "opciones": [
+      "Organizar y preparar los planes para ejecutar el proyecto.",
+      "Establecer relaciones con los stakeholders.",
+      "Cerrar contratos con proveedores.",
+      "Desarrollar los entregables definidos."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "El objetivo de la planificación es definir el curso de acción y preparar los documentos (planes) necesarios para guiar la ejecución y el control[cite: 43, 46]."
+  },
+  {
+    "pregunta": "¿Cuál es el propósito del Project Charter (Acta de Constitución del Proyecto)?",
+    "opciones": [
+      "Definir los entregables detallados del proyecto.",
+      "Dar al gerente del proyecto la autoridad para aplicar los recursos de la organización.",
+      "Autorizar formalmente la existencia de un proyecto.",
+      "Establecer el cronograma detallado del proyecto."
+    ],
+    "respuesta": 2,
+    [cite_start]"explicacion": "Aunque también otorga autoridad al gerente (opción B), la función primaria y definición estándar del Project Charter es autorizar formalmente la existencia del proyecto en la organización[cite: 54, 60]."
+  },
+  {
+    "pregunta": "Empareja los conceptos relacionados con la TIR (Tasa Interna de Retorno). Seleccione la combinación correcta: A(TIR), B(Tasa descuento), C(Flujos descontados), D(Criterio aceptación).",
+    "opciones": [
+      "A1 (Tasa que iguala VP a gasto), B2 (Tasa mínima), C3 (Flujos ajustados), D4 (Aceptar si TIR > Tasa)",
+      "A2, B4, C1, D3",
+      "A4, B3, C2, D1",
+      "A3, B1, C4, D2"
+    ],
+    "respuesta": 0,
+    "explicacion": "La TIR es la tasa que hace que el Valor Presente Neto sea cero (A=1). La tasa de descuento es el rendimiento mínimo requerido (B=2). [cite_start]Los flujos descontados ajustan el dinero al tiempo (C=3)[cite: 82, 86]."
+  },
+  {
+    "pregunta": "Relaciona cada grupo de procesos con una actividad clave. A(Iniciación), B(Planificación), C(Ejecución), D(Cierre).",
+    "opciones": [
+      "A2, B4, C3, D1",
+      "A1 (Establece objetivos), B2 (Desarrolla plan), C3 (Implementa actividades), D4 (Formaliza fin)",
+      "A4, B3, C1, D2",
+      "A3, B1, C2, D4"
+    ],
+    "respuesta": 1,
+    "explicacion": "Iniciación define el alcance inicial (1). Planificación desarrolla la hoja de ruta (2). Ejecución realiza el trabajo (3). [cite_start]Cierre formaliza la entrega (4)[cite: 150, 155]."
+  },
+  {
+    "pregunta": "Un proyecto requiere una inversión de $50,000 y genera un flujo de efectivo neto de $10,000 por año. ¿Cuál es el PRI o período de recuperación de la inversión?",
+    "opciones": [
+      "5 años",
+      "10 años",
+      "3 años",
+      "7 años"
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "El PRI se calcula dividiendo la inversión inicial por el flujo de caja anual: 50,000 / 10,000 = 5 años[cite: 211, 214]."
+  },
+  {
+    "pregunta": "¿Qué rol se espera que cumpla un gerente de proyecto según la guía PMBOK?",
+    "opciones": [
+      "Guiar al equipo para cumplir los objetivos del proyecto aplicando conocimientos, herramientas y liderazgo.",
+      "Aprobar cambios en la política organizacional.",
+      "Evaluar el desempeño financiero anual de la organización.",
+      "Decidir sobre la contratación del personal de toda la empresa."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "El gerente de proyectos es el responsable de liderar al equipo y gestionar los procesos para alcanzar los objetivos del proyecto[cite: 221, 224]."
+  },
+  {
+    "pregunta": "¿Qué elemento NO debe faltar en un acta de constitución del proyecto (Project Charter)?",
+    "opciones": [
+      "Resumen del currículo de cada miembro del equipo.",
+      "Plan de marketing del producto generado.",
+      "Identificación de los objetivos del negocio.",
+      "Horario detallado de todas las reuniones técnicas."
+    ],
+    "respuesta": 2,
+    "explicacion": "El Acta de Constitución es un documento de alto nivel. Debe incluir los objetivos del negocio y la justificación del proyecto. [cite_start]No debe incluir horarios detallados de reuniones técnicas (eso es planificación detallada)[cite: 234, 239]."
+  },
+  {
+    "pregunta": "¿Cuál es una característica distintiva del ciclo de vida adaptativo (Ágil) en proyectos de TI?",
+    "opciones": [
+      "Se prohíbe cualquier cambio posterior a la planificación.",
+      "El producto final se entrega en una única fase.",
+      "No se requiere validación del cliente en cada etapa.",
+      "El alcance detallado se define en cada iteración."
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "En los ciclos adaptativos, el alcance no se define completamente al inicio, sino que se refina y detalla al comienzo de cada iteración[cite: 243, 252]."
+  },
+  {
+    "pregunta": "¿Cuál es una dificultad clave que enfrentan las estructuras organizacionales mixtas (matriciales) en proyectos?",
+    "opciones": [
+      "Falta de herramientas informáticas disponibles.",
+      "Doble reporte jerárquico que genera conflictos de autoridad.",
+      "Ausencia de gerentes de proyecto.",
+      "Exceso de control del gerente funcional sobre presupuesto."
+    ],
+    "respuesta": 1,
+    [cite_start]"explicacion": "El desafío principal de la estructura matricial es que los miembros del equipo tienen dos jefes (el gerente funcional y el del proyecto), lo que puede causar conflictos de lealtad y prioridades[cite: 253, 258]."
+  },
+  {
+    "pregunta": "¿Cuál es el principal objetivo de la gestión de las comunicaciones en un proyecto según PMBOK?",
+    "opciones": [
+      "Garantizar que la información fluya correctamente entre los interesados.",
+      "Planificar el alcance del proyecto.",
+      "Monitorear los costos.",
+      "Desarrollar el equipo del proyecto."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "La gestión de comunicaciones asegura la generación, recopilación, distribución, almacenamiento y disposición final de la información del proyecto de manera oportuna y adecuada[cite: 264, 266]."
+  },
+  {
+    "pregunta": "¿Cuál es la diferencia esencial entre gestión de programas y gestión de proyectos?",
+    "opciones": [
+      "Los programas no tienen entregables.",
+      "La gestión de programas tiene menor presupuesto que los proyectos.",
+      "Un programa solo puede contener proyectos idénticos.",
+      "La gestión de programas coordina múltiples proyectos relacionados para obtener beneficios estratégicos."
+    ],
+    "respuesta": 3,
+    [cite_start]"explicacion": "Un programa es un grupo de proyectos relacionados gestionados de manera coordinada para obtener beneficios y control que no se obtendrían si se gestionaran individualmente[cite: 273, 282]."
+  },
+  {
+    "pregunta": "¿Cuáles son las mejores prácticas para asegurar una comunicación efectiva durante la ejecución de un proyecto?",
+    "opciones": [
+      "Realizar reuniones periódicas de equipo y definir canales claros.",
+      "Asignar los entregables sin retroalimentación.",
+      "Establecer canales informales únicamente.",
+      "Evitar el plan de comunicación."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "Las reuniones periódicas (a) y el establecimiento de canales claros (c) son fundamentales para la comunicación efectiva[cite: 306, 309, 313]."
+  },
+  {
+    "pregunta": "A partir del siguiente listado, ordene los pasos del proceso para el control integrado de cambios: 1.Búsqueda alternativas, 2.Ajuste plan, 3.Aprobación CCB, 4.Evaluación impacto, 5.Gestionar nuevo plan, 6.Notificación.",
+    "opciones": [
+      "5, 1, 3, 2, 6, 4",
+      "2, 1, 3, 5, 4, 6",
+      "6, 1, 3, 2, 5, 4",
+      "4 (Evaluar), 1 (Alternativas), 3 (Aprobación), 2 (Ajuste), 6 (Notificación), 5 (Gestionar)"
+    ],
+    "respuesta": 3,
+    "explicacion": "El orden lógico es: Primero se evalúa el impacto (4), se buscan alternativas (1), se aprueba o rechaza (3), se ajusta el plan/línea base (2), se notifica (6) y se gestiona (5). [cite_start]Nota: La opción correcta en el texto original parece estar mal formada en las letras a,b,c,d, pero la secuencia lógica estándar es evaluación -> aprobación -> implementación[cite: 343, 363]."
+  },
+  {
+    "pregunta": "¿Cuál es el propósito de la planeación estratégica en la gestión de proyectos?",
+    "opciones": [
+      "Determinar objetivos organizacionales a largo plazo y seleccionar proyectos que generen valor.",
+      "Definir objetivos organizacionales a corto plazo.",
+      "Identificar proyectos que no tienen impacto en la organización.",
+      "Eliminar la necesidad de análisis FODA."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "La planificación estratégica busca alinear los proyectos con la visión a largo plazo de la empresa para maximizar el valor del negocio[cite: 508, 509]."
+  },
+  {
+    "pregunta": "¿Cuál de los siguientes NO es un objetivo del Project Charter?",
+    "opciones": [
+      "Establecer el presupuesto detallado del proyecto.",
+      "Definir los objetivos del proyecto.",
+      "Identificar las partes interesadas clave.",
+      "Proporcionar al gerente del proyecto la autoridad para utilizar recursos."
+    ],
+    "respuesta": 0,
+    "explicacion": "El presupuesto *detallado* se define en la fase de planificación (Gestión de Costos). [cite_start]El Charter solo incluye un presupuesto preliminar o sumario[cite: 736, 738]."
+  },
+  {
+    "pregunta": "¿Qué indica el análisis de sensibilidad cuando la TIR de un proyecto es sensible a pequeñas variaciones en los flujos de efectivo?",
+    "opciones": [
+      "El proyecto tiene un alto riesgo ya que sus resultados dependen de pequeñas variaciones.",
+      "El proyecto es estable y no presenta riesgos.",
+      "El proyecto no genera valor significativo.",
+      "El proyecto debe ser aceptado sin ajustes."
+    ],
+    "respuesta": 0,
+    [cite_start]"explicacion": "Si pequeños cambios en los flujos afectan drásticamente la TIR, el proyecto es volátil y de alto riesgo[cite: 1090, 1091]."
+  }
+]
