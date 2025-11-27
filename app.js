@@ -413,3 +413,55 @@ if (btnGuardar) {
         alert("Guardado global exitoso.");
     };
 }
+// ==========================================
+// 8. EXPORTAR PDF SOLO CON PREGUNTAS FALLADAS
+// ==========================================
+document.getElementById('btnExportPDF').onclick = async () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    let y = 10;
+    let errores = 0;
+
+    ronda.forEach((p, i) => {
+        const user = respuestasUsuario[i];
+        const correcto = p.respuesta;
+
+        if (user !== correcto) {
+            errores++;
+
+            pdf.setFontSize(12);
+            pdf.setFont("helvetica", "bold");
+            pdf.text(`${errores}. ${p.pregunta}`, 10, y);
+            y += 7;
+
+            pdf.setFont("helvetica", "normal");
+
+            pdf.text(`Tu respuesta: ${p.opciones[user] || "Sin responder"}`, 10, y);
+            y += 6;
+
+            pdf.text(`Correcta: ${p.opciones[correcto]}`, 10, y);
+            y += 6;
+
+            if (p.explicacion) {
+                const lines = pdf.splitTextToSize(`Explicación: ${p.explicacion}`, 180);
+                pdf.text(lines, 10, y);
+                y += lines.length * 6;
+            }
+
+            y += 8;
+
+            // Nueva página si se llena
+            if (y > 270) {
+                pdf.addPage();
+                y = 10;
+            }
+        }
+    });
+
+    if (errores === 0) {
+        pdf.text("🎉 ¡Felicidades! No tuviste preguntas incorrectas.", 10, 20);
+    }
+
+    pdf.save("errores_simulador.pdf");
+};
