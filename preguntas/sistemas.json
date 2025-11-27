@@ -11,6 +11,17 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+    "pregunta": "¿Qué representa una tabla de verdad, como la mostrada en la imagen, en el contexto de un circuito lógico?",
+    "opciones": [
+      "La secuencia de bits de entrada en el tiempo.",
+      "La salida de un circuito en función de sus entradas.",
+      "El número de transistores utilizados en la compuerta.",
+      "La simplificación del diagrama de un mapa de Karnaugh."
+    ],
+    "respuesta": 1,
+    "explicacion": "Una tabla de verdad es una herramienta utilizada en la lógica booleana para mostrar el comportamiento de un circuito lógico; lista todas las posibles combinaciones de las entradas y la salida resultante para cada combinación."
+  },
+  {
     "pregunta": "¿Cuál es la salida de una compuerta OR si ambas entradas son 0?",
     "opciones": [
       "1",
