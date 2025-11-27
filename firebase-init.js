@@ -18,5 +18,5 @@ if (!firebase.apps.length) {
 }
 
 // Exportamos las variables globales para que auth.js y app.js las vean
-const auth = firebase.auth();
-const db = firebase.firestore();
+window.auth = firebase.auth(); // <-- CRUCIAL: Usar window
+window.db = firebase.firestore(); // <-- CRUCIAL: Usar window
