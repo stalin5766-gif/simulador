@@ -24,6 +24,19 @@ const btnCargar = document.getElementById('btnCargar');
 const modoSel = document.getElementById('modo');
 const minutosSel = document.getElementById('minutos');
 
+// --- NUEVO: BOTÓN DE MUTE ---
+const btnMute = document.getElementById('btnMute');
+let sonidoHabilitado = true; // Por defecto el sonido está activado
+
+if (btnMute) {
+    btnMute.onclick = () => {
+        sonidoHabilitado = !sonidoHabilitado; // Alternar estado
+        // Cambiar el ícono
+        btnMute.textContent = sonidoHabilitado ? "🔊" : "🔇";
+    };
+}
+// ----------------------------
+
 // Variables de Estado
 let banco = [];
 let ronda = [];
@@ -32,10 +45,10 @@ let respuestasUsuario = [];
 let seleccionTemporal = null;
 let interval = null;
 
-// --- NUEVO: CARGAR SONIDOS ---
+// CARGAR SONIDOS
 const audioCorrecto = new Audio('./sonidos/correcta.mp3');
 const audioIncorrecto = new Audio('./sonidos/incorrecta.mp3');
-// -----------------------------
+
 
 // ==========================================
 // UTILIDADES UI (CONTADOR AL LADO DEL RELOJ)
@@ -76,7 +89,6 @@ function actualizarContadorPreguntas() {
 // ==========================================
 // 1. CARGA DE DATOS (JSON)
 // ==========================================
-// AHORA RECIBE LA URL COMO PARÁMETRO
 async function cargarMateria(url) {
     try {
         const res = await fetch(url);
@@ -91,17 +103,15 @@ async function cargarMateria(url) {
 }
 
 // ==========================================
-// 2. INICIAR QUIZ (LÓGICA ACTUALIZADA)
+// 2. INICIAR QUIZ
 // ==========================================
 btnEmpezar.onclick = async () => {
     btnEmpezar.disabled = true;
     btnEmpezar.innerText = "Cargando...";
 
-    // 1. OBTENEMOS EL NOMBRE DEL ARCHIVO DEL SELECTOR HTML
     const archivoSeleccionado = document.getElementById('materiaSelect').value;
     const rutaCompleta = `./preguntas/${archivoSeleccionado}`;
 
-    // 2. CARGAMOS ESE ARCHIVO ESPECÍFICO
     const exito = await cargarMateria(rutaCompleta);
     
     if (!exito) {
@@ -110,15 +120,12 @@ btnEmpezar.onclick = async () => {
         return;
     }
 
-    // Reiniciar variables para examen nuevo
     respuestasUsuario = [];
     idx = 0;
 
     if (modoSel.value === 'examen') {
-        // Mezclar y cortar
         ronda = banco.sort(() => 0.5 - Math.random()).slice(0, CANTIDAD_EXAMEN);
     } else {
-        // Mezclar todo
         ronda = banco.sort(() => 0.5 - Math.random());
     }
 
@@ -129,7 +136,6 @@ function iniciarInterfazQuiz() {
     startScreen.classList.add('hidden');
     quizContainer.classList.remove('hidden');
     
-    // Restaurar botones si se quedó en "Cargando..."
     btnEmpezar.disabled = false;
     btnEmpezar.innerText = "Empezar";
 
@@ -138,7 +144,7 @@ function iniciarInterfazQuiz() {
 }
 
 // ==========================================
-// 3. CARGAR PROGRESO (EXISTENTE)
+// 3. CARGAR PROGRESO
 // ==========================================
 btnCargar.onclick = () => {
     const savedData = localStorage.getItem(STORAGE_KEY);
@@ -150,13 +156,10 @@ btnCargar.onclick = () => {
 
     try {
         const data = JSON.parse(savedData);
-        
-        // Restaurar estado
         ronda = data.ronda || [];
         respuestasUsuario = data.respuestasUsuario || [];
         idx = data.idx || 0;
         
-        // Restaurar configuración visual si se guardó
         if (data.modo) modoSel.value = data.modo;
 
         if (ronda.length === 0) {
@@ -217,7 +220,6 @@ function mostrarPregunta() {
     actualizarContadorPreguntas();
     const q = ronda[idx];
 
-    // Generar HTML de la pregunta
     preguntaRender.innerHTML = `
         <h2 class="text-lg font-bold text-gray-800 mb-4">${q.pregunta}</h2>
 
@@ -241,14 +243,12 @@ function mostrarPregunta() {
         </div>
     `;
 
-    // Generar Opciones
     const opcionesBox = document.getElementById('opcionesBox');
     q.opciones.forEach((op, i) => {
         const btn = document.createElement('button');
         btn.className = "opt";
         btn.textContent = op;
         
-        // Si ya respondimos esta pregunta anteriormente (al cargar), marcarla
         if (respuestasUsuario[idx] !== undefined && respuestasUsuario[idx] === i) {
              btn.classList.add('option-selected');
         }
@@ -257,10 +257,8 @@ function mostrarPregunta() {
         opcionesBox.appendChild(btn);
     });
 
-    // Configurar botón "Siguiente"
     document.getElementById('btnSiguiente').onclick = avanzar;
 
-    // Configurar botón "Guardar" (Visible en modo estudio)
     const studyControls = document.getElementById('studyLocalControls');
     if (modoSel.value === "estudio") {
         studyControls.classList.remove('hidden');
@@ -286,35 +284,34 @@ function seleccionar(index, btnRef) {
     const all = document.querySelectorAll('#opcionesBox button');
     const btnNext = document.getElementById('btnSiguiente');
 
-    // Limpiar estilos previos
     all.forEach(b => b.classList.remove('option-selected', 'ans-correct', 'ans-wrong'));
 
     seleccionTemporal = index;
 
     if (modoSel.value === "estudio") {
-        // Modo Estudio: Feedback inmediato
         if (index === q.respuesta) {
             btnRef.classList.add("ans-correct");
             
-            // --- NUEVO: SONIDO CORRECTO ---
-            audioCorrecto.currentTime = 0;
-            audioCorrecto.play().catch(e => console.log(e));
-            // ------------------------------
+            // --- SONIDO CORRECTO (CON CHECK DE SILENCIO) ---
+            if (sonidoHabilitado) {
+                audioCorrecto.currentTime = 0;
+                audioCorrecto.play().catch(e => console.log(e));
+            }
+            // -----------------------------------------------
             
         } else {
             btnRef.classList.add("ans-wrong");
-            // Mostrar la correcta
             if (all[q.respuesta]) all[q.respuesta].classList.add("ans-correct");
             
-            // --- NUEVO: SONIDO INCORRECTO ---
-            audioIncorrecto.currentTime = 0;
-            audioIncorrecto.play().catch(e => console.log(e));
-            // --------------------------------
+            // --- SONIDO INCORRECTO (CON CHECK DE SILENCIO) ---
+            if (sonidoHabilitado) {
+                audioIncorrecto.currentTime = 0;
+                audioIncorrecto.play().catch(e => console.log(e));
+            }
+            // -------------------------------------------------
         }
 
-        // Mostrar explicación si existe
         if (q.explicacion) {
-            // Evitar duplicados
             if (!preguntaRender.querySelector('.explanation-box')) {
                 const box = document.createElement("div");
                 box.className = "explanation-box bg-blue-50 border border-blue-200 p-3 rounded mt-3 text-sm text-blue-800";
@@ -323,7 +320,6 @@ function seleccionar(index, btnRef) {
             }
         }
     } else {
-        // Modo Examen: Solo marcar selección
         btnRef.classList.add('option-selected');
     }
 
@@ -333,10 +329,7 @@ function seleccionar(index, btnRef) {
 
 function avanzar() {
     if (seleccionTemporal === null) return;
-
-    // Guardar respuesta en el array
     respuestasUsuario[idx] = seleccionTemporal;
-
     idx++;
     mostrarPregunta();
 }
@@ -350,7 +343,6 @@ function finalizarQuiz(tiempoTerminado) {
     resultScreen.classList.remove('hidden');
     divContador.style.display = "none";
     
-    // Opcional: Borrar el progreso guardado al terminar para limpiar
     localStorage.removeItem(STORAGE_KEY);
 
     let aciertos = 0;
@@ -384,15 +376,14 @@ btnReview.onclick = () => {
         }
 
         p.opciones.forEach((op, k) => {
-            let cls = "border border-gray-200 text-gray-700"; // Estilo base
+            let cls = "border border-gray-200 text-gray-700";
             
-            // Lógica de colores para revisión
             if (k === p.respuesta) {
-                cls = "bg-green-100 border-green-500 text-green-800 font-semibold"; // Correcta oficial
+                cls = "bg-green-100 border-green-500 text-green-800 font-semibold";
             } else if (k === userAns && !isCorrect) {
-                cls = "bg-red-100 border-red-500 text-red-800"; // Error del usuario
+                cls = "bg-red-100 border-red-500 text-red-800";
             } else if (k === userAns && isCorrect) {
-                cls = "bg-green-100 border-green-500 text-green-800 font-semibold"; // Acierto del usuario
+                cls = "bg-green-100 border-green-500 text-green-800 font-semibold";
             }
 
             html += `<div class="p-2 rounded mb-1 ${cls}">${op}</div>`;
@@ -407,10 +398,8 @@ btnReview.onclick = () => {
     });
 };
 
-// Guardado manual desde botón externo (si existe en tu HTML)
 if (btnGuardar) {
     btnGuardar.onclick = () => {
-        // Solo guarda si hay una ronda activa
         if(ronda.length === 0) {
             alert("No hay un examen activo para guardar.");
             return;
