@@ -11,6 +11,46 @@
     "explicacion": "La compuerta XOR (O exclusiva) produce un 1 únicamente cuando las entradas son distintas (0-1 o 1-0)."
   },
   {
+    "pregunta": "¿Cuál es la resolución de un convertidor AD de 8 bits?",
+    "opciones": [
+      "1/256",
+      "1/1024",
+      "1/128"
+    ],
+    "respuesta": 0,
+    "explicacion": "Un convertidor AD de 8 bits divide el rango de señal en 2^8 = 256 niveles, por lo que su resolución es 1/256."
+  },
+  {
+    "pregunta": "¿Qué es un sistema embebido?",
+    "opciones": [
+      "Un sistema informático diseñado para realizar una tarea específica",
+      "Una computadora personal de propósito general",
+      "Un servidor de alto rendimiento"
+    ],
+    "respuesta": 0,
+    "explicacion": "Un sistema embebido está diseñado para cumplir una función o conjunto limitado de funciones dentro de un sistema mayor."
+  },
+  {
+    "pregunta": "¿Cuál es la principal ventaja de utilizar un microcontrolador en lugar de una FPGA para un proyecto?",
+    "opciones": [
+      "Menor costo y menor complejidad",
+      "Mayor paralelismo y velocidad",
+      "Reconfiguración ilimitada del hardware"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los microcontroladores suelen ser más económicos y fáciles de implementar que las FPGAs, por lo que son ideales para proyectos simples."
+  },
+  {
+    "pregunta": "¿Qué significa FPGA?",
+    "opciones": [
+      "Field Programmable Gate Array",
+      "Fast Processing Graphic Adapter",
+      "Flexible Platform for General Applications"
+    ],
+    "respuesta": 0,
+    "explicacion": "FPGA significa Field Programmable Gate Array, un dispositivo cuya lógica interna puede ser configurada por el usuario."
+  },
+  {
     "pregunta": "¿Qué aplicación es común para un sistema embebido?",
     "opciones": [
       "Control de procesos industriales",
