@@ -11,6 +11,18 @@
     "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
   },
   {
+    "pregunta": "¿Qué mecanismo o grupo de protocolos podría evitar que un host quede aislado de la red en caso de falla del router predeterminado?",
+    "opciones": [
+      "Protocolo Frame Relay (FR)",
+      "Protocolo FHRP (First Hop Redundancy Protocol)",
+      "Protocolo SPT (Spanning Tree Protocol)",
+      "Protocolo WDM (Wavelength Division Multiplexing)"
+    ],
+    "respuesta": 1,
+    "explicacion": "Los Protocolos de Redundancia de Primer Salto (FHRP), como HSRP o VRRP, aseguran que si el router principal (First Hop) falla, el host pueda usar automáticamente un router secundario para evitar el aislamiento de la red. ",
+    "imagen": "imagen/aislado.png" 
+  },
+  {
     "pregunta": "¿Qué protocolo se utilizó comúnmente para establecer conexiones permanentes entre las sucursales de grandes instituciones financieras, ofreciendo circuitos virtuales privados (PVCs)?",
     "opciones": [
       "IP (Internet Protocol)",
