@@ -11,6 +11,18 @@
     "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
   },
   {
+    "pregunta": "¿Qué protocolo se utilizó comúnmente para establecer conexiones permanentes entre las sucursales de grandes instituciones financieras, ofreciendo circuitos virtuales privados (PVCs)?",
+    "opciones": [
+      "IP (Internet Protocol)",
+      "SDH (Synchronous Digital Hierarchy)",
+      "Frame Relay",
+      "ATM (Asynchronous Transfer Mode)"
+    ],
+    "respuesta": 2,
+    "explicacion": "Frame Relay y ATM fueron tecnologías de Capa 2 muy populares para conectar sucursales bancarias debido a su capacidad para crear circuitos virtuales permanentes (PVC) dedicados, ofreciendo fiabilidad y calidad de servicio (QoS) para tráfico sensible.",
+    "imagen": "imagen/sucursales.png" 
+  },
+  {
     "pregunta": "¿Por qué SDH y SONET son considerados pilares en las redes de telecomunicaciones modernas?",
     "opciones": [
       "Porque utilizan el algoritmo DUAL para una rápida convergencia.",
