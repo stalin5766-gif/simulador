@@ -11,6 +11,18 @@
     "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
   },
   {
+    "pregunta": "De acuerdo con el gráfico de Venn, ¿en qué tipo de red convergente se integran las siguientes tecnologías: Redes de Datos, Redes Fijas, Redes Móviles, VoIP y 3G?",
+    "opciones": [
+      "Redes SDH/SONET",
+      "Redes de nueva generación (NGN)",
+      "Redes de área metropolitana (MAN)",
+      "Redes WAN de gran alcance"
+    ],
+    "respuesta": 1,
+    "explicacion": "El término 'Redes de nueva generación' (NGN) define la arquitectura de red unificada que permite la convergencia de servicios de voz, datos, movilidad y multimedia sobre una única infraestructura basada en protocolos IP. ",
+    "imagen": "imagen/convergencia.png" 
+  },
+  {
     "pregunta": "De acuerdo con la estructura jerárquica recomendada por Cisco, ¿cuáles son las tres capas principales de red representadas en la siguiente imagen?",
     "opciones": [
       "Acceso, transporte, enlace",
