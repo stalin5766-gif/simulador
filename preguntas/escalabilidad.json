@@ -11,6 +11,18 @@
     "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
   },
   {
+    "pregunta": "¿Qué tipo de paquete OSPF se está enviando en la ilustración, donde el Router R1 intenta descubrir vecinos en el enlace 172.16.5.0/24 enviando un mensaje a la dirección de multidifusión 224.0.0.5?",
+    "opciones": [
+      "Paquetes IP genéricos",
+      "Paquetes de descripción de base de datos (DBD)",
+      "Paquetes de solicitud de estado de enlace (LSR)",
+      "Paquetes de saludo (Hello)"
+    ],
+    "respuesta": 3,
+    "explicacion": "El primer paso en el establecimiento de una adyacencia OSPF es el envío de paquetes de Saludo (Hello). Estos paquetes se utilizan para descubrir vecinos, establecer parámetros de comunicación y mantener la relación de vecindad. Se envían a la dirección multicast 224.0.0.5.",
+    "imagen": "imagen/hello.png" 
+  },
+  {
     "pregunta": "¿Qué mecanismo o grupo de protocolos podría evitar que un host quede aislado de la red en caso de falla del router predeterminado?",
     "opciones": [
       "Protocolo Frame Relay (FR)",
