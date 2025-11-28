@@ -11,6 +11,17 @@
     "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
   },
   {
+  "pregunta": "Defina las capas de la arquitectura de las redes NGN.",
+  "opciones": [
+    "1 = Capa de gestión de servicios, 2 = Capa de transporte, 3 = Capa de control de red, 4 = Capa de acceso.",
+    "1 = Capa de gestión de servicios, 2 = Capa de control de red, 3 = Capa de transporte, 4 = Capa de acceso.",
+    "1 = Capa de acceso, 2 = Capa de control de red, 3 = Capa de transporte, 4 = Capa de gestión de servicios."
+  ],
+  "respuesta": 1,
+  "explicacion": "La arquitectura NGN se organiza en capas donde la gestión de servicios se ubica sobre el control de red, seguida del transporte y finalmente el acceso. Por ello, la opción b presenta el orden correcto.",
+  "imagen": "./img/ngn.png"
+  },
+  {
     "pregunta": "De acuerdo con el gráfico de Venn, ¿en qué tipo de red convergente se integran las siguientes tecnologías: Redes de Datos, Redes Fijas, Redes Móviles, VoIP y 3G?",
     "opciones": [
       "Redes SDH/SONET",
