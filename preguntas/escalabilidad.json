@@ -11,6 +11,18 @@
     "explicacion": "El AVG es el responsable de asignar las MACs virtuales de forma secuencial a los hosts de la red, lo que permite la distribución de carga de forma rotatoria (Round Robin)."
   },
   {
+    "pregunta": "De acuerdo con la estructura jerárquica recomendada por Cisco, ¿cuáles son las tres capas principales de red representadas en la siguiente imagen?",
+    "opciones": [
+      "Acceso, transporte, enlace",
+      "Núcleo, enlace, aplicación",
+      "Acceso, red, física",
+      "Núcleo, distribución y acceso"
+    ],
+    "respuesta": 3,
+    "explicacion": "El modelo jerárquico de tres capas de Cisco divide la red en las capas de Acceso (donde los usuarios finales se conectan), Distribución (que agrega tráfico y aplica políticas) y Núcleo (que proporciona conmutación de alta velocidad para la red troncal).",
+    "imagen": "imagen/capas.png" 
+  },
+  {
     "pregunta": "¿Qué tipo de paquete OSPF se está enviando en la ilustración, donde el Router R1 intenta descubrir vecinos en el enlace 172.16.5.0/24 enviando un mensaje a la dirección de multidifusión 224.0.0.5?",
     "opciones": [
       "Paquetes IP genéricos",
